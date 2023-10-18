@@ -1,0 +1,43 @@
+---
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import HeaderContent from "../../../components/HeaderContent.astro";
+// import Accordion from '../../../components/Accordion.astro'
+export const prerender = true;
+
+export interface Props {
+  page: Page<CollectionEntry<"meetUs">>;
+}
+
+const { service } = Astro.params;
+
+const detail = await getEntry("service", service!);
+
+const frontmatter = {
+  title: detail!.data.title.toLocaleUpperCase(),
+  description: detail!.data.description,
+  image: detail!.data.image,
+};
+
+export async function getStaticPaths() {
+  const services = await getCollection("service");
+  return services.flatMap((service) => {
+    return [{ params: { service: service.slug } }];
+  });
+}
+---
+
+<Base frontmatter={frontmatter}>
+  <header>
+    <HeaderContent
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={frontmatter.image}
+    />
+  </header>
+  <main class="mt-10 bg-gray-100 dark:bg-gray-900 mx-32 mb-10">
+    <!-- <Accordion /> -->
+  </main>
+</Base>
