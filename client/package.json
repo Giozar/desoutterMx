@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "description": "Desoutter México is a web platform of Desumex, is a product catalog page. Made with frontend technologies such as astro, tailwind.",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,7 +12,8 @@
   },
   "dependencies": {
     "astro": "^3.3.1",
-    "astro-icon": "^0.8.1"
+    "astro-icon": "^0.8.1",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@astrojs/alpinejs": "^0.3.1",

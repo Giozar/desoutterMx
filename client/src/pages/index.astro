@@ -1,8 +1,96 @@
 ---
 import Base from "../layouts/Base.astro";
+import Carousel from '../components/Carousel.astro'
 
+const carouselPages = [
+  {
+    name: "Herramientas industriales digitales",
+    image: "../assets/gallery/desoutter/banners/bannerDesoutter1.png",
+
+    content: {
+      title: "Este es tema del banner 1",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      actions: [
+        {
+          name: "Contactanos",
+          ref: `${import.meta.env.BASE_URL + "contact"}`,
+        },
+        {
+          name: "Cotizar",
+          ref: "#",
+        },
+      ],
+    },
+  },
+  {
+    name: "Industria 4.0",
+    image: "../assets/gallery/desoutter/banners/bannerDesoutter2.jpg",
+
+    content: {
+      title: "Este es tema del banner 2",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      actions: [
+        {
+          name: "Más información",
+          ref: "#",
+        },
+        {
+          name: "Herramientas",
+          ref: "#",
+        },
+      ],
+    },
+  },
+
+  {
+    name: "Industria 4.0",
+    image: "../assets/gallery/desoutter/banners/bannerDesoutter3.jpg",
+    content: {
+      title: "Este es tema del banner 3",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      actions: [
+        {
+          name: "Acerca de nosotros",
+          ref: "#",
+        },
+        {
+          name: "Historia",
+          ref: "#",
+        },
+      ],
+    },
+  },
+
+  {
+    name: "Herramientas balancines y remachadoras",
+    image: "../assets/gallery/desoutter/banners/bannerDesoutter4.jpg",
+    content: {
+      title: "Este es tema del banner 4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      actions: [
+        {
+          name: "Más información",
+          ref: "#",
+        },
+        {
+          name: "otra cosa",
+          ref: "#",
+        },
+      ],
+    },
+  },
+];
 ---
 
 <Base>
-	<h1>Desoutter México</h1>
+  <h1>Desoutter México</h1>
+  <section class='mx-64 my-10'>
+    <article class='border'>
+      <Carousel pages={carouselPages} />
+    </article>
+  </section>
 </Base>

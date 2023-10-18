@@ -1,0 +1,86 @@
+---
+import Icon from 'astro-icon'
+import 'swiper/css/bundle'
+import CarouselContent from './carouselContent.astro'
+
+export interface Props {
+  pages: {
+    name: string
+    image: string
+    title?: string
+    description?: string
+  }[]
+}
+
+const { pages } = Astro.props
+
+
+const imagepaths = pages.map((page) => page.image)
+const imageFiles = import.meta.glob<ImageMetadata>('../assets/gallery/**/*.{png,webp,jpg,jpeg}', {
+  import: 'default',
+  eager: true
+})
+const folderFiles = Object.keys(imageFiles).filter((image) => imagepaths.includes(image))
+const images = folderFiles.map((image) => imageFiles[image])
+---
+
+<div
+  style="--swiper-navigation-color: #000000; --swiper-pagination-color: #fff"
+  class:list={['swiper mySwiper not-prose max-w-screen-xl mx-auto w-full', `h-[350px]`]}>
+  <div class="swiper-wrapper">
+    {
+      pages.map((page, i) => (
+        <div class="swiper-slide relative">
+          <div class="absolute bottom-0 right-0 z-10 h-full w-full bg-gradient-to-t" />
+          <img
+            src={images[i].src}
+            alt={page.name}
+            class="absolute right-0 top-0 z-0 m-0 h-full w-full object-cover"
+          />
+          <div class="absolute h-full right-0 flex px-10 z-20 w-1/2">
+            {(i === 0) && <CarouselContent content={pages[0].content} /> }
+            {(i === 1) && <CarouselContent content={pages[1].content} />}
+            {(i === 2) && <CarouselContent content={pages[2].content} />}
+            {(i === 3) && <CarouselContent content={pages[3].content} /> }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <Icon pack="mdi" name="arrow-right" class="swiper-button-next" />
+  <!-- <div class="swiper-button-next"></div> -->
+  <Icon pack="mdi" name="arrow-left" class="swiper-button-prev" />
+  <!-- <div class="swiper-button-prev"></div> -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script>
+  // @ts-ignore
+  import Swiper from 'swiper/bundle'
+
+  // import Swiper styles
+  import 'swiper/css/bundle'
+
+  new Swiper('.mySwiper', {
+    cssMode: true,
+    lazy: true,
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    mousewheel: true,
+    keyboard: true
+  })
+</script>
