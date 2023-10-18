@@ -1,0 +1,52 @@
+---
+const { qya } = Astro.props;
+
+// console.log(qya);
+---
+
+<article id="accordion-collapse" class="mb-28">
+  {
+    qya && (
+      <section>
+        {qya.map((questionAsnwer: string) => (
+          <div>
+            <header id="accordion-collapse-heading-1">
+              <h4 class="flex items-center bg-slate-100 justify-between w-full p-5 font-medium text-left text-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-800 dark:hover:bg-gray-400">
+                <legend>{questionAsnwer.q}</legend>
+              </h4>
+            </header>
+            <div
+              id="accordion-collapse-body-1"
+              class="block p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                {questionAsnwer.a}
+              </p>
+            </div>
+          </div>
+        ))}
+
+        <p class="text-gray-500 text-xl dark:text-gray-400 mt-16">
+          Para realizar un servicio o consulta mandanos un 
+          <a
+            href={import.meta.env.BASE_URL+"contact"}
+            class="text-red-600 dark:text-red-500 hover:underline"
+          >
+          mensaje
+          </a>
+          o
+          <a
+            href={import.meta.env.BASE_URL+"contact"}
+            class="text-red-600 dark:text-red-500 hover:underline"
+          >
+            Contactanos en redes sociales
+          </a>
+          <legend>
+            Esos conocimientos pueden ser de varios tipos y pueden enfocarse a
+            diversos fines individuales y organizacionales.
+          </legend>
+        </p>
+      </section>
+    )
+  }
+</article>

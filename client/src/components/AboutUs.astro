@@ -1,0 +1,103 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+export interface Props {
+  posts: CollectionEntry<'meetUs'>[]
+}
+
+import Team from "../assets/gallery/desoutter/roadmaps/team.jpg"
+
+const imageTeam = {
+    title: "Personal del equipo de Desumex",
+    alt: "Personal del equipo de Desumex posando para la foto",
+    src: Team.src,
+}
+
+const { meetUsInfo} = Astro.props
+
+const presentation = meetUsInfo[0];
+const mission = meetUsInfo[2];
+const vission = meetUsInfo[4];
+const values = meetUsInfo[3];
+const history = meetUsInfo[1];
+const wedo = meetUsInfo[5]
+// console.log(meetUsInfo)
+
+
+---
+
+<div class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
+      <div class="flex flex-row items-center">
+        <h2 class="text-2xl font-extrabold text-red-800 dark:text-red-200 md:text-4xl">
+          Conócenos
+        </h2>
+        <a
+          href={import.meta.env.BASE_URL + 'meetUs/' + mission.slug}
+          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
+          Misión
+        </a>
+        <a
+          href={import.meta.env.BASE_URL + 'meetUs/' + vission.slug}
+          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
+          Visión
+        </a>
+        <a
+          href={import.meta.env.BASE_URL + 'meetUs/' + values.slug}
+          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
+          Valores
+        </a>
+      </div>
+      <div class="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
+        <div class="relative mb-4 block rounded p-4 lg:mb-0 lg:p-0 xl:col-span-2">
+          <a href={import.meta.env.BASE_URL + 'history/'}>
+            <span class="sr-only">{presentation.data.title}</span>
+            {
+              imageTeam && (
+                <img
+                  src={imageTeam.src}
+                  alt={imageTeam.alt}
+                  title={imageTeam.title}
+                  class="h-64 w-full rounded-md bg-red-100 object-cover dark:bg-red-800 md:h-80"
+                  loading="lazy"
+                />
+              )
+            }
+          </a>
+          <!-- Roadmap -->
+          <a href={import.meta.env.BASE_URL + 'meetUs/' + presentation.slug}>
+            <h1
+              class="mt-2 text-4xl font-bold leading-tight text-red-600 hover:text-zinc-600 dark:text-red-300 dark:hover:text-zinc-300">
+              {presentation.data.title}
+            </h1>
+          </a>
+          <p class="mb-4 text-gray-600 dark:text-gray-400">
+            {presentation.data.description}
+          </p>
+          <a
+            href={import.meta.env.BASE_URL + 'meetUs/' + history.slug}
+            class="mt-2 inline-block rounded-md bg-red-600 px-6 py-3 text-white hover:bg-slate-600 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300">
+            Saber más
+            <span class="sr-only">{presentation.data.title}</span>
+          </a>
+        </div>
+
+        <div class="w-full">
+              <div class="mb-10 w-full rounded md:grid md:grid-cols-3">
+                <div class="rounded bg-white px-4 dark:bg-gray-800 md:col-span-2">
+                  <a href={import.meta.env.BASE_URL + 'meetUs/' + wedo.slug}>
+                    <div class="text-xl font-semibold text-red-600 hover:text-zinc-600 dark:text-gray-100 md:mt-1">
+                      {wedo.data.title}
+                    </div>
+                  </a>
+                  <p class="block text-lg text-gray-600 dark:text-gray-300">
+                    {wedo.data.description}
+                  </p>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

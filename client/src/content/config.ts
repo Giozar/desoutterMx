@@ -16,6 +16,10 @@ const meetUsCollection = defineCollection({
         title: z.string(),
         description: z.string(),
         image: image(),
+        qya: z.array(z.object({
+          q: z.string().optional(),
+          a: z.string().optional(),
+        })),
       })
   })
   

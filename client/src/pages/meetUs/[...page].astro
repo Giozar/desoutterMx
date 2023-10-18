@@ -1,0 +1,35 @@
+---
+import type { Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from "astro:content"
+import Base from '../../layouts/Base.astro'
+import AboutUs from '../../components/AboutUs.astro'
+export const prerender = true
+
+export interface Props {
+  page: Page<CollectionEntry<'meetUs'>>
+}
+
+const { page } = Astro.props
+// console.log(page.data[0].data)
+
+const frontmatter = {
+  title: 'About Us',
+  description: 'Contributors to this website',
+}
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+  const allPosts = await getCollection('meetUs', ({ data }) => {
+    return data.draft !== true
+  })
+  const posts = allPosts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+
+  return paginate(posts)
+}
+---
+
+<Base frontmatter={frontmatter}>
+  <main class="mt-10 bg-gray-100 dark:bg-gray-900">
+    <AboutUs meetUsInfo={page.data}>
+  </main>
+</Base>
