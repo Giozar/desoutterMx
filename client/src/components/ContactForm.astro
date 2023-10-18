@@ -1,0 +1,211 @@
+---
+// import { contactRequest } from '../api/emailApi'
+
+const errors = { fullName: '' }
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+    const fullName = data.get('fullName')
+    const email = data.get('email')
+    const phone = data.get('phone')
+    const subject = data.get('subject')
+    const message = data.get('message')
+    const informations = data.get('informations')
+    const products = data.get('products')
+    const offers = data.get('offers')
+    const phoneNotifications = data.get('phoneNotifications')
+
+    if (typeof name !== 'string' || name.length < 1) {
+      errors.fullName += 'Ingresa tu nombre completo. '
+    }
+    const dataContact = {
+      fullName,
+      email,
+      phone,
+      subject,
+      message,
+      informations,
+      products,
+      offers,
+      phoneNotifications
+    }
+    // console.log(dataContact)
+    // contactRequest(dataContact);
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+// console.log(errors)
+---
+
+<section class='min-w-max' id="contactForm">
+  <form method='post'>
+    <div class='space-y-12'>
+      <div class='border-b border-gray-900/10 pb-12'>
+        <div class='mt-10'>
+          <h1 class='mb-14 text-center text-4xl font-bold leading-8'>Contáctenos</h1>
+          <div class='mb-12'>
+            <h2 class='text-base font-semibold leading-7 text-gray-900'>Información personal</h2>
+            <p class='mt-1 text-sm leading-6 text-gray-600'>
+              Utilice una dirección permanente en la que pueda recibir correo.
+            </p>
+          </div>
+          <label for='fullName' class='block text-sm font-medium leading-6 text-gray-900'>Nombre Completo
+            <div class='mt-2'>
+              <input
+                type='text'
+                name='fullName'
+                id='fullName'
+                class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'
+              />
+            </div>
+            {errors.fullName && <p class='text-red-500'>{errors.fullName}</p>}
+          </label>
+
+          <div class='sm:col-span-3'>
+            <label for='subject' class='block text-sm font-medium leading-6 text-gray-900'>Asunto</label>
+            <div class='mt-2'>
+              <input
+                type='text'
+                name='subject'
+                id='subject'
+                class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'/>
+            </div>
+          </div>
+
+          <div class='sm:col-span-3'>
+            <label for='message' class='block text-sm font-medium leading-6 text-gray-900'>Mensaje</label>
+            <div class='mt-2'>
+              <textarea
+                name='message'
+                id='message'
+                rows='5'
+                class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'>
+              </textarea>
+            </div>
+          </div>
+
+          <div class='grid grid-cols-2 gap-x-2 sm:col-span-4'>
+            <div>
+              <label for='email' class='block text-sm font-medium leading-6 text-gray-900'
+                >Dirección de correo electrónico</label>
+              <div class='mt-2'>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'/>
+              </div>
+            </div>
+
+            <div>
+              <label for='phone' class='block text-sm font-medium leading-6 text-gray-900'>Número telefónico</label>
+              <div class='mt-2'>
+                <input
+                  id='phone'
+                  name='phone'
+                  type='tel'
+                  class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'/>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class='text-base font-semibold leading-7 text-gray-900'>Notificaciones</h2>
+            <p class='mt-1 text-sm leading-6 text-gray-600'>
+              Siempre le informaremos de los cambios importantes, pero usted elige de qué más quiere
+              enterarse.
+            </p>
+          </div>
+          <fieldset>
+            <legend class='text-sm font-semibold leading-6 text-gray-900'>Por correo electrónico</legend>
+            <div class='mt-6 space-y-6'>
+              <div class='relative flex gap-x-3'>
+                <div class='flex h-6 items-center'>
+                  <input
+                    id='informations'
+                    name='informations'
+                    type='checkbox'
+                    class='h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600'/>
+                </div>
+                <div class='text-sm leading-6'>
+                  <label for='informations' class='font-medium text-gray-900'>Información</label>
+                  <p class='text-gray-500'>
+                    Recibe una información sobre Desoutter México, nuevos lanzamientos, productos y
+                    eventos próximos.
+                  </p>
+                </div>
+              </div>
+              <div class='relative flex gap-x-3'>
+                <div class='flex h-6 items-center'>
+                  <input
+                    id='products'
+                    name='products'
+                    type='checkbox'
+                    class='h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600'/>
+                </div>
+                <div class='text-sm leading-6'>
+                  <label for='products' class='font-medium text-gray-900'>Productos</label>
+                  <p class='text-gray-500'>
+                    Reciba notificaciones cuando haya producto de novedad.
+                  </p>
+                </div>
+              </div>
+              <div class='relative flex gap-x-3'>
+                <div class='flex h-6 items-center'>
+                  <input
+                    id='offers'
+                    name='offers'
+                    type='checkbox'
+                    class='h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600'/>
+                </div>
+                <div class='text-sm leading-6'>
+                  <label for='offers' class='font-medium text-gray-900'>Ofertas</label>
+                  <p class='text-gray-500'>
+                    Reciba una notificación cuando hayan ofertas o descuentos en productos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class='text-sm font-semibold leading-6 text-gray-900'>Notificaciones automáticas</legend
+            >
+            <p class='mb-4 mt-1 text-sm leading-6 text-gray-600'>
+              Se envían por SMS a su teléfono móvil.
+            </p>
+
+            <div class='relative flex gap-x-3'>
+              <div class='flex h-6 items-center'>
+                <input
+                  id='phoneNotifications'
+                  name='phoneNotifications'
+                  type='checkbox'
+                  class='h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600'
+                />
+              </div>
+              <div class='text-sm leading-6'>
+                <label for='phoneNotifications' class='font-medium text-gray-900'>Activar</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class='mt-6 flex items-center justify-end gap-x-6'>
+            <button type='button' class='text-sm font-semibold leading-6 text-gray-900'
+              >Cancelar</button
+            >
+            <button
+              type='submit'
+              class='rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600'>
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

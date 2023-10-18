@@ -1,0 +1,76 @@
+---
+import { Icon } from 'astro-icon'
+
+const services = [
+  {
+    name: '1. Herramientas de ensamble',
+    description:
+      'Ofrecemos una amplia gama de herramientas de torque de última generación que cumplen con los más altos estándares de calidad y precisión. Tenemos la solución perfecta para sus necesidades de torque.',
+    icon: 'sparkles'
+  },
+  {
+    name: '2. Capacitación en Torque',
+    description:
+      'Entendemos la importancia de la formación adecuada en el manejo de herramientas de torque. Ofrecemos programas de capacitación personalizados para garantizar que su personal esté debidamente entrenado en el uso seguro y eficiente de nuestras herramientas.',
+    icon: 'puzzle'
+  },
+  {
+    name: '3. Calibración en Torque: ',
+    description:
+      'Contamos con instalaciones de calibración de última generación y personal experto para garantizar que sus herramientas de torque estén siempre calibradas con precisión y cumplan con los estándares internacionales. Estamos acreditados por la Entidad Mexicana de Acreditación A.C. (EMA) en la norma ISO17025 en PAR TORSIONAL, lo que respalda nuestra capacidad para brindar servicios de calibración confiables.',
+    icon: 'presentation-chart-bar'
+  },
+  {
+    name: '4. Servicio técnico',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at aliquet ligula. In semper ipsum tincidunt aliquet imperdiet.',
+    icon: 'clock'
+  }
+]
+---
+
+<div class='bg-white py-12 dark:bg-gray-800'>
+  <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+    <div class='lg:text-center'>
+      <h2 class='text-base font-semibold uppercase tracking-wide text-red-800 dark:text-red-300'>
+        Herramientas y trabajos de calidad
+      </h2>
+      <p
+        class='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl'
+      >
+        Nuestros servicios
+      </p>
+      <p class='mt-4 max-w-2xl text-xl dark:text-gray-300 lg:mx-auto'>
+        Nuestra pasión por la excelencia y nuestro compromiso con la satisfacción del cliente son
+        los pilares que sustentan nuestro éxito continuo.
+      </p>
+    </div>
+
+    <div class='mt-10'>
+      <dl class='space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0'>
+        {
+          services.map((service) => (
+            <div class='relative'>
+              <dt>
+                <div class='absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white dark:bg-red-400 dark:text-black'>
+                  <Icon
+                    class='h-6 w-6'
+                    aria-hidden='true'
+                    pack='heroicons-outline'
+                    name={service.icon}
+                  />
+                </div>
+                <p class='ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-gray-200'>
+                  {service.name}
+                </p>
+              </dt>
+              <dd class='ml-16 mt-2 text-base dark:text-gray-400'>
+                {service.description}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</div>

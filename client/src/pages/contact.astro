@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro'
+import Map from '../components/Map.astro'
+import LeftSidebar from '../components/LeftSidebar.astro';
+import ContactForm from '../components/ContactForm.astro';
+import SocialContact from '../components/SocialContact.astro';
+import RightSidebar from '../components/RightSidebar.astro';
+
+const frontmatter = {
+  title: 'Contact',
+  description: 'Our presence is real and digital. Contact us through the following ways.',
+}
+---
+
+<Base>
+  <main>
+    <div class="contact-container grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+      <LeftSidebar />
+      <div class="w-4/5 md:col-start-1 md:col-end-3 lg:col-span-2 lg:col-start-2 lg:w-full">
+        <ContactForm />
+        <Map />
+        <SocialContact />
+      </div>
+      <RightSidebar />
+    </div>
+  </main>
+</Base>

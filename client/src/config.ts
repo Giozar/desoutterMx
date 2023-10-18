@@ -12,10 +12,6 @@ export { default as IconDesumexSVG} from './assets/svg/desumex/desumex.svg'
 export { default as IconDesumexIco} from './assets/ico/desumex/desumex.ico'
 
 export { default as Logo } from './assets/svg/desumex/desumex.svg'
-// export { default as LogoImage } from './assets/astro/astro-logo-dark.png'
-// export { default as FeaturedSVG } from './assets/gallery/desoutter/covers/cover.jpg'
-// export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
-// export { default as DefaultImage } from './assets/undraw/undraw_my_feed.png'
 
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
@@ -23,7 +19,7 @@ export const NavigationLinks = [
   { name: 'Contacto', href: 'contact' },
   { name: 'Productos', href: 'products' },
   { name: 'Servicios', href: 'services' },
-  { name: 'Industrias', href: 'industries' },
+  // { name: 'Industrias', href: 'industries' },
 ]
 
 export type Sidebar = Record<string, { text: string; link: string }[]>

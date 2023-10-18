@@ -1,6 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import Carousel from '../components/Carousel.astro'
+import Carousel from "../components/Carousel.astro";
+import IndustriesSectorsList from "../components/IndustriesSectorsList.astro";
+import Services from "../components/Services.astro";
+import CTA from "../components/CTA.astro";
 
 const carouselPages = [
   {
@@ -87,10 +90,27 @@ const carouselPages = [
 ---
 
 <Base>
-  <h1>Desoutter México</h1>
-  <section class='mx-64 my-10'>
-    <article class='border'>
+  <section class="mx-32 my-10">
+    <article class="border">
       <Carousel pages={carouselPages} />
+    </article>
+  </section>
+
+  <section class="mx-32 my-10">
+    <article class="border shadow-lg">
+      <IndustriesSectorsList />
+    </article>
+  </section>
+
+  <section class="flex justify-center mx-32 my-10">
+    <article class="border shadow-lg">
+      <Services />
+    </article>
+  </section>
+
+  <section class="flex justify-center mx-32 my-10">
+    <article class="border shadow-lg w-full">
+      <CTA />
     </article>
   </section>
 </Base>
