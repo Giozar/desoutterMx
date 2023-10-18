@@ -1,13 +1,6 @@
 ---
 title: Valores
 description: Nestra dedicación a valores sólidos nos impulsa a ofrecer servicios excepcionales de distribución y calibración de torque en toda la República Mexicana.
-author: giovanni-cortazar
-publishDate: 2022-08-26T00:00:00.000Z
-coverSVG: ../../assets/svg/undraw/undraw_mind_map.svg
-socialImage: ../../assets/undraw/undraw_mind_map.png
-categories:
-  - information
-tags: [valores]
 ---
 
 # Los Valores Fundamentales de DESUMEX:

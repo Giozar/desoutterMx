@@ -1,13 +1,6 @@
 ---
 title: ¿Quienes somos?
 description: DESUMEX SA de CV es una empresa líder en la distribución y calibración de herramientas de torque en toda la República Mexicana. Nuestro compromiso se extiende a una variedad de segmentos, incluyendo el automotriz, aeroespacial e industria en general. Con una amplia experiencia en el mercado, hemos consolidado nuestra posición como un socio confiable para los sectores industriales más exigentes.
-author: giovanni-cortazar
-publishDate: 2022-08-26T00:00:00.000Z
-coverSVG: ../../assets/svg/undraw/undraw_mind_map.svg
-socialImage: ../../assets/undraw/undraw_mind_map.png
-categories:
-  - information
-tags: [history]
 ---
 
 # Historia de DESUMEX 

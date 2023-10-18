@@ -1,13 +1,6 @@
 ---
 title: Trayectoria | Historia
 description: Nuestra misión es liderar la industria de herramientas de torque en México con calidad, tecnología y compromiso hacia el éxito y seguridad de nuestros clientes.
-author: giovanni-cortazar
-publishDate: 2023-06-13T00:00:00.000Z
-coverSVG: ../../assets/gallery/desoutter/roadmaps/team.jpg
-socialImage: ../../assets/undraw/undraw_scrum_board.png
-categories:
-  - information
-tags: [roadmap]
 ---
 
 # Nuestra misión en DESUMEX 

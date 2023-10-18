@@ -1,13 +1,6 @@
 ---
 title: Visión
 description: Nuestra visión en DESUMEX S.A. de C.V. es llegar a ser la empresa referente en herramientas de torque en México.
-author: giovanni-cortazar
-publishDate: 2022-08-26T00:00:00.000Z
-coverSVG: ../../assets/svg/undraw/undraw_mind_map.svg
-socialImage: ../../assets/undraw/undraw_mind_map.png
-categories:
-  - information
-tags: [vission]
 ---
 
 # Nuestra visión en DESUMEX 

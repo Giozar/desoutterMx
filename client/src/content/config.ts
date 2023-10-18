@@ -3,22 +3,10 @@ import { z, defineCollection, reference } from 'astro:content';
 
 // 2. Define your collections
 const meetUsCollection = defineCollection({
-    schema: ({ image }) =>
+    schema: () =>
       z.object({
-        draft: z.boolean().optional(),
         title: z.string(),
         description: z.string(),
-        author: reference('author').optional(),
-        publishDate: z.date(),
-        coverSVG: image().optional(),
-        coverImage: image().optional(),
-        socialImage: image().optional(),
-        images: z.array(image()).optional(),
-        gallery: z.string().optional(),
-        categories: z.array(reference('category')).optional(),
-        tags: z.array(z.string()).optional(),
-        extra: z.array(z.enum(['math', 'markmap', 'mermaid', 'gallery'])).optional(),
-        minutesRead: z.string().optional()
       })
   })
   
@@ -27,8 +15,7 @@ const meetUsCollection = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
-        coverSVG: image(),
-        socialImage: image()
+        image: image(),
       })
   })
   
@@ -37,8 +24,7 @@ const meetUsCollection = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
-        coverSVG: image(),
-        socialImage: image()
+        image: image(),
       })
   })
   
