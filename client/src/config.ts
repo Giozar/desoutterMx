@@ -8,8 +8,8 @@ export const SiteMetadata = {
   },
 }
 
-export const IconDesumexSVG = 'src/assets/svg/desumex/desumex.svg'
-export const IconDesumexIco = 'src/assets/ico/desumex/desumex.ico'
+export { default as IconDesumexSVG} from './assets/svg/desumex/desumex.svg'
+export { default as IconDesumexIco} from './assets/ico/desumex/desumex.ico'
 
 export { default as Logo } from './assets/svg/desumex/desumex.svg'
 // export { default as LogoImage } from './assets/astro/astro-logo-dark.png'
@@ -25,12 +25,6 @@ export const NavigationLinks = [
   { name: 'Servicios', href: 'services' },
   { name: 'Industrias', href: 'industries' },
 ]
-
-export const PAGE_SIZE = 6
-
-export const GITHUB_EDIT_URL = `https://github.com/hellotham/hello-astro`
-
-export const COMMUNITY_INVITE_URL = `https://astro.build/chat`
 
 export type Sidebar = Record<string, { text: string; link: string }[]>
 
