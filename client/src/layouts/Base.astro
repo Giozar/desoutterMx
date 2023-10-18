@@ -3,6 +3,8 @@ import { ViewTransitions } from 'astro:transitions'
 import { IconDesumexSVG } from '../config'
 import { IconDesumexIco } from '../config'
 
+import Header from '../components/Header.astro'
+
 
 const { frontmatter } = Astro.props
 ---
@@ -43,7 +45,7 @@ const { frontmatter } = Astro.props
     <slot name="in-head" />
     </head>
     <body class="dark:bg-gray-900">
-      <!-- <Header /> -->
+      <Header />
       <slot />
       <slot name="before-footer" />
       <!-- <Footer /> -->

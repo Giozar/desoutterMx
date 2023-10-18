@@ -11,7 +11,7 @@ export const SiteMetadata = {
 export const IconDesumexSVG = 'src/assets/svg/desumex/desumex.svg'
 export const IconDesumexIco = 'src/assets/ico/desumex/desumex.ico'
 
-// export { default as Logo } from './assets/svg/astro/astro-icon-dark.svg'
+export { default as Logo } from './assets/svg/desumex/desumex.svg'
 // export { default as LogoImage } from './assets/astro/astro-logo-dark.png'
 // export { default as FeaturedSVG } from './assets/gallery/desoutter/covers/cover.jpg'
 // export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
