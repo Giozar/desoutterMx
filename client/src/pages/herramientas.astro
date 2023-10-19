@@ -1,0 +1,41 @@
+---
+import CategoriesList from '../components/CategoriesList.astro';
+import Base from '../layouts/Base.astro'
+
+const frontmatter = {
+  title: 'Herramientas',
+  description: 'Todos los herramientas que necesites en un solo sitio',
+}
+---
+
+<Base>
+  <header class='mx-64 my-10 space-y-10'>
+    <nav>
+      <ul>
+        <li>
+          <a href='#' class='border-b border-red-500 text-red-500 hover:border-none'>Inicio</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="px-10 space-y-4">
+      <header class="border-b-4 border-red-600">
+        <h1 class='text-4xl font-bold'>SOLUCIONES Y HERRAMIENTAS INDUSTRIALES</h1>
+      </header>
+      <p class="text-sm">
+        Descubra el completo rango de herramientas industriales y soluciones personalizadas de
+        Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas
+        neumáticas para fijación…
+      </p>
+      <ul class='lg:flex space-x-2'>
+        <a href='#'><li class='bg-red-600 px-5 py-2 text-white hover:bg-red-500'>Obtenga una cotización</li></a>
+        <a href='#'><li class="bg-slate-600 px-5 py-2 text-white hover:bg-slate-500">Obtenga una demo</li></a>
+        <a href={`${import.meta.env.BASE_URL}contacto`}><li class="bg-zinc-800 px-5 py-2 text-white hover:bg-zinc-700">Contáctenos</li></a>
+      </ul>
+    </section>
+  </header>
+  <main>
+    <section class='mx-24 my-10'>
+        <CategoriesList/>
+    </section>
+  </main>
+</Base>
