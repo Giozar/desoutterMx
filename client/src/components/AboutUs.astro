@@ -34,17 +34,17 @@ const wedo = meetUsInfo[5]
           Conócenos
         </h2>
         <a
-          href={import.meta.env.BASE_URL + 'meetUs/' + mission.slug}
+          href={import.meta.env.BASE_URL + 'nosotros/' + mission.slug}
           class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
           Misión
         </a>
         <a
-          href={import.meta.env.BASE_URL + 'meetUs/' + vission.slug}
+          href={import.meta.env.BASE_URL + 'nosotros/' + vission.slug}
           class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
           Visión
         </a>
         <a
-          href={import.meta.env.BASE_URL + 'meetUs/' + values.slug}
+          href={import.meta.env.BASE_URL + 'nosotros/' + values.slug}
           class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
           Valores
         </a>
@@ -66,7 +66,7 @@ const wedo = meetUsInfo[5]
             }
           </a>
           <!-- Roadmap -->
-          <a href={import.meta.env.BASE_URL + 'meetUs/' + presentation.slug}>
+          <a href={import.meta.env.BASE_URL + 'nosotros/' + presentation.slug}>
             <h1
               class="mt-2 text-4xl font-bold leading-tight text-red-600 hover:text-zinc-600 dark:text-red-300 dark:hover:text-zinc-300">
               {presentation.data.title}
@@ -76,7 +76,7 @@ const wedo = meetUsInfo[5]
             {presentation.data.description}
           </p>
           <a
-            href={import.meta.env.BASE_URL + 'meetUs/' + history.slug}
+            href={import.meta.env.BASE_URL + 'nosotros/' + history.slug}
             class="mt-2 inline-block rounded-md bg-red-600 px-6 py-3 text-white hover:bg-slate-600 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300">
             Saber más
             <span class="sr-only">{presentation.data.title}</span>
@@ -86,7 +86,7 @@ const wedo = meetUsInfo[5]
         <div class="w-full">
               <div class="mb-10 w-full rounded md:grid md:grid-cols-3">
                 <div class="rounded bg-white px-4 dark:bg-gray-800 md:col-span-2">
-                  <a href={import.meta.env.BASE_URL + 'meetUs/' + wedo.slug}>
+                  <a href={import.meta.env.BASE_URL + 'nosotros/' + wedo.slug}>
                     <div class="text-xl font-semibold text-red-600 hover:text-zinc-600 dark:text-gray-100 md:mt-1">
                       {wedo.data.title}
                     </div>
