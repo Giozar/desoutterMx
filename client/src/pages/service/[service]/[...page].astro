@@ -11,11 +11,27 @@ export interface Props {
   page: Page<CollectionEntry<"meetUs">>;
 }
 
+const frontmatter = {
+  title: "Título de la Página",
+  description: "Descripción de la Página",
+  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  name: "Nombre del Autor",
+  language: "Idioma de la Página",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: "Título para Compartir en Facebook",
+  facebookDescription: "Descripción para Compartir en Facebook",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
+}
+
 const { service } = Astro.params;
 
 const detail = await getEntry("service", service!);
 
-const frontmatter = {
+const serviceDetails = {
   title: detail!.data.title.toLocaleUpperCase(),
   description: detail!.data.description,
   image: detail!.data.image,
@@ -37,12 +53,12 @@ export async function getStaticPaths() {
       href={import.meta.env.BASE_URL+"servicios"}>Regresar a servicios</a>/<span class="text-base">{frontmatter.title}</span>
     </div>
     <HeaderContent
-      title={frontmatter.title}
-      description={frontmatter.description}
-      image={frontmatter.image}
+      title={serviceDetails.title}
+      description={serviceDetails.description}
+      image={serviceDetails.image}
     />
   </header>
   <section class="mt-10 dark:bg-gray-900 mx-32 mb-10">
-    <Accordion qya={frontmatter.qya} />
+    <Accordion qya={serviceDetails.qya} />
   </section>
 </Base>

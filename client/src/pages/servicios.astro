@@ -6,10 +6,19 @@ import image from '../assets/gallery/desoutter/services/service-banner.png'
 
 
 const frontmatter = {
-  title: 'Servicio Y Mantenimiento',
-  description:
-    'Mantenimiento a las herramientas, soporte técnico y para incrementar su producción.',
-  image: image,
+  title: "Título de la Página",
+  description: "Descripción de la Página",
+  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  name: "Nombre del Autor",
+  language: "Idioma de la Página",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: "Título para Compartir en Facebook",
+  facebookDescription: "Descripción para Compartir en Facebook",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 
 const services = await getCollection('service')
@@ -20,7 +29,7 @@ const services = await getCollection('service')
         <HeaderBanner
         title={frontmatter.title}
         description={frontmatter.description}
-        image={frontmatter.image}
+        image={image}
       />
     </header>
     <main class="mt-8 bg-gray-100 dark:bg-gray-900">

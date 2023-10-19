@@ -9,10 +9,10 @@ export interface Props {
   next?: CollectionEntry<'meetUs'>
 }
 
-const {prev, next } = Astro.props
+const {prev, next, frontmatter } = Astro.props
 ---
 
-<Base>
+<Base frontmatter={frontmatter}>
   <main class="dark:bg-black">
     <article class="post">
       <header>

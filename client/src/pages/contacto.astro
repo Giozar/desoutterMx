@@ -7,12 +7,23 @@ import SocialContact from '../components/SocialContact.astro';
 import RightSidebar from '../components/RightSidebar.astro';
 
 const frontmatter = {
-  title: 'Contact',
-  description: 'Our presence is real and digital. Contact us through the following ways.',
+  title: "Título de la Página",
+  description: "Descripción de la Página",
+  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  name: "Nombre del Autor",
+  language: "Idioma de la Página",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: "Título para Compartir en Facebook",
+  facebookDescription: "Descripción para Compartir en Facebook",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 ---
 
-<Base>
+<Base frontmatter={frontmatter}>
   <main>
     <div class="contacto-container grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
       <LeftSidebar />

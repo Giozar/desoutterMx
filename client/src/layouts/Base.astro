@@ -1,10 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { IconDesumexSVG } from "../config";
-import { IconDesumexIco } from "../config";
-
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SEO from "../components/SEO.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -12,19 +10,7 @@ const { frontmatter } = Astro.props;
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src * 'unsafe-eval' 'unsafe-inline' data:; font-src * data:; object-src 'none'; img-src * data:"
-    />
-    <meta
-      http-equiv="Referrer-Policy"
-      content="no-referrer, strict-origin-when-cross-origin"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={IconDesumexIco} sizes="any" />
-    <link rel="icon" href={IconDesumexSVG} type="image/svg+xml" />
-    <meta name="generator" content={Astro.generator} />
+    <SEO frontmatter={frontmatter} />
     <ViewTransitions />
     <script is:inline>
     const setDarkMode = () => {

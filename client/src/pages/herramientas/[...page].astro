@@ -3,12 +3,23 @@ import CategoriesList from '../../components/CategoriesList.astro';
 import Base from '../../layouts/Base.astro'
 
 const frontmatter = {
-  title: 'Herramientas',
-  description: 'Todos los herramientas que necesites en un solo sitio',
+  title: "Desoutter México",
+  description: "Descripción de la Página",
+  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  name: "Nombre del Autor",
+  language: "Idioma de la Página",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: "Título para Compartir en Facebook",
+  facebookDescription: "Descripción para Compartir en Facebook",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 ---
 
-<Base>
+<Base frontmatter={frontmatter}>
   <header class='mx-64 my-10 space-y-10'>
     <nav>
       <div class="text-lg ml-28 text-slate-500 ">

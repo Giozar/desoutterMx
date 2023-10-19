@@ -1,0 +1,37 @@
+---
+const { frontmatter } = Astro.props;
+
+import { IconDesumexSVG } from "../config";
+import { IconDesumexIco } from "../config";
+---
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Etiquetas de seguridad y políticas -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline' data:; font-src * data:; object-src 'none'; img-src * data:">
+    <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
+
+    <!-- Iconos del sitio -->
+    <link rel="icon" href={IconDesumexIco} sizes="any" />
+    <link rel="icon" href={IconDesumexSVG} type="image/svg+xml" />
+
+    <!-- Información general -->
+    <title>{frontmatter.title}</title>
+    <meta name="author" content={frontmatter.name} />
+    <meta name="description" content={frontmatter.description} />
+    <meta name="keywords" content={frontmatter.keywords} />
+    <meta name="language" content={frontmatter.language} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={frontmatter.url} />
+
+    <!-- Etiquetas Open Graph para redes sociales -->
+    <meta property="og:title" content={frontmatter.facebookTitle} />
+    <meta property="og:description" content={frontmatter.facebookDescription} />
+    <meta property="og:image" content={frontmatter.facebookImage} />
+    <meta property="og:url" content={frontmatter.facebookURL} />
+
+    <!-- Etiquetas Twitter Card para redes sociales -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={frontmatter.twitterTitle} />
+    <meta name="twitter:description" content={frontmatter.twitterDescription} />
+    <meta name="twitter:image" content={frontmatter.twitterImage} />

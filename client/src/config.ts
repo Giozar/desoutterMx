@@ -15,10 +15,10 @@ export { default as Logo } from './assets/svg/desumex/desumex.svg'
 
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
-  { name: 'Acerca de nosotros', href: 'nosotros' },
-  { name: 'Contacto', href: 'contacto' },
   { name: 'Herramientas', href: 'herramientas' },
   { name: 'Servicios', href: 'servicios' },
+  { name: 'Acerca de nosotros', href: 'nosotros' },
+  { name: 'Contacto', href: 'contacto' },
   // { name: 'Industrias', href: 'industries' },
 ]
 
