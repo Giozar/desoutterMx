@@ -1,23 +1,24 @@
 ---
 import { Icon } from "astro-icon";
-const { category } = Astro.props;
-export const prerender = true;
+const { subcategory } = Astro.props;
 ---
 
 <section class="group relative overflow-hidden bg-white w-11/12 h-64">
   <figure class="z-0">
     <div class="flex justify-center">
-      <Icon pack="bi" name="map" class="w-36 h-36" />
+      <picture>
+        <img src={subcategory.image} alt={subcategory.name} class="w-52 h-52">
+      </picture>
     </div>
-    <a href={"/herramientas/" + category.id} title="Herramientas de montaje de batería">
+    <a href={subcategory.href} title="Herramientas de montaje de batería">
       <figcaption
         class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >
         <header class="px-5">
-          <h3 class="text-center font-bold text-gray-700">{category.name}</h3>
+          <h3 class="text-center font-bold text-gray-700">{subcategory.name}</h3>
         </header>
         <p class="p-2 pt-10 text-center text-sm text-gray-600">
-          {category.description}
+          {subcategory.description}
         </p>
         <legend
           class="mb-2 h-8 justify-self-center bg-red-600 px-6 py-1 text-center text-sm font-semibold text-white"
