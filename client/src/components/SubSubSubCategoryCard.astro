@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon";
+const { subsubsubcategory } = Astro.props;
+---
+
+<section class="group relative overflow-hidden bg-white w-11/12 h-64">
+  <figure class="z-0">
+    <div class="flex justify-center">
+      <picture>
+        <img src={subsubsubcategory.image} alt={subsubsubcategory.name} class="w-52 h-52">
+      </picture>
+    </div>
+    <a href={subsubsubcategory.href} title="Herramientas de montaje de batería">
+      <figcaption
+        class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
+      >
+        <header class="px-5">
+          <h3 class="text-center font-bold text-gray-700">{subsubsubcategory.name}</h3>
+        </header>
+        <p class="p-2 pt-10 text-center text-sm text-gray-600">
+          {subsubsubcategory.description}
+        </p>
+        <legend
+          class="mb-2 h-8 justify-self-center bg-red-600 px-6 py-1 text-center text-sm font-semibold text-white"
+          >Mas informacion</legend
+        >
+      </figcaption>
+    </a>
+  </figure>
+</section>
