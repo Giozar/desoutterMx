@@ -2,12 +2,13 @@
 import SubCategoryCard from "./SubCategoryCard.astro"
 export function getStaticPaths() {
   return [
-    { params: { categoryId } },
-    { params: { categoryId } },
-    { params: { categoryId } },
+    { params: { categoryId, categoryName } },
+    { params: { categoryId, categoryName } },
+    { params: { categoryId, categoryName } },
   ];
 }
-const { categoryId } = Astro.params;
+const { categoryId, categoryName } = Astro.params;
+// console.log(categoryId, categoryName);
 const CategoryId = Number(categoryId);
 
 const SubCategoriesAll = [
@@ -140,7 +141,7 @@ const SubCategoriesAll = [
         "CVI3 - El nuevo estándar de valor en el aprete eficiente. La gama CVI tiene la más potente y flexible herramientas trasductoras y fixturizadas para su seguridad y aplicaciones críticas. Este nuevo sistema...",
       image:
         "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI3%20Range.jpg",
-      href: "1/gama-cvi3",
+      href: "/herramientas/3/sistemas-de-montaje-electricos/1/gama-cvi3",
       id: 1,
       categoryId: 3,
     },
@@ -148,7 +149,7 @@ const SubCategoriesAll = [
       name: "Gama CVIR II ",
       image:
         "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIR2%20Range.jpg",
-      href: "/herramientas/2/sistemas-de-montaje-electricos/2/gama-cvir-ii",
+      href: "/herramientas/3/sistemas-de-montaje-electricos/2/gama-cvir-ii",
       id: 2,
       categoryId: 3,
     },

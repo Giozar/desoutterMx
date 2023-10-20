@@ -2,13 +2,19 @@
 import SubSubCategoryCard from "./SubSubCategoryCard.astro";
 export function getStaticPaths() {
   return [
-    { params: { subcategoryId } },
-    { params: { subcategoryId } },
-    { params: { subcategoryId } },
+    { params: { categoryId, subcategoryId } },
+    { params: { categoryId, subcategoryId } },
+    { params: { categoryId, subcategoryId } },
   ];
 }
-const { subcategoryId } = Astro.params;
+const { categoryId, subcategoryId } = Astro.params;
+
+
+const CategoryId = Number(categoryId);
 const SubCategoryId = Number(subcategoryId);
+
+// console.log(CategoryId);
+// console.log(SubCategoryId);
 
 const SubSubCategoriesAll = [
 [
@@ -988,14 +994,12 @@ const SubSubCategoriesAll = [
 
 const subsubcategories = SubSubCategoriesAll
   .map(subsubcategories => subsubcategories.filter(subsubcategory => {
-      if(subsubcategory.categoryId === 15 && subsubcategory.subcategoryId === SubCategoryId ){
+      if(subsubcategory.categoryId === CategoryId && subsubcategory.subcategoryId === SubCategoryId ){
         return subsubcategory
       }
-  }))
+  })).flat()
 
-console.log(subsubcategories);
-
-console.log(SubCategoryId);
+// console.log(subsubcategories);
 
 export const prerender = true;
 ---
