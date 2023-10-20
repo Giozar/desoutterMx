@@ -2,13 +2,13 @@
 import SubCategoryCard from "./SubCategoryCard.astro"
 export function getStaticPaths() {
   return [
-    { params: { catId } },
-    { params: { catId } },
-    { params: { catId } },
+    { params: { categoryId } },
+    { params: { categoryId } },
+    { params: { categoryId } },
   ];
 }
-const { catId } = Astro.params;
-const CategoryId = Number(catId);
+const { categoryId } = Astro.params;
+const CategoryId = Number(categoryId);
 
 const SubCategoriesAll = [
   [
