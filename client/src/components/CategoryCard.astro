@@ -9,7 +9,7 @@ export const prerender = true;
     <div class="flex justify-center">
       <Icon pack="bi" name="map" class="w-36 h-36" />
     </div>
-    <a href={"/herramientas/" + category.id} title="Herramientas de montaje de batería">
+    <a href={category.href + "/"} title={category.name}>
       <figcaption
         class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >
