@@ -1,0 +1,973 @@
+[
+    {
+        "name": "Batería E-Pulse independiente",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/E-Pulse%20battery%20standalone.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/1/herramientas-de-montaje-de-bateria/19/bateria-e-pulse-herramienta-de-pulso-de-bateria-electrica/190/bateria-e-pulse-independiente",
+        "id": 1,
+        "categoryId": 1,
+        "subcategoryId": 8
+    },
+    {
+        "name": "Batería E-Pulse inalámbrica",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/E-Pulse%20battery%20wireless.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/1/herramientas-de-montaje-de-bateria/19/bateria-e-pulse-herramienta-de-pulso-de-bateria-electrica/191/bateria-e-pulse-inalambrica",
+        "id": 2,
+        "categoryId": 1,
+        "subcategoryId": 8
+    }
+],
+[
+    {
+        "name": "Sight",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Sight.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/13/smart-hub-industrial/133/conectividades/1331/sight",
+        "id": 1,
+        "categoryId": 2,
+        "subcategoryId": 3
+    }
+],
+[
+    {
+        "name": "MULTI",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/MULTI.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/13/smart-hub-industrial/135/multi-spindle-solutions/1351/multi",
+        "id": 1,
+        "categoryId": 2,
+        "subcategoryId": 5
+    },
+    {
+        "name": "EFM spindles",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EFM%20spindles.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/13/smart-hub-industrial/135/multi-spindle-solutions/1352/efm-spindles",
+        "id": 2,
+        "categoryId": 2,
+        "subcategoryId": 5
+    }
+],
+[
+    {
+        "name": "CVI3 Controllers",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI3%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/210/cvi3-controllers",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "ERP - atornilladores eléctricos de alto torque",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERP%20-%20high%20torque%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/213/erp-atornilladores-electricos-de-alto-torque",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "ERP - herramientas de torque bajo con empuñadura de pistola de mano",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERP%20-%20Pistol%20grip%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/211/erp-herramientas-de-torque-bajo-con-empunadura-de-pistola-de-mano",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "EAD - atornilladores eléctricos de cabeza ángular",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EAD%20-%20Angle%20head%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/212/ead-atornilladores-electricos-de-cabeza-angular",
+        "id": 4,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Atornilladores eléctricos en línea EID",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EID%20Inline%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/214/atornilladores-electricos-en-linea-eid",
+        "id": 5,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "EABcom - EPBcom aprietatuercas de batería",
+        "description": "La última innovación Desoutter con herramientas de batería. Hasta 4 herramientas de batería transductoras conectadas a 1 sólo controlador CVI3 Visión. 100% de trazabilidad completa, calidad y libertad...",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EABcom%20-%20EPBcom%20Battery%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/215/eabcom-epbcom-aprietatuercas-de-bateria",
+        "id": 6,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "EFDE-EFDA-EFDS Husillos eléctricos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EFDE-EFDA-EFDS%20Fixtured%20electric%20spindles.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/217/efde-efda-efds-husillos-electricos",
+        "id": 7,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Software CVI3 ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI3%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/219/software-cvi3",
+        "id": 8,
+        "categoryId": 3,
+        "subcategoryId": 1
+    },
+    {
+        "name": "accesorios CVI3",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI3%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/21/gama-cvi3/10015/accesorios-cvi3",
+        "id": 9,
+        "categoryId": 3,
+        "subcategoryId": 1
+    }
+],
+[
+    {
+        "name": "Controladores CVIR II",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIR2%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/22/gama-cvir-ii/220/controladores-cvir-ii",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Destornilladores eléctricos ERS",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERS%20Electric%20screwdrivers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/22/gama-cvir-ii/222/destornilladores-electricos-ers",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Software CVIxII",
+        "description": "La gama de atornilladores con transductor ERP está dedicada a aplicaciones de torque alto, especialmente ensamblajes estructurales que requieren precisión y trazabilidad",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIxII%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/22/gama-cvir-ii/223/software-cvixii",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 2
+    }
+],
+[
+    {
+        "name": "CVIXS Controllers",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIXS%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/27/cvixs-range/270/cvixs-controllers",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 3
+    },
+    {
+        "name": "ERXS Electric screwdrivers",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERXS%20Electric%20screwdrivers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/27/cvixs-range/271/erxs-electric-screwdrivers",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 3
+    },
+    {
+        "name": "CVIXS accessories",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIXS%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/27/cvixs-range/10019/cvixs-accessories",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Serie DSTxs - Nano transductores estáticos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/DSTxs%20Series.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/27/cvixs-range/5221/serie-dstxs-nano-transductores-estaticos",
+        "id": 4,
+        "categoryId": 3,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Software CVIXS",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIXS%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/27/cvixs-range/272/software-cvixs",
+        "id": 5,
+        "categoryId": 3,
+        "subcategoryId": 3
+    }
+],
+[
+    {
+        "name": "Controladores CVIL II",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIL2%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/230/controladores-cvil-ii",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "ELRT - Herramientas de pulso",
+        "description": "El E-PULSE es la primera herramienta de impulso totalmente eléctrica en el mercado que ofrece una completa transformación de neumática a eléctrica sin reacción en herramientas de ensamblaje.",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ELRT%20-%20Pulse%20Tools.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/234/elrt-herramientas-de-pulso",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "ERP - herramientas de torque bajo con empuñadura de pistola de mano",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERP%20-%20Pistol%20grip%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/231/erp-herramientas-de-torque-bajo-con-empunadura-de-pistola-de-mano",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "ERAL - atornilladores eléctricos de cabeza angular",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERAL%20-%20Angle%20head%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/232/eral-atornilladores-electricos-de-cabeza-angular",
+        "id": 4,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "ERD-ERDL atornilladores eléctricos en línea",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERD-ERDL%20Inline%20electric%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/233/erd-erdl-atornilladores-electricos-en-linea",
+        "id": 5,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "ERF - Husillos eléctricos fijos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERF%20-%20Fixtured%20electric%20splindes.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/235/erf-husillos-electricos-fijos",
+        "id": 6,
+        "categoryId": 3,
+        "subcategoryId": 4
+    },
+    {
+        "name": "Software CVIxII",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIxII%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/23/gama-cvil-ii/236/software-cvixii",
+        "id": 7,
+        "categoryId": 3,
+        "subcategoryId": 4
+    }
+],
+[
+    {
+        "name": "Rango MultiCVIL II ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/MultiCVIL2%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/24/rango-multicvil-ii/240/rango-multicvil-ii",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 5
+    },
+    {
+        "name": "EME - ejes compuestos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EME%20-%20Fixtured%20Spindles.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/24/rango-multicvil-ii/241/eme-ejes-compuestos",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 5
+    },
+    {
+        "name": "EME - ejes compuestos con extremo desplazamiento",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EME%20-%20Fixtured%20Spindles%20with%20offset%20end.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/24/rango-multicvil-ii/242/eme-ejes-compuestos-con-extremo-desplazamiento",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 5
+    },
+    {
+        "name": "Software CVIxII",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIxII%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/24/rango-multicvil-ii/244/software-cvixii",
+        "id": 4,
+        "categoryId": 3,
+        "subcategoryId": 5
+    }
+],
+[
+    {
+        "name": "Controladores CVIC II",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIC2%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/250/controladores-cvic-ii",
+        "id": 1,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Atornilladores ECS",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ECS%20screwdrivers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/251/atornilladores-ecs",
+        "id": 2,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Aprietatuercas ECP LT",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ECP%20LT%20nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/252/aprietatuercas-ecp-lt",
+        "id": 3,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "ECA Aprietatuercas",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ECA%20Nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/254/eca-aprietatuercas",
+        "id": 4,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "ECD Aprietatuercas",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ECD%20Nutrunners.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/255/ecd-aprietatuercas",
+        "id": 5,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Ejes de montura rígida MC",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/MC%20Fixtured%20Spindles.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/256/ejes-de-montura-rigida-mc",
+        "id": 6,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Posco 500 sistema de posicionamiento",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Posco%20500%20positioning%20system.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/257/posco-500-sistema-de-posicionamiento",
+        "id": 7,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Accesorios Posco",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Posco%20Accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/10007/accesorios-posco",
+        "id": 8,
+        "categoryId": 3,
+        "subcategoryId": 6
+    },
+    {
+        "name": "Software CVIC II",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIC%20II%20Software.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/2/sistemas-de-montaje-electricos/25/gama-cvic-ii/258/software-cvic-ii",
+        "id": 9,
+        "categoryId": 3,
+        "subcategoryId": 6
+    }
+],
+[
+    {
+        "name": "ESP Controladores",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ESP%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/3/destornilladores-electricos/31/gama-slbn/310/esp-controladores",
+        "id": 1,
+        "categoryId": 4,
+        "subcategoryId": 1
+    },
+    {
+        "name": "destornilladores eléctricos SLBN",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/SLB%20electric%20screwdrivers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/3/destornilladores-electricos/31/gama-slbn/311/destornilladores-electricos-slbn",
+        "id": 2,
+        "categoryId": 4,
+        "subcategoryId": 1
+    }
+],
+[
+    {
+        "name": "ESP C Controladores",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ESP%20C%20Controllers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/3/destornilladores-electricos/32/gama-slc/320/esp-c-controladores",
+        "id": 1,
+        "categoryId": 4,
+        "subcategoryId": 2
+    },
+    {
+        "name": "destornilladores eléctricos SLC ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/SLC%20electric%20screwdrivers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/3/destornilladores-electricos/32/gama-slc/321/destornilladores-electricos-slc",
+        "id": 2,
+        "categoryId": 4,
+        "subcategoryId": 2
+    }
+],
+[
+    {
+        "name": "Herramientas de pulso PT",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/PT%20Pulse%20tools.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/494/herramientas-de-pulso/4941/herramientas-de-pulso-pt",
+        "id": 1,
+        "categoryId": 5,
+        "subcategoryId": 13
+    },
+    {
+        "name": "Herramientas de pulso PTF",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/PTF%20Pulse%20tools.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/494/herramientas-de-pulso/4942/herramientas-de-pulso-ptf",
+        "id": 2,
+        "categoryId": 5,
+        "subcategoryId": 13
+    },
+    {
+        "name": "accesorios de hHerramientas Pulso ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Pulse%20tools%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/494/herramientas-de-pulso/10014/accesorios-de-hherramientas-pulso",
+        "id": 3,
+        "categoryId": 5,
+        "subcategoryId": 13
+    }
+],
+[
+    {
+        "name": "Brocas de tornillo de precisión",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Bits%20for%20precision%20screw.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/112001/accesorios-de-fijacion/112051/brocas-de-tornillo-de-precision",
+        "id": 1,
+        "categoryId": 5,
+        "subcategoryId": 14
+    },
+    {
+        "name": "Inserte pedazos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Insert%20bits.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/112001/accesorios-de-fijacion/113051/inserte-pedazos",
+        "id": 2,
+        "categoryId": 5,
+        "subcategoryId": 14
+    },
+    {
+        "name": "pedazos de potencia",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Power%20bits.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/4/herramientas-de-sujecion-neumaticas/112001/accesorios-de-fijacion/114051/pedazos-de-potencia",
+        "id": 3,
+        "categoryId": 5,
+        "subcategoryId": 14
+    }
+],
+[
+    {
+        "name": "DWTA Llave de Auditoría de Calidad en Delta 7D",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Quality%20Wrenches%20%28DWTA%29.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/53/llaves-dinamometricas/531/dwta-llave-de-auditoria-de-calidad-en-delta-7d",
+        "id": 1,
+        "categoryId": 6,
+        "subcategoryId": 1
+    },
+    {
+        "name": "QAudit Wrenches on Delta 7D",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/QAudit%20Wrenches.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/53/llaves-dinamometricas/533/qaudit-wrenches-on-delta-7d",
+        "id": 2,
+        "categoryId": 6,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Llaves QShield",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/QShield%20Wrenches.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/53/llaves-dinamometricas/532/llaves-qshield",
+        "id": 3,
+        "categoryId": 6,
+        "subcategoryId": 1
+    }
+],
+[
+    {
+        "name": "transductores rotativos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Rotary%20transducers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/52/transductores-de-torque/521/transductores-rotativos",
+        "id": 1,
+        "categoryId": 6,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Transductores estáticos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Static%20transducers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/52/transductores-de-torque/522/transductores-estaticos",
+        "id": 2,
+        "categoryId": 6,
+        "subcategoryId": 2
+    }
+],
+[
+    {
+        "name": "Accessories for PST",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Accessories%20for%20PST.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/10013/accesorios-de-sistemas-de-medicion/10017/accessories-for-pst",
+        "id": 1,
+        "categoryId": 6,
+        "subcategoryId": 8
+    },
+    {
+        "name": "Accessories for Wrenches",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Accessories%20for%20Wrenches.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/10013/accesorios-de-sistemas-de-medicion/10020/accessories-for-wrenches",
+        "id": 2,
+        "categoryId": 6,
+        "subcategoryId": 8
+    },
+    {
+        "name": "Accessories for Delta Collectors",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Accessories%20for%20Delta%20Collectors.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/10013/accesorios-de-sistemas-de-medicion/10021/accessories-for-delta-collectors",
+        "id": 3,
+        "categoryId": 6,
+        "subcategoryId": 8
+    },
+    {
+        "name": "Other measurement systems accessories",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Other%20measurement%20systems%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/5/sistemas-de-medicion-de-torque/10013/accesorios-de-sistemas-de-medicion/10022/other-measurement-systems-accessories",
+        "id": 4,
+        "categoryId": 6,
+        "subcategoryId": 8
+    }
+],
+[
+    {
+        "name": "Multi taladros",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Multi%20drills.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/730/multi-taladros",
+        "id": 1,
+        "categoryId": 9,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Brocas rectas y angulares\n",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Straight%20%26%20Angle%20Drills.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/731/brocas-rectas-y-angulares",
+        "id": 2,
+        "categoryId": 9,
+        "subcategoryId": 1
+    },
+    {
+        "name": "taladros con empuñadura de pistola",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Pistol%20grip%20drills.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/732/taladros-con-empunadura-de-pistola",
+        "id": 3,
+        "categoryId": 9,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Soluciones para perforación compuesta\n",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Solutions%20for%20composite%20drilling.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/733/soluciones-para-perforacion-compuesta",
+        "id": 4,
+        "categoryId": 9,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Manual C - taladrado de pinza",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Manual%20C-clamp%20drilling.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/734/manual-c-taladrado-de-pinza",
+        "id": 5,
+        "categoryId": 9,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Taladros de alimentación en rack",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/RFD.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/73/perforacion-manual-neumatica/735/taladros-de-alimentacion-en-rack",
+        "id": 6,
+        "categoryId": 9,
+        "subcategoryId": 1
+    }
+],
+[
+    {
+        "name": "XPB One",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/XPB%20One.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/74/soluciones-manuales-de-bateria/741/xpb-one",
+        "id": 1,
+        "categoryId": 9,
+        "subcategoryId": 2
+    },
+    {
+        "name": "XPB Modular",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/XPB%20Modular.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/74/soluciones-manuales-de-bateria/743/xpb-modular",
+        "id": 2,
+        "categoryId": 9,
+        "subcategoryId": 2
+    }
+],
+[
+    {
+        "name": "Motor (Turbina)",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Motor%20%28Turbine%29.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/70/unidades-de-perforacion-neumatica-avanzada/701/motor-turbina",
+        "id": 1,
+        "categoryId": 9,
+        "subcategoryId": 3
+    },
+    {
+        "name": "ADU cabezales",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ADU%20Heads.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/70/unidades-de-perforacion-neumatica-avanzada/702/adu-cabezales",
+        "id": 2,
+        "categoryId": 9,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Equipos ADU",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ADU%20Equipments.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/70/unidades-de-perforacion-neumatica-avanzada/703/equipos-adu",
+        "id": 3,
+        "categoryId": 9,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Opciones",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Options.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/70/unidades-de-perforacion-neumatica-avanzada/704/opciones",
+        "id": 4,
+        "categoryId": 9,
+        "subcategoryId": 3
+    }
+],
+[
+    {
+        "name": "éVo Light",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/%C3%A9Vo%20Light.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/711/evo-light",
+        "id": 1,
+        "categoryId": 9,
+        "subcategoryId": 4
+    },
+    {
+        "name": "éVo Modular",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/%C3%A9Vo%20Modular.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/713/evo-modular",
+        "id": 2,
+        "categoryId": 9,
+        "subcategoryId": 4
+    },
+    {
+        "name": "EDU cabezales",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EDU%20Heads.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/714/edu-cabezales",
+        "id": 3,
+        "categoryId": 9,
+        "subcategoryId": 4
+    },
+    {
+        "name": "Equipos EDU",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/EDU%20Equipments.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/715/equipos-edu",
+        "id": 4,
+        "categoryId": 9,
+        "subcategoryId": 4
+    },
+    {
+        "name": "Caja de control y cables ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Control%20box%20%26%20cable.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/716/caja-de-control-y-cables",
+        "id": 5,
+        "categoryId": 9,
+        "subcategoryId": 4
+    },
+    {
+        "name": "Software y gestión de funciones\n",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Software%20%26%20Feature%20Management.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/71/unidades-avanzadas-de-perforacion-electricas-evo/717/software-y-gestion-de-funciones",
+        "id": 6,
+        "categoryId": 9,
+        "subcategoryId": 4
+    }
+],
+[
+    {
+        "name": "Efecto final multifuncional",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Multifunction%20End%20Effector.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/72/unidades-roboticas-avanzadas-de-perforacion-evo/721/efecto-final-multifuncional",
+        "id": 1,
+        "categoryId": 9,
+        "subcategoryId": 5
+    },
+    {
+        "name": "Cabezales de múltiples aplicaciones\n",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Multi%20application%20heads.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/72/unidades-roboticas-avanzadas-de-perforacion-evo/722/cabezales-de-multiples-aplicaciones",
+        "id": 2,
+        "categoryId": 9,
+        "subcategoryId": 5
+    },
+    {
+        "name": "Caja de control",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Control%20box.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/72/unidades-roboticas-avanzadas-de-perforacion-evo/723/caja-de-control",
+        "id": 3,
+        "categoryId": 9,
+        "subcategoryId": 5
+    },
+    {
+        "name": "Accesorios para aplicaciones robóticas.",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Accessories%20for%20robotic%20applications.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/7/soluciones-para-aplicaciones-de-barrenado/72/unidades-roboticas-avanzadas-de-perforacion-evo/724/accesorios-para-aplicaciones-roboticas",
+        "id": 4,
+        "categoryId": 9,
+        "subcategoryId": 5
+    }
+],
+[
+    {
+        "name": "Torque D53  y Posicionamiento de Brazos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/D53%20Torque%20and%20Positioning%20Arms.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11010/torque-d53-y-posicionamiento-de-brazos",
+        "id": 1,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "BANDEJA - brazos de reacción telescópicos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/TRA%20-%20Telescopic%20reaction%20arms.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11011/bandeja-brazos-de-reaccion-telescopicos",
+        "id": 2,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Balanceadores",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Balancers.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11012/balanceadores",
+        "id": 3,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Brazos balanceadores",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Balancing%20Arms.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11013/brazos-balanceadores",
+        "id": 4,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Torque Tubes",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Torque%20Tubes.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/10018/torque-tubes",
+        "id": 5,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "Tool Holders",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Tool%20Holders.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/10011/tool-holders",
+        "id": 6,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "abrazaderas de herramientas",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Tool%20clamps.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11014/abrazaderas-de-herramientas",
+        "id": 7,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "fundas para herramientas",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Tool%20holsters.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11015/fundas-para-herramientas",
+        "id": 8,
+        "categoryId": 15,
+        "subcategoryId": 1
+    },
+    {
+        "name": "ASD - dispensador automático de tornillo",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ASD%20-%20Automatic%20screw%20dispenser.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11100/estaciones-de-trabajo-optimizadas/11016/asd-dispensador-automatico-de-tornillo",
+        "id": 9,
+        "categoryId": 15,
+        "subcategoryId": 1
+    }
+],
+[
+    {
+        "name": "Filtros, reguladores, lubricadores (FRL)",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/FRL.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10320/filtros-reguladores-lubricadores-frl",
+        "id": 1,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Carretes de manguera",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Hose%20reels.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10321/carretes-de-manguera",
+        "id": 2,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Mangueras",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Hoses.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10330/mangueras",
+        "id": 3,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Acoplamientos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Couplings.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10313/acoplamientos",
+        "id": 4,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Air Flex",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Airflex.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10310/air-flex",
+        "id": 5,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Válvulas de bola",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Ball%20valves.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10311/valvulas-de-bola",
+        "id": 6,
+        "categoryId": 15,
+        "subcategoryId": 2
+    },
+    {
+        "name": "Espigas",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Nipples.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10300/accesorios-paralinea-de-aire/10340/espigas",
+        "id": 7,
+        "categoryId": 15,
+        "subcategoryId": 2
+    }
+],
+[
+    {
+        "name": "Accesorios de herramientas de batería",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/E-LIT%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10002/accesorios-de-herramientas-de-bateria",
+        "id": 1,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "accesorios CVIC",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIC%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10004/accesorios-cvic",
+        "id": 2,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Accesorios CVI II",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI2%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10006/accesorios-cvi-ii",
+        "id": 3,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "accesorios CVI3",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVI3%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10015/accesorios-cvi3",
+        "id": 4,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "CVIXS accessories",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/CVIXS%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10019/cvixs-accessories",
+        "id": 5,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Accesorios HT ERP",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ERP%20HT%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10016/accesorios-ht-erp",
+        "id": 6,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Unidad de transferencia de datos (DTU)",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Data%20Transfert%20Unit%20%28DTU%29.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10005/unidad-de-transferencia-de-datos-dtu",
+        "id": 7,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Posco",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Posco.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10007/posco",
+        "id": 8,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Cables",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Cables.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10008/cables",
+        "id": 9,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "ESP",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/ESP.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10009/esp",
+        "id": 10,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "SLC-SL-LES-SLB",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/SLC-SLK-SLE-SLB.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10012/slc-sl-les-slb",
+        "id": 11,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "Accesorios de sistemas de medición",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Measurement%20systems%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10013/accesorios-de-sistemas-de-medicion",
+        "id": 12,
+        "categoryId": 15,
+        "subcategoryId": 3
+    },
+    {
+        "name": "accesorios de hHerramientas Pulso ",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Pulse%20tools%20accessories.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/10400/accesorios-para-herramientas/10014/accesorios-de-hherramientas-pulso",
+        "id": 13,
+        "categoryId": 15,
+        "subcategoryId": 3
+    }
+],
+[
+    {
+        "name": "Brocas de tornillo de precisión",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Bits%20for%20precision%20screw.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11200/accesorios-de-fijacion/11205/brocas-de-tornillo-de-precision",
+        "id": 1,
+        "categoryId": 15,
+        "subcategoryId": 4
+    },
+    {
+        "name": "Inserte pedazos",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Insert%20bits.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11200/accesorios-de-fijacion/11305/inserte-pedazos",
+        "id": 2,
+        "categoryId": 15,
+        "subcategoryId": 4
+    },
+    {
+        "name": "pedazos de potencia",
+        "image": "https://www.desouttertools.mx/media/cache/thumb_350x350_small/uploads/catalog/categories/Power%20bits.jpg",
+        "href": "https://www.desouttertools.mx/herramientas/10000/accesorios/11200/accesorios-de-fijacion/11405/pedazos-de-potencia",
+        "id": 3,
+        "categoryId": 15,
+        "subcategoryId": 4
+    }
+],
