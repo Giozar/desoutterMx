@@ -1,4 +1,5 @@
 ---
+import HeaderTools from "./HeaderTools.astro";
 import SubCategoryCard from "./SubCategoryCard.astro"
 
 const { categoryId, categoryName } = Astro.params;
@@ -15,10 +16,7 @@ const subcategories = SubCategoriesAll
 export const prerender = true;
 ---
 <article>
-  <header class='p-10'>
-    <h2 class="text-2xl font-bold">Herramientas ({subcategories.length})</h2>
-  </header>
-
+  <HeaderTools tools={subcategories} />
   <div class='content-centerw-full grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
     {subcategories.map((subcategory) => <SubCategoryCard key={subcategory.id} subcategory={subcategory} />)}
   </div>
