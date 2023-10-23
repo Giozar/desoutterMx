@@ -1,6 +1,102 @@
 ---
 const {} = Astro.params;
+const product = {
+    "Referencia": "6151658880 ",
+    "Modelo": "ELS7-880-A10S ",
+    "Descripcin": "Lightest tool & speed regulation",
+    "SalidaHex": "Sq. 3/8\" M ",
+    "velocidadlibre": "440-880 rpm",
+    "Tipodeherramienta": "Angle Head ",
+    "rangodetorque": "1.1-5.1 ft.lbs",
+    "Pesoneto": "2.6 lb",
+    "Longitud": "17.23 \"",
+    "Pesosinbatera": "2.57 lb",
+    "Voltagedebateria": "18 V",
+    "TipodeBatera": "Li-ion ",
+    "categoryId": 1,
+    "subcategoryId": 1,
+    "subSubcategoryId": null,
+    "subSubSubcategoryId": null,
+    "image" : "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
+    "href": "https://www.desouttertools.mx/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151658880/els7-880-a10s"
+};
+
+const productDetails = Object.entries (product);
+
+// productDetails.flatMap((detail)=>{
+//     return detail[0] + ": " + detail[1];
+// })
+
 ---
-<section>
+<article>
+    <section class="grid grid-cols-2 gap-4">
+        <article class="grid justify-items-center content-center">
+
+            <header>
+                <h1 class="text-5xl font-extrabold">{product.Modelo}</h1>
+            </header>
+
+            <figure class="flex justify-center items-center">
+                <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripcin} `>
+            </figure>
     
-</section>
+            <ul class="flex space-x-4 [&>a>li]:bg-red-500 [&>a>li]:text-white [&>a>li]:px-4 [&>a>li]:py-1 [&>a>li]:text-lg">
+                <a href="#">
+                    <li>Obtener una cotización</li>
+                </a>
+                <a href="#">
+                    <li>Solicitar una demo</li>
+                </a>
+                <a href="#">
+                    <li>Contactanos</li>
+                </a>
+            </ul>
+
+            <div class="flex space-x-4 pt-20">
+                {
+                    product.categoryId && ( <strong class="bg-red-500 px-4">Categeoria 1</strong> )
+                }
+                {
+                    product.subcategoryId && ( <strong class="bg-blue-500 px-4">Categeoria 2</strong> )
+                }
+                {
+                    product.subSubcategoryId && ( <strong class="bg-green-500 px-4">Categeoria 3</strong> )
+                }
+                {
+                    product.subSubSubcategoryId && ( <strong class="bg-yellow-500 px-4">Categeoria 4</strong> )
+                }
+            </div>
+
+        </article>
+
+        <article class="bg-red-400 p-10 w-2/3 justify-self-center">
+            <header class="pb-2">
+                <h2 class="text-white text-2xl font-bold">{product.Descripcin}</h2>
+            </header>
+            <section>
+                <article class="grid gap-4 pb-6">
+                    <section>
+                        <header class="text-white text-xl text-center font-semibold border-b-4 border-red-300 hover:border-zinc-500">Descripción Técnica</header>
+                        <table class="w-full text-center text-sm">
+                            <tbody>
+                                {productDetails.slice(0,-6).flatMap((detail)=>(
+                                    <tr class="border-b border-black hover:bg-red-300">
+                                        <th>{detail[0]}</th>
+                                        <td>{detail[1]}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <header class="text-white text-xl text-center font-semibold border-b-4 border-red-300 hover:border-zinc-500">Detalles</header>
+                        <div class="text-sm">
+                            <p>Descubra todos nuestros {product.Modelo} productos de Desoutter Herramientas Industriales. </p>
+                            <p>Encuentre toda la gama de {product.Modelo} productos y póngase en contacto con Desoutter Herramientas Industriales para una cita o una demostración.</p>
+                        </div>
+                    </section>
+                </article>
+            </section>
+        </article>
+    </section>
+</article>

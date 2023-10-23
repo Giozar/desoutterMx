@@ -1,11 +1,11 @@
 ---
 const { industrySector } = Astro.props
 ---
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group relative overflow-hidden">
+<section class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group relative overflow-hidden">
     <a href="#">
-        <picture>
+        <figure>
             <img class="rounded-t-lg group-hover:scale-110 transition-transform duration-300 object-cover" src={industrySector.image} alt={industrySector.name} />
-        </picture>
+        </figure>
     </a>
     <div class="p-5">
         <a href="#">
@@ -19,5 +19,5 @@ const { industrySector } = Astro.props
             </svg>
         </a>
     </div>
-</div>
+</section>
 
