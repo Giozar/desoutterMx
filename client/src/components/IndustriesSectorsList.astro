@@ -2,23 +2,31 @@
 import IndustrySector from "./IndustrySector.astro";
 const listIndustrySectors = [
     {
-        name: "Aereo Espacial",
+        name: "Industria Automotriz en México",
+        description: "La industria automotriz en México es un motor económico importante. Descubre cómo las herramientas Desoutter apoyan la producción de vehículos en el país.",
         image: "https://www.norbar.com/portals/0/homeb/Aerospace.jpg"
     },
     {
-        name: "Aereo Espacial",
+        name: "Tecnología y Herramientas para la Manufactura Electrónica",
+        description: "México es un líder en la fabricación de productos electrónicos. Nuestras herramientas Desoutter son esenciales para la producción de dispositivos electrónicos de alta calidad.",
         image: "https://www.norbar.com/portals/0/homeb/Oil-&-Gas.jpg"
     },
     {
-        name: "Aereo Espacial",
+        name: "Herramientas Sostenibles para Energía Renovable",
+        description: "México está invirtiendo en energías limpias. Descubre cómo las herramientas industriales de Desoutter respaldan la producción de energía renovable en el país.",
+        image: "https://www.norbar.com/portals/0/homeb/Transport.jpg"
+    },
+    {
+        name: "Innovación en la Industria Aeroespacial ",
+        description: "La industria aeroespacial en México está en crecimiento. Las herramientas Desoutter son esenciales para mantener altos estándares en la producción y el mantenimiento de aeronaves.",
         image: "https://www.norbar.com/portals/0/homeb/Transport.jpg"
     },
 ]
 ---
 
-<div class="p-5">
-    <h1 class="font-bold text-2xl text-center mb-10">Sectores industriales</h1>
-    <ul class="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-4 p-3">
+<div class="p-5 dark:bg-gray-800">
+    <h2 class="font-bold text-2xl text-center mb-10 dark:text-white">Sectores industriales</h2>
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3">
         {listIndustrySectors.map((industrySector)=>(
             <li class="flex justify-center">
                 <IndustrySector industrySector={industrySector}  />

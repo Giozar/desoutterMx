@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Carousel from "../components/Carousel.astro";
+import CarouselContainer from "../components/CarouselContainer.astro";
 import IndustriesSectorsList from "../components/IndustriesSectorsList.astro";
 import Services from "../components/Services.astro";
 import CTA from "../components/CTA.astro";
@@ -107,26 +107,34 @@ const frontmatter = {
 ---
 
 <Base frontmatter={frontmatter}>
-  <section class="mx-32 my-10">
-    <article class="border">
-      <Carousel pages={carouselPages} />
+  <section class="mx-32 my-10 p-10 dark:bg-gray-800">
+    <article class="border dark:border-none">
+      <CarouselContainer />
+    </article>
+  </section>
+
+  <section class="mx-32 my-10 dark:dark:bg-gray-800">
+    <article class="border dark:border-none ">
+      <h3 class="font-bold text-2xl text-center mb-10 dark:text-white">
+        Herramientas
+      </h3>
     </article>
   </section>
 
   <section class="mx-32 my-10">
-    <article class="border shadow-lg">
+    <article class="border shadow-lg dark:border-none">
       <IndustriesSectorsList />
     </article>
   </section>
 
   <section class="flex justify-center mx-32 my-10">
-    <article class="border shadow-lg w-full">
+    <article class="border shadow-lg w-full dark:border-none">
       <Services />
     </article>
   </section>
 
   <section class="flex justify-center mx-32 my-10">
-    <article class="border shadow-lg w-full">
+    <article class="border shadow-lg w-full dark:border-none">
       <CTA />
     </article>
   </section>

@@ -11,7 +11,7 @@ export const SiteMetadata = {
 export { default as IconDesumexSVG} from './assets/svg/desumex/desumex.svg'
 export { default as IconDesumexIco} from './assets/ico/desumex/desumex.ico'
 
-export { default as Logo } from './assets/svg/desumex/desumex.svg'
+export { default as Logo } from './assets/svg/desumex/desumex256.svg'
 
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
