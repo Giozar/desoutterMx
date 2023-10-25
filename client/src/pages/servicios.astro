@@ -1,9 +1,8 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import HeaderBanner from '../components/HeaderBanner.astro'
-import image from '../assets/gallery/desoutter/services/service-banner.png'
-
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import HeaderBanner from "../components/HeaderBanner.astro";
+import image from "../assets/gallery/desoutter/services/service-banner.png";
 
 const frontmatter = {
   title: "Título de la Página",
@@ -18,50 +17,53 @@ const frontmatter = {
   facebookURL: "URL_canónica_de_la_Página_para_Facebook",
   twitterTitle: "Título para Compartir en Twitter",
   twitterDescription: "Descripción para Compartir en Twitter",
-  twitterImage: "URL_de_la_Imagen_para_Twitter"
-}
+  twitterImage: "URL_de_la_Imagen_para_Twitter",
+};
 
-const services = await getCollection('service')
+const services = await getCollection("service");
 ---
 
 <Base frontmatter={frontmatter}>
-    <header class="mx-64">
-        <HeaderBanner
-        title={frontmatter.title}
-        description={frontmatter.description}
-        image={image}
-      />
-    </header>
-    <main class="mt-8 bg-gray-100 dark:bg-gray-900">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl pb-72 sm:pb-32 lg:max-w-none lg:pb-24">
-          <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-            {
-              services.map((service) => (
-                <div class="group relative">
-                  <div class="relative mb-4 h-80 w-full overflow-hidden bg-red-100 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 dark:bg-red-600 sm:h-64">
-                    <img
-                      src={service.data.image.src}
-                      alt={service.data.description}
-                      class="h-full w-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3 class="inline-block rounded bg-red-600 px-3 py-1 text-xs font-medium uppercase tracking-tight text-white hover:bg-slate-600">
-                    <a href={`${import.meta.env.BASE_URL}service/${service.slug}/`}>
-                      <span class="absolute inset-0" />
-                      {service.data.title}
-                    </a>
-                  </h3>
-                  <p class="text-base text-gray-900 dark:text-gray-400">
-                    {service.data.description}
-                  </p>
+  <header class="mx-64">
+    <HeaderBanner
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={image}
+    />
+  </header>
+  <section class="mt-8 bg-gray-100 dark:bg-gray-900 sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl pb-72 sm:pb-32 lg:max-w-none lg:pb-24">
+        <div
+          class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0"
+        >
+          {
+            services.map((service) => (
+              <div class="group relative">
+                <div class="relative mb-4 h-80 w-full overflow-hidden bg-red-100 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 dark:bg-red-600 sm:h-64">
+                  <img
+                    src={service.data.image.src}
+                    alt={service.data.description}
+                    class="h-full w-full object-cover object-center"
+                    loading="lazy"
+                  />
                 </div>
-              ))
-            }
-          </div>
+                <h3 class="inline-block rounded bg-red-600 px-3 py-1 text-xs font-medium uppercase tracking-tight text-white hover:bg-slate-600">
+                  <a
+                    href={`${import.meta.env.BASE_URL}service/${service.slug}/`}
+                  >
+                    <span class="absolute inset-0" />
+                    {service.data.title}
+                  </a>
+                </h3>
+                <p class="text-base text-gray-900 dark:text-gray-400">
+                  {service.data.description}
+                </p>
+              </div>
+            ))
+          }
         </div>
       </div>
-    </main>
-  </Base>
-  
+    </div>
+  </section>
+</Base>

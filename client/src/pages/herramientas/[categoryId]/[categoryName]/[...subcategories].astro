@@ -1,9 +1,10 @@
 ---
 import SubCategoriesList from "../../../../components/SubCategoriesList.astro";
 import Base from "../../../../layouts/Base.astro";
-
+const { categoryId, categoryName } = Astro.params;
+// console.log(categoryId, categoryName);
 const frontmatter = {
-  title: "Título de la Página",
+  title: categoryName,
   description: "Descripción de la Página",
   keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
   name: "Nombre del Autor",
