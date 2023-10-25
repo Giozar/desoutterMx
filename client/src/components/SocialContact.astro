@@ -5,33 +5,32 @@ import { Icon } from "astro-icon";
 const social = await getCollection("social");
 ---
 
-<section id="socialContact">
-  <div class="block bg-white dark:bg-gray-900 lg:my-8">
-    <div class="flex flex-wrap">
+<article id="socialContact" class="w-full">
+  <div class="block bg-white p-10 dark:bg-gray-900 lg:my-8">
+    <div>
       <div class="w-full shrink-0 grow-0 basis-auto">
-        <div class="flex flex-wrap">
+        <div class="grid grid-cols-2 gap-4">
           {
             social.map(
               (method) =>
                 method.data.link && (
-                  <div class="mb-5 w-full basis-auto md:w-6/12 lg:w-full xl:w-6/12">
-                    <div class="flex">
-                      <div class=" flex justify-start m-2 ml-4">
-                        <Icon
-                          pack="bi"
-                          name={method.data.icon}
-                          class="flex h-14 w-14 items-center justify-center rounded-md bg-red-600 p-4 text-white shadow-md"
-                        />
-                      </div>
-                      <div class="mx-4 flex items-center">
-                        <p class="mb-1 font-bold">{method.data.name}</p>
-                      </div>
+                  <div class="">
+                    <div class="flex items-center">
+                      <div class="mr-2">
+                      <Icon
+                        pack="bi"
+                        name={method.data.icon}
+                        class="h-14 w-14 rounded-md bg-red-600 p-4 text-white shadow-md"
+                      />
                     </div>
-
-                    <p>
+                    <div class="text-sm">
+                      <p class="mb-1 font-bold">{method.data.name}</p>
+                    </div>
+                    </div>
+                    <p class="hidden sm:block">
                       <a
                         href={method.data.link}
-                        class="text-red-600 hover:text-slate-600 dark:text-red-300 dark:hover:text-white m-2 ml-4"
+                        class="lg:text-xs xl:text-base text-red-600 hover:text-slate-600 dark:text-red-300 dark:hover:text-white m-2 ml-4"
                       >
                         {method.data.link}
                       </a>
@@ -44,4 +43,4 @@ const social = await getCollection("social");
       </div>
     </div>
   </div>
-</section>
+</article>

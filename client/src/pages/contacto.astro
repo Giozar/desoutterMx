@@ -24,15 +24,15 @@ const frontmatter = {
 ---
 
 <Base frontmatter={frontmatter}>
-  <main>
-    <div class="contacto-container grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+  <section class="w-full">
+    <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
       <LeftSidebar />
-      <div class="w-4/5 md:col-start-1 md:col-end-3 lg:col-span-2 lg:col-start-2 lg:w-full">
+      <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
         <ContactForm />
         <Map />
         <SocialContact />
-      </div>
+      </section>
       <RightSidebar />
-    </div>
-  </main>
+    </article>
+  </section>
 </Base>
