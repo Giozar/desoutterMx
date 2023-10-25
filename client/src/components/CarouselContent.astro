@@ -5,9 +5,9 @@ const { content } = Astro.props
 <div class='flex items-center top-0 mb-5 w-full h-full bg-white bg-opacity-90'>
   <section class="w-full">
     <h2 class='text-2xl font-bold tracking-tight text-zinc-800 w-full'>
-      <div class='text-black top-0 w-full text-center'>{content.title}</div>
+      <div class='text-black top-0 w-full px-4 text-center md:text-left'>{content.title}</div>
     </h2>
-    <p class='hidden text-center lg:block mt-3 text-lg text-black'>
+    <p class='hidden text-center px-4 md:text-left lg:block mt-3 text-lg text-black'>
       {content.description}
     </p>
   

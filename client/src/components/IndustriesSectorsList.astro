@@ -24,9 +24,9 @@ const listIndustrySectors = [
 ]
 ---
 
-<div class="p-5 dark:bg-gray-800">
+<div class="p-5 pb-20 dark:bg-gray-800 grid justify-center">
     <h2 class="font-bold text-2xl text-center mb-10 dark:text-white">Sectores industriales</h2>
-    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3">
+    <ul class="grid justify-items-center grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 p-3 max-w-full">
         {listIndustrySectors.map((industrySector)=>(
             <li class="flex justify-center">
                 <IndustrySector industrySector={industrySector}  />
