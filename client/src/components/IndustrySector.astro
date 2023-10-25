@@ -4,7 +4,7 @@ const { industrySector } = Astro.props
 <section class="max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 group relative overflow-hidden">
     <a href="#">
         <figure>
-            <img class="group-hover:scale-110 w-full h-full transition-transform duration-300 object-cover" src={industrySector.image} alt={industrySector.name} />
+            <img loading="lazy" class="group-hover:scale-110 w-full h-full transition-transform duration-300 object-cover" src={industrySector.image} alt={industrySector.name} />
         </figure>
     </a>
     <div class="p-5">
