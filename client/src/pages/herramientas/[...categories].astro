@@ -3,7 +3,7 @@ import CategoriesList from '../../components/CategoriesList.astro';
 import Base from '../../layouts/Base.astro'
 
 const frontmatter = {
-  title: "Desoutter México",
+  title: "Herramientas",
   description: "Descripción de la Página",
   keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
   name: "Nombre del Autor",
@@ -113,9 +113,9 @@ const categories = [
 ---
 
 <Base frontmatter={frontmatter}>
-  <header class='mx-64 my-10 space-y-10'>
+  <header class='sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16'>
     <nav>
-      <div class="text-lg ml-28 text-slate-500 ">
+      <div class="px-10 text-lg text-slate-500 ">
         <a class="border-b-2 text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600" 
         href={import.meta.env.BASE_URL}>Regresar a inicio</a>/<span class="text-base">{frontmatter.title}</span>
       </div>
@@ -129,7 +129,7 @@ const categories = [
         Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas
         neumáticas para fijación…
       </p>
-      <ul class='lg:flex space-x-2'>
+      <ul class='md:flex space-x-2'>
         <a href='#'><li class='bg-red-600 px-5 py-2 text-white hover:bg-red-500'>Obtenga una cotización</li></a>
         <a href='#'><li class="bg-slate-600 px-5 py-2 text-white hover:bg-slate-500">Obtenga una demo</li></a>
         <a href={`${import.meta.env.BASE_URL}contacto`}><li class="bg-zinc-800 px-5 py-2 text-white hover:bg-zinc-700">Contáctenos</li></a>
@@ -137,7 +137,7 @@ const categories = [
     </section>
   </header>
   <main>
-    <section class='mx-24 my-10'>
+    <section class='px-10 sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16'>
         <CategoriesList categories={categories}/>
     </section>
   </main>
