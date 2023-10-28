@@ -1,0 +1,51 @@
+---
+import { getEntry } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import HeaderContent from "../../../components/HeaderContent.astro";
+import Accordion from '../../../components/Accordion.astro'
+
+const { servicioNombre } = Astro.params;
+
+const detail = await getEntry("servicio", servicioNombre!);
+
+const frontmatter = {
+  title: detail!.data.title,
+  description: detail!.data.description,
+  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  name: "Desumex",
+  language: "es",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: detail!.data.title,
+  facebookDescription: detail!.data.description,
+  facebookImage: detail!.data.image,
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: detail!.data.title,
+  twitterDescription: detail!.data.description,
+  twitterImage: detail!.data.image
+}
+
+const serviceDetails = {
+  title: detail!.data.title.toLocaleUpperCase(),
+  description: detail!.data.description,
+  image: detail!.data.image,
+  qya: detail!.data.qya,
+};
+
+---
+
+<Base frontmatter={frontmatter}>
+  <header class="mx-28 pt-10">
+    <div class="text-lg ml-28 text-slate-500 ">
+      <a class="border-b-2 text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600" 
+      href={import.meta.env.BASE_URL+"servicios"}>Regresar a servicios</a>/<span class="text-base">{frontmatter.title}</span>
+    </div>
+    <HeaderContent
+      title={serviceDetails.title}
+      description={serviceDetails.description}
+      image={serviceDetails.image}
+    />
+  </header>
+  <section class="mt-10 dark:bg-gray-900 mx-32 mb-10">
+    <Accordion qya={serviceDetails.qya} />
+  </section>
+</Base>

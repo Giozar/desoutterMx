@@ -14,18 +14,6 @@ export interface Props {
 
 const { pages } = Astro.props;
 
-const imagepaths = pages.map((page) => page.image);
-const imageFiles = import.meta.glob<ImageMetadata>(
-  "../assets/gallery/**/*.{png,webp,jpg,jpeg}",
-  {
-    import: "default",
-    eager: true,
-  }
-);
-const folderFiles = Object.keys(imageFiles).filter((image) =>
-  imagepaths.includes(image)
-);
-const images = folderFiles.map((image) => imageFiles[image]);
 ---
 
 <div
@@ -41,7 +29,7 @@ const images = folderFiles.map((image) => imageFiles[image]);
         <div class="swiper-slide relative">
           <figure class="right-0 top-0 z-0 m-0 md:absolute h-[150] w-[250] sm:h-full sm:w-full">
             <img
-              src={images[i].src}
+              src={page.image}
               alt={page.name}
               class="h-full w-full object-cover"
             />

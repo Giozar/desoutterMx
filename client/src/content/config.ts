@@ -2,7 +2,7 @@
 import { z, defineCollection, reference } from 'astro:content';
 
 // 2. Define your collections
-const meetUsCollection = defineCollection({
+const nosotrosCollection = defineCollection({
     schema: () =>
       z.object({
         title: z.string(),
@@ -11,24 +11,15 @@ const meetUsCollection = defineCollection({
   })
   
   const servicioCollection = defineCollection({
-    schema: ({ image }) =>
+    schema: () =>
       z.object({
         title: z.string(),
         description: z.string(),
-        image: image(),
+        image: z.string(),
         qya: z.array(z.object({
           q: z.string().optional(),
           a: z.string().optional(),
         })),
-      })
-  })
-  
-  const industryCollection = defineCollection({
-    schema: ({ image }) =>
-      z.object({
-        title: z.string(),
-        description: z.string(),
-        image: image(),
       })
   })
   
@@ -43,9 +34,8 @@ const meetUsCollection = defineCollection({
   
   // 3. Export multiple collections to register them
   export const collections = {
-    meetUs: meetUsCollection,
+    nosotros: nosotrosCollection,
     servicio: servicioCollection,
-    industry: industryCollection,
     social: socialCollection
   }
   

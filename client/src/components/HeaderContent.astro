@@ -15,7 +15,7 @@ const { title, description, image } = Astro.props
     <figure class='flex items-center justify-center'>
       {
         image && (
-          <img src={image.src} alt={title} class='z-0 object-cover' />
+          <img src={image} alt={title} class='z-0 object-cover' />
         )
       }
     </figure>

@@ -2,15 +2,15 @@
 import type { CollectionEntry } from 'astro:content'
 
 export interface Props {
-  posts: CollectionEntry<'meetUs'>[]
+  posts: CollectionEntry<'nosotors'>[]
 }
 
-import Team from "../assets/gallery/desumex/roadmaps/team.jpg"
+const team = "https://img.freepik.com/premium-photo/happy-coach-team-transparent-background_894067-17865.jpg";
 
 const imageTeam = {
     title: "Personal del equipo de Desumex",
     alt: "Personal del equipo de Desumex posando para la foto",
-    src: Team.src,
+    src: team,
 }
 
 const { meetUsInfo} = Astro.props
