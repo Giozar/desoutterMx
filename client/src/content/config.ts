@@ -10,7 +10,7 @@ const meetUsCollection = defineCollection({
       })
   })
   
-  const serviceCollection = defineCollection({
+  const servicioCollection = defineCollection({
     schema: ({ image }) =>
       z.object({
         title: z.string(),
@@ -44,7 +44,7 @@ const meetUsCollection = defineCollection({
   // 3. Export multiple collections to register them
   export const collections = {
     meetUs: meetUsCollection,
-    service: serviceCollection,
+    servicio: servicioCollection,
     industry: industryCollection,
     social: socialCollection
   }

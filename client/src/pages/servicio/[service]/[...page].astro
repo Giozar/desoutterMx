@@ -5,11 +5,6 @@ import { getEntry, getCollection } from "astro:content";
 import Base from "../../../layouts/Base.astro";
 import HeaderContent from "../../../components/HeaderContent.astro";
 import Accordion from '../../../components/Accordion.astro'
-export const prerender = true;
-
-export interface Props {
-  page: Page<CollectionEntry<"meetUs">>;
-}
 
 const frontmatter = {
   title: "Título de la Página",
@@ -29,7 +24,7 @@ const frontmatter = {
 
 const { service } = Astro.params;
 
-const detail = await getEntry("service", service!);
+const detail = await getEntry("servicio", service!);
 
 const serviceDetails = {
   title: detail!.data.title.toLocaleUpperCase(),
@@ -38,12 +33,6 @@ const serviceDetails = {
   qya: detail!.data.qya,
 };
 
-export async function getStaticPaths() {
-  const services = await getCollection("service");
-  return services.flatMap((service) => {
-    return [{ params: { service: service.slug } }];
-  });
-}
 ---
 
 <Base frontmatter={frontmatter}>
