@@ -17,7 +17,7 @@ export const prerender = true;
 ---
 <article>
   <HeaderTools tools={subcategories} />
-  <div class='content-centerw-full grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
+  <div class='content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
     {subcategories.map((subcategory) => <SubCategoryCard key={subcategory.id} subcategory={subcategory} />)}
   </div>
 </article>

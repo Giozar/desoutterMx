@@ -353,7 +353,7 @@ export const prerender = true;
     verifyProducts === true ? (
       <>
         <HeaderTools tools={products} />
-        <div class="content-centerw-full grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
+        <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
           {products.map((product) => (
             <ProductCard key={product.Referencia} product={product} />
           ))}
@@ -362,7 +362,7 @@ export const prerender = true;
     ) : (
       <>
         <HeaderTools tools={subsubsubcategories} />
-        <div class="content-centerw-full grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
+        <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
           {subsubsubcategories.map((subsubsubcategory) => (
             <SubSubSubCategoryCard
               key={subsubsubcategory.id}

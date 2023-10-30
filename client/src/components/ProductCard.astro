@@ -6,21 +6,25 @@ const { product } = Astro.props;
   <figure class="z-0">
     <div class="flex justify-center">
       <picture>
-        <img src={product.image} alt={product.Modelo} class="w-52 h-52">
+        <img src={product.image} alt={product.Modelo} class="scale-150">
       </picture>
     </div>
     <a href={product.href} title="Herramientas de montaje de batería">
       <figcaption
         class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >
-        <header class="px-5">
-          <h3 class="text-center font-bold text-gray-700">{product.Modelo} {product.Referencia}</h3>
+        <header class="px-5 w-full border-4 border-blue-500">
+          <h3 class="font-bold text-gray-700">{product.Modelo} {product.Referencia}</h3>
         </header>
-        <p class="p-2 pt-10 text-center text-sm text-gray-600">
-          {product.Descripcin} <br>
-          {product.SalidaHex} <br>
-          {product.velocidadlibre} <br>
-          {product.Tipodeherramienta} <br>
+        <p class="pt-10 border-4 border-black text-sm text-gray-600">
+          <ul class="flex flex-col justify-center">
+            {Object.keys(product).map((clave) => (
+              <li key={clave}>
+                {clave}: {product[clave]}
+              </li>
+            ))}
+          </ul>
+      
         </p>
         <legend
           class="mb-2 h-8 justify-self-center bg-red-600 px-6 py-1 text-center text-sm font-semibold text-white"

@@ -1,25 +1,26 @@
 ---
 const {} = Astro.params;
 const product = {
-    "Referencia": "6151658880 ",
-    "Modelo": "ELS7-880-A10S ",
-    "Descripcin": "Lightest tool & speed regulation",
-    "SalidaHex": "Sq. 3/8\" M ",
-    "velocidadlibre": "440-880 rpm",
-    "Tipodeherramienta": "Angle Head ",
-    "rangodetorque": "1.1-5.1 ft.lbs",
-    "Pesoneto": "2.6 lb",
-    "Longitud": "17.23 \"",
-    "Pesosinbatera": "2.57 lb",
-    "Voltagedebateria": "18 V",
-    "TipodeBatera": "Li-ion ",
-    "categoryId": 1,
-    "subcategoryId": 1,
-    "subSubcategoryId": null,
-    "subSubSubcategoryId": null,
-    "image" : "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
-    "href": "https://www.desouttertools.mx/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151658880/els7-880-a10s"
-};
+        "Referencia": "6151654180 ",
+        "Modelo": "ELB12-600-P ",
+        "Descripción": "Lightest tool & ergonomics",
+        "Salida Hex": "HEX. 1/4\" F ",
+        "velocidad libre": "570 rpm",
+        "Tipo de herramienta": "Pistola ",
+        "rango de torque": "2.2-8.8 ft.lbs",
+        "Peso neto": "1.76 lb",
+        "Longitud": "8.46 \"",
+        "Altura sin batería": "7 \"",
+        "Peso sin batería": "1.76 lb",
+        "Voltage de bateria": "18 V",
+        "Tipo de Batería": "Li-ion ",
+        "categoryId": 1,
+        "subcategoryId": 1,
+        "subSubcategoryId": null,
+        "subSubSubcategoryId": null,
+        "image": "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
+        "href": "/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151654180/elb12-600-p"
+    };
 
 const productDetails = Object.entries (product);
 
@@ -28,7 +29,7 @@ const productDetails = Object.entries (product);
 // })
 
 ---
-<article>
+<article class="bg-white p-10">
     <section class="grid grid-cols-2 gap-4">
         <article class="grid justify-items-center content-center">
 
@@ -37,7 +38,7 @@ const productDetails = Object.entries (product);
             </header>
 
             <figure class="flex justify-center items-center">
-                <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripcin} `>
+                <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripción} `>
             </figure>
     
             <ul class="flex space-x-4 [&>a>li]:bg-red-500 [&>a>li]:text-white [&>a>li]:px-4 [&>a>li]:py-1 [&>a>li]:text-lg">
@@ -48,7 +49,7 @@ const productDetails = Object.entries (product);
                     <li>Solicitar una demo</li>
                 </a>
                 <a href="#">
-                    <li>Contactanos</li>
+                    <li>Contáctenos</li>
                 </a>
             </ul>
 
@@ -71,7 +72,7 @@ const productDetails = Object.entries (product);
 
         <article class="bg-red-400 p-10 w-2/3 justify-self-center">
             <header class="pb-2">
-                <h2 class="text-white text-2xl font-bold">{product.Descripcin}</h2>
+                <h2 class="text-white text-2xl font-bold">{product.Descripción}</h2>
             </header>
             <section>
                 <article class="grid gap-4 pb-6">
