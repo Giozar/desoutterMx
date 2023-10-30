@@ -14,11 +14,11 @@ export { default as IconDesumexIco} from './assets/ico/desumex/desumex.ico'
 export { default as Logo } from './assets/svg/desumex/desumex256.svg'
 
 export const NavigationLinks = [
-  { name: 'Inicio', href: '' },
-  { name: 'Herramientas', href: 'herramientas' },
-  { name: 'Servicios', href: 'servicios' },
-  { name: 'Nosotros', href: 'nosotros' },
-  { name: 'Contacto', href: 'contacto' },
+  { name: 'Inicio', href: '', icon: 'home', pack: 'heroicons-solid' },
+  { name: 'Herramientas', href: 'herramientas', icon: 'tools', pack: 'bi' },
+  { name: 'Servicios', href: 'servicios', icon: 'services', pack: 'icons8' },
+  { name: 'Nosotros', href: 'nosotros', icon: 'team-fill', pack: 'ri' },
+  { name: 'Contacto', href: 'contacto', icon: 'contact', pack: 'mdi' },
   // { name: 'Industrias', href: 'industries' },
 ]
 

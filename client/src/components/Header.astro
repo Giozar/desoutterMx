@@ -9,14 +9,14 @@ import { Logo } from '../config'
 <div class="relative h-[80px] w-full border-4 border-blue-500">
   <nav x-data="{ isOpen: false }" class="dark:bg-gray-800">
     <div
-      class="fixed z-50 mx-auto w-full bg-[#E40520] px-2 dark:border-b-2 dark:border-[#E40520] dark:bg-gray-800 sm:px-6 lg:px-8">
+      class="fixed z-50 top-0 left-0 mx-auto w-full bg-[#E40520] px-2 dark:border-b-2 dark:border-[#E40520] dark:bg-gray-800 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
           <!-- Mobile menu button-->
           <button
             type="button"
             x-on:click="isOpen = !isOpen"
-            class="inline-flex items-center justify-center rounded p-2 border-4 border-black text-zinc-900 hover:bg-red-200 hover:text-[#E40520] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-100 dark:text-red-100 dark:hover:bg-red-800 dark:hover:text-red-100 dark:focus:ring-red-800"
+            class="inline-flex items-center justify-center rounded p-2 border-2 border-black text-zinc-900 hover:bg-red-200 hover:text-[#E40520] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-100 dark:text-red-100 dark:hover:bg-red-800 dark:hover:text-red-100 dark:focus:ring-red-800"
             aria-controls="mobile-menu"
             aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -36,12 +36,12 @@ import { Logo } from '../config'
             />
           </button>
         </div>
-        <div class="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start border-4 border-green-500">
+        <div class="flex flex-1 h-full items-center justify-center lg:items-stretch lg:justify-start max-[570px]:ml-[70px]">
           <div class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-8 border-4 border-white" src={Logo.src} alt="Logo" />
-            <h1 class="text-white ml-2 hidden">Desoutter México | Herramientas industriales, Neumáticas, Automotriz, Eléctricas</h1>
+            <img class="block h-8 w-8 border-4 border-white max-[570px]:ml-[10px]" src={Logo.src} alt="Logo" />
+            <h1 class="text-white ml-2 max-[430px]:text-xs max-[300px]:hidden">Desoutter México <span class="hidden">| Herramientas industriales, Neumáticas, Automotriz, Eléctricas</span></h1>
           </div>
-          <div class="hidden lg:mx-2 lg:block">
+          <div class="hidden lg:mx-2 lg:block border-4 border-yellow-600">
             <div class="flex space-x-1 border-4 border-pink-400">
               {
                 NavigationLinks.map((item) => (
@@ -66,7 +66,7 @@ import { Logo } from '../config'
           </div>
         </div>
         <div
-          class="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 max-[446px]:ml-[40px] border-4 border-purple-500">
+          class="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 max-[570px]:ml-[20px] border-4 border-purple-500">
           <Search />
           <Theme />
 
@@ -88,7 +88,7 @@ import { Logo } from '../config'
       class="absolute inset-x-0 top-16 z-50"
       id="mobile-menu">
       <div
-        class="flex justify-center lg:hidden border-b-2 border-t-2 border-red-300 bg-gray-100 px-4 py-2 font-sans text-sm dark:border-[#E40520] dark:bg-gray-800">
+        class="flex flex-col w-3/5 max-[430px]:w-1/2 sm:w-3/5 h-full min-w-[160px] fixed top-[62px] left-0 lg:hidden border-b-2 border-t-2 border-r-2 border-red-300 bg-gray-100 px-4 py-2 font-sans text-sm dark:border-[#E40520] dark:bg-gray-800">
         {
           NavigationLinks.map((item) => (
             <a
@@ -96,7 +96,7 @@ import { Logo } from '../config'
               class:list={[
                 item.href.length > 0 && Astro.url.toString().includes(item.href)
                   ? 'bg-red-200 text-[#E40520] dark:bg-red-800 dark:text-red-300'
-                  : 'text-[#E40520] hover:bg-red-200 hover:text-[#E40520] dark:text-red-100 dark:hover:bg-red-800 dark:hover:text-white',
+                  : 'flex space-x-4 text-[#E40520] hover:bg-red-200 hover:text-[#E40520] dark:text-red-100 dark:hover:bg-red-800 dark:hover:text-white',
                 ' px-2'
               ]}
               aria-current={
@@ -104,7 +104,15 @@ import { Logo } from '../config'
                   ? 'page'
                   : undefined
               }>
-              {item.name}
+              <span>
+                <Icon
+                  class="-mr-1 ml-2 h-5 w-5"
+                  aria-hidden="true"
+                  pack={item.pack}
+                  name={item.icon}
+                />
+              </span>
+              <span>{item.name}</span>
             </a>
           ))
         }
