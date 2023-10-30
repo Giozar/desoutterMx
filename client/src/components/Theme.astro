@@ -29,13 +29,13 @@ import { Icon } from 'astro-icon'
     x-transition:leave="transition ease-in duration-75"
     x-transition:leave-start="transform opacity-100 scale-100"
     x-transition:leave-end="transform opacity-0 scale-95"
-    class="absolute border-4 border-blue-500 z-20 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-700 sm:text-sm"
+    class="absolute z-20 border border-red-600 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-700 sm:text-sm"
     tabindex="-1"
     role="listbox"
     aria-labelledby="listbox-label"
     aria-activedescendant="listbox-option-3">
     <li
-      class="relative cursor-default select-none py-2 pl-2 pr-4 text-gray-900 hover:bg-red-600 hover:text-white dark:bg-gray-700 dark:text-white dark:hover:bg-red-100 dark:hover:text-gray-900"
+      class="relative cursor-default select-none py-2 text-gray-900 hover:bg-red-600 hover:text-white dark:bg-gray-700 dark:text-white dark:hover:bg-red-100 dark:hover:text-gray-900"
       id="listbox-option-0"
       role="option"
       x-on:click="localStorage.removeItem('theme'); window.location.reload()">
@@ -49,7 +49,7 @@ import { Icon } from 'astro-icon'
       </div>
       <span
         x-show="!localStorage.theme"
-        class="absolute inset-y-0 right-0 flex items-center pr-4 text-red-600 hover:text-white">
+        class="absolute inset-y-0 right-0 flex items-center pr-0 min-[300px]:pr-4 text-red-600 hover:text-white">
         <!-- Heroicon name: solid/check -->
         <Icon class="h-5 w-5" pack="heroicons-solid" name="check" />
       </span>
