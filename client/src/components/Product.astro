@@ -1,5 +1,11 @@
 ---
-const {} = Astro.params;
+import QuoteForm from "./QuoteForm.astro";
+import SpeedDial from "./SpeedDial.astro";
+import DemoForm from "./DemoForm.astro";
+import QuestionForm from "./QuestionForm.astro";
+import Navegation from "./Navegation.astro";
+const {categoryId,categoryName,subcategoryId,subcategoryName} = Astro.params;
+
 const product = {
         "Referencia": "6151654180 ",
         "Modelo": "ELB12-600-P ",
@@ -22,6 +28,13 @@ const product = {
         "href": "/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151654180/elb12-600-p"
     };
 
+    const productAttributes = {
+        categoryName, 
+        categoryId,
+        subcategoryName, 
+        subcategoryId,
+        productModelo : product.Modelo,
+    }
 const productDetails = Object.entries (product);
 
 // productDetails.flatMap((detail)=>{
@@ -29,56 +42,49 @@ const productDetails = Object.entries (product);
 // })
 
 ---
-<article class="bg-white p-10">
-    <section class="grid grid-cols-2 gap-4">
-        <article class="grid justify-items-center content-center">
+<article class="bg-white dark:bg-gray-800 p-10 w-full">
+    
+    <header>
+        <Navegation productAttributes={productAttributes}>
+    </header>
 
+    <section>
+        <article>
             <header>
                 <h1 class="text-5xl font-extrabold">{product.Modelo}</h1>
             </header>
 
-            <figure class="flex justify-center items-center">
-                <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripción} `>
-            </figure>
-    
-            <ul class="flex space-x-4 [&>a>li]:bg-red-500 [&>a>li]:text-white [&>a>li]:px-4 [&>a>li]:py-1 [&>a>li]:text-lg">
-                <a href="#">
-                    <li>Obtener una cotización</li>
-                </a>
-                <a href="#">
-                    <li>Solicitar una demo</li>
-                </a>
-                <a href="#">
-                    <li>Contáctenos</li>
-                </a>
-            </ul>
-
-            <div class="flex space-x-4 pt-20">
-                {
-                    product.categoryId && ( <strong class="bg-red-500 px-4">Categeoria 1</strong> )
-                }
-                {
-                    product.subcategoryId && ( <strong class="bg-blue-500 px-4">Categeoria 2</strong> )
-                }
-                {
-                    product.subSubcategoryId && ( <strong class="bg-green-500 px-4">Categeoria 3</strong> )
-                }
-                {
-                    product.subSubSubcategoryId && ( <strong class="bg-yellow-500 px-4">Categeoria 4</strong> )
-                }
+            
+            <div>
+                <SpeedDial />
+                <figure>
+                    <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripción} `
+                    class="object-none h-48 w-auto ">
+                </figure>
             </div>
-
+    
+            <ul class="[&>li]:py-2">
+                <li><QuoteForm /></li>
+                <li><DemoForm /></li>
+                <li><QuestionForm /></li>
+            </ul>
         </article>
 
-        <article class="bg-red-400 p-10 w-2/3 justify-self-center">
+        <article class="bg-slate-50 p-10 border w-full justify-self-center">
             <header class="pb-2">
-                <h2 class="text-white text-2xl font-bold">{product.Descripción}</h2>
+                <h2 class="text-zinc-800 text-2xl font-bold">{product.Descripción}</h2>
             </header>
             <section>
-                <article class="grid gap-4 pb-6">
+                <article class="grid pb-6">
                     <section>
-                        <header class="text-white text-xl text-center font-semibold border-b-4 border-red-300 hover:border-zinc-500">Descripción Técnica</header>
-                        <table class="w-full text-center text-sm">
+                        
+                        <header class="text-zinc-800 text-xl text-center font-semibold border-b-4 mb-5 border-[#393939] hover:border-zinc-500">Descripción Técnica</header>
+                        <div class="text-sm mb-4 hidden lg:block">
+                            <p>Descubra todos nuestros {product.Modelo} productos de Desoutter Herramientas Industriales.</p>
+                            <p>Encuentre toda la gama de {product.Modelo} productos y póngase en contacto con Desoutter Herramientas Industriales para una cita o una demostración.</p>
+                        </div>
+
+                        <table class="text-sm">
                             <tbody>
                                 {productDetails.slice(0,-6).flatMap((detail)=>(
                                     <tr class="border-b border-black hover:bg-red-300">
@@ -88,13 +94,6 @@ const productDetails = Object.entries (product);
                                 ))}
                             </tbody>
                         </table>
-                    </section>
-                    <section>
-                        <header class="text-white text-xl text-center font-semibold border-b-4 border-red-300 hover:border-zinc-500">Detalles</header>
-                        <div class="text-sm">
-                            <p>Descubra todos nuestros {product.Modelo} productos de Desoutter Herramientas Industriales. </p>
-                            <p>Encuentre toda la gama de {product.Modelo} productos y póngase en contacto con Desoutter Herramientas Industriales para una cita o una demostración.</p>
-                        </div>
                     </section>
                 </article>
             </section>
