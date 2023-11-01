@@ -44,48 +44,48 @@ const productDetails = Object.entries (product);
 ---
 <article class="bg-white dark:bg-gray-800 p-10 w-full">
     
-    <header>
+    <header class="mb-5">
         <Navegation productAttributes={productAttributes}>
     </header>
 
-    <section>
-        <article>
+    <section class="flex max-[900px]:flex-col">
+        <article class="flex flex-col justify-between">
             <header>
-                <h1 class="text-5xl font-extrabold">{product.Modelo}</h1>
+                <h1 class="text-5xl text-center font-extrabold dark:text-white">{product.Modelo}</h1>
             </header>
 
-            
-            <div>
-                <SpeedDial />
-                <figure>
+            <div class="flex items-center py-5">
+                <div class="pr-5">
+                    <SpeedDial />
+                </div>
+                <figure class="flex justify-center w-full">
                     <img title={product.Modelo} src={product.image} alt=`Herramienta industrial ${product.Modelo, product.Descripción} `
-                    class="object-none h-48 w-auto ">
+                    class="object-none object-center h-48 w-auto max-[400px]:scale-50">
                 </figure>
             </div>
     
-            <ul class="[&>li]:py-2">
+            <ul class="[&>li]:py-2 [&>li]:px-2 flex max-[570px]:flex-col">
                 <li><QuoteForm /></li>
                 <li><DemoForm /></li>
                 <li><QuestionForm /></li>
             </ul>
         </article>
 
-        <article class="bg-slate-50 p-10 border w-full justify-self-center">
+        <article class="bg-slate-50 p-10 max-[900px]:px-10 max-[1200px]:px-2 border min-[900px]:w-1/2 min-[900px]:ml-4">
             <header class="pb-2">
                 <h2 class="text-zinc-800 text-2xl font-bold">{product.Descripción}</h2>
             </header>
             <section>
                 <article class="grid pb-6">
                     <section>
-                        
-                        <header class="text-zinc-800 text-xl text-center font-semibold border-b-4 mb-5 border-[#393939] hover:border-zinc-500">Descripción Técnica</header>
-                        <div class="text-sm mb-4 hidden lg:block">
+                        <header class="text-zinc-800 text-xl font-semibold border-b-4 mb-5 border-[#393939] hover:border-zinc-500">Descripción Técnica</header>
+                        <div class="text-sm mb-4 max-[1200px]:hidden max-[900px]:block">
                             <p>Descubra todos nuestros {product.Modelo} productos de Desoutter Herramientas Industriales.</p>
                             <p>Encuentre toda la gama de {product.Modelo} productos y póngase en contacto con Desoutter Herramientas Industriales para una cita o una demostración.</p>
                         </div>
 
-                        <table class="text-sm">
-                            <tbody>
+                        <table class="text-sm max-[900px]:text-sm max-[1200px]:text-xs w-full text-center">
+                            <tbody class="border border-black">
                                 {productDetails.slice(0,-6).flatMap((detail)=>(
                                     <tr class="border-b border-black hover:bg-red-300">
                                         <th>{detail[0]}</th>
@@ -98,5 +98,6 @@ const productDetails = Object.entries (product);
                 </article>
             </section>
         </article>
+
     </section>
 </article>
