@@ -85,9 +85,9 @@ const productDetails = Object.entries (product);
                         </div>
 
                         <table class="text-sm max-[900px]:text-sm max-[1200px]:text-xs w-full text-center">
-                            <tbody class="border border-black">
+                            <tbody class="border">
                                 {productDetails.slice(0,-6).flatMap((detail)=>(
-                                    <tr class="border-b border-black hover:bg-red-300">
+                                    <tr class="border-b hover:bg-red-300">
                                         <th>{detail[0]}</th>
                                         <td>{detail[1]}</td>
                                     </tr>
