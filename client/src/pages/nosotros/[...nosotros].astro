@@ -1,14 +1,6 @@
 ---
-import type { Page } from 'astro'
-import type { CollectionEntry } from 'astro:content'
-import { getCollection } from "astro:content"
 import Base from '../../layouts/Base.astro'
 import AboutUs from '../../components/AboutUs.astro'
-export const prerender = true
-
-export interface Props {
-  page: Page<CollectionEntry<'nosotros'>>
-}
 
 const frontmatter = {
   title: "Título de la Página",
@@ -26,20 +18,10 @@ const frontmatter = {
   twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 
-const { page } = Astro.props
-// console.log(page.data[0].data)
-
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const allMeetUs = await getCollection('nosotros', ({ data }) => {
-    return data
-  })
-
-  return paginate(allMeetUs)
-}
 ---
 
 <Base frontmatter={frontmatter} >
   <section class="mt-10 bg-gray-100 dark:bg-gray-900">
-    <AboutUs meetUsInfo={page.data}>
+    <AboutUs />
   </section>
 </Base>
