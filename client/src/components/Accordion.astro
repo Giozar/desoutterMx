@@ -11,13 +11,13 @@ const { qya } = Astro.props;
         {qya.map((questionAsnwer: string) => (
           <div>
             <header id="accordion-collapse-heading-1">
-              <h4 class="flex items-center bg-slate-100 justify-between w-full p-5 font-medium text-left text-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-800 dark:hover:bg-gray-400">
+              <h4 class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-800 dark:bg-gray-400">
                 <legend>{questionAsnwer.q}</legend>
               </h4>
             </header>
             <div
               id="accordion-collapse-body-1"
-              class="block p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+              class="block p-5 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
             >
               <p class="mb-2 text-gray-500 dark:text-gray-400">
                 {questionAsnwer.a}

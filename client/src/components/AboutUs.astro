@@ -1,102 +1,161 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 
-export interface Props {
-  posts: CollectionEntry<'nosotors'>[]
-}
-
-const team = "https://img.freepik.com/premium-photo/happy-coach-team-transparent-background_894067-17865.jpg";
+const team =
+  "https://img.freepik.com/premium-photo/happy-coach-team-transparent-background_894067-17865.jpg";
 
 const imageTeam = {
-    title: "Personal del equipo de Desumex",
-    alt: "Personal del equipo de Desumex posando para la foto",
-    src: team,
-}
-
-const { meetUsInfo} = Astro.props
-
-const presentation = meetUsInfo[0];
-const mission = meetUsInfo[2];
-const vission = meetUsInfo[4];
-const values = meetUsInfo[3];
-const history = meetUsInfo[1];
-const wedo = meetUsInfo[5]
-// console.log(meetUsInfo)
-
+  title: "Personal del equipo de Desumex",
+  alt: "Personal del equipo de Desumex posando para la foto",
+  src: team,
+};
 
 ---
 
-<div class="bg-white dark:bg-gray-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-      <div class="flex flex-row items-center">
-        <h2 class="text-2xl font-extrabold text-red-800 dark:text-red-200 md:text-4xl">
-          Conócenos
+<div class="dark:bg-gray-900">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="w-full p-10">
+      <header class="flex flex-col md:flex-row md:items-center sm:w-1/2">
+        <h2
+          class="mt-2 text-4xl font-bold leading-tight text-red-600 hover:text-zinc-600 dark:text-red-300 dark:hover:text-zinc-300"
+        >
+          Historia
         </h2>
-        <a
-          href={import.meta.env.BASE_URL + 'nosotros/' + mission.slug}
-          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
-          Misión
-        </a>
-        <a
-          href={import.meta.env.BASE_URL + 'nosotros/' + vission.slug}
-          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
-          Visión
-        </a>
-        <a
-          href={import.meta.env.BASE_URL + 'nosotros/' + values.slug}
-          class="ml-4 mt-2 inline-block rounded-md bg-red-600 px-2 py-2 text-base font-bold  text-white hover:bg-slate-800 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300 md:px-6 md:py-3 md:text-lg">
-          Valores
-        </a>
-      </div>
-      <div class="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
-        <div class="relative mb-4 block rounded p-4 lg:mb-0 lg:p-0 xl:col-span-2">
-          <a href={import.meta.env.BASE_URL + 'history/'}>
-            <span class="sr-only">{presentation.data.title}</span>
-            {
-              imageTeam && (
-                <img
-                  src={imageTeam.src}
-                  alt={imageTeam.alt}
-                  title={imageTeam.title}
-                  class="h-64 w-full rounded-md bg-red-100 object-cover dark:bg-red-800 md:h-80"
-                  loading="lazy"
-                />
-              )
-            }
-          </a>
-          <!-- Roadmap -->
-          <a href={import.meta.env.BASE_URL + 'nosotros/' + presentation.slug}>
-            <h1
-              class="mt-2 text-4xl font-bold leading-tight text-red-600 hover:text-zinc-600 dark:text-red-300 dark:hover:text-zinc-300">
-              {presentation.data.title}
-            </h1>
-          </a>
-          <p class="mb-4 text-gray-600 dark:text-gray-400">
-            {presentation.data.description}
-          </p>
-          <a
-            href={import.meta.env.BASE_URL + 'nosotros/' + history.slug}
-            class="mt-2 inline-block rounded-md bg-red-600 px-6 py-3 text-white hover:bg-slate-600 dark:bg-red-300 dark:text-black dark:hover:bg-zinc-300">
-            Saber más
-            <span class="sr-only">{presentation.data.title}</span>
-          </a>
-        </div>
+      </header>
 
-        <div class="w-full">
-              <div class="mb-10 w-full rounded md:grid md:grid-cols-3">
-                <div class="rounded bg-white px-4 dark:bg-gray-800 md:col-span-2">
-                  <a href={import.meta.env.BASE_URL + 'nosotros/' + wedo.slug}>
-                    <div class="text-xl font-semibold text-red-600 hover:text-zinc-600 dark:text-gray-100 md:mt-1">
-                      {wedo.data.title}
-                    </div>
-                  </a>
-                  <p class="block text-lg text-gray-600 dark:text-gray-300">
-                    {wedo.data.description}
-                  </p>
+      <div class="mt-6 w-full space-y-4 grid grid-cols-1 min-[950px]:grid-cols-2">
+        <figure class="block px-2 object-contain">
+          {
+            imageTeam && (
+              <img
+                src={imageTeam.src}
+                alt={imageTeam.alt}
+                title={imageTeam.title}
+                class="w-full h-full"
+                loading="lazy"
+              />
+            )
+          }
+        </figure>
+
+        <div class="px-2">
+          <ol class="items-center sm:flex">
+            <li class="relative mb-6 sm:mb-0">
+              <div class="flex items-center">
+                <div
+                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
+                >
+                  <svg
+                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
+                >
                 </div>
               </div>
+              <div class="mt-3 sm:pr-8">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  Flowbite Library v1.0.0
+                </h3>
+                <time
+                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                  >Released on December 2, 2021</time
+                >
+                <p
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  Get started with dozens of web components and interactive
+                  elements.
+                </p>
+              </div>
+            </li>
+            <li class="relative mb-6 sm:mb-0">
+              <div class="flex items-center">
+                <div
+                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
+                >
+                  <svg
+                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
+                >
+                </div>
+              </div>
+              <div class="mt-3 sm:pr-8">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  Flowbite Library v1.2.0
+                </h3>
+                <time
+                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                  >Released on December 23, 2021</time
+                >
+                <p
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  Get started with dozens of web components and interactive
+                  elements.
+                </p>
+              </div>
+            </li>
+            <li class="relative mb-6 sm:mb-0">
+              <div class="flex items-center">
+                <div
+                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
+                >
+                  <svg
+                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
+                >
+                </div>
+              </div>
+              <div class="mt-3 sm:pr-8">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  Flowbite Library v1.3.0
+                </h3>
+                <time
+                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                  >Released on January 5, 2022</time
+                >
+                <p
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  Get started with dozens of web components and interactive
+                  elements.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
+
       </div>
     </div>
   </div>
