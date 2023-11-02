@@ -2,26 +2,47 @@
 import CTA from '../../../../../../../../../components/CTA.astro';
 import Product from '../../../../../../../../../components/Product.astro';
 import Base from '../../../../../../../../../layouts/Base.astro';
+const product = {
+        "Referencia": "6151654180 ",
+        "Modelo": "ELB12-600-P ",
+        "Descripción": "Lightest tool & ergonomics",
+        "Salida Hex": "HEX. 1/4\" F ",
+        "velocidad libre": "570 rpm",
+        "Tipo de herramienta": "Pistola ",
+        "rango de torque": "2.2-8.8 ft.lbs",
+        "Peso neto": "1.76 lb",
+        "Longitud": "8.46 \"",
+        "Altura sin batería": "7 \"",
+        "Peso sin batería": "1.76 lb",
+        "Voltage de bateria": "18 V",
+        "Tipo de Batería": "Li-ion ",
+        "categoryId": 1,
+        "subcategoryId": 1,
+        "subSubcategoryId": null,
+        "subSubSubcategoryId": null,
+        "image": "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
+        "href": "/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151654180/elb12-600-p"
+    };
 const frontmatter = {
-  title: "Título de la Página",
-  description: "Descripción de la Página",
-  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  title: "Desoutter México Herramientas " + product.Modelo,
+  description: product.Descripción,
+  keywords: [product['Peso neto'], product['Peso sin batería'], product['Tipo de herramienta']],
   name: "Nombre del Autor",
   language: "es",
-  url: "URL_canónica_de_la_Página",
-  facebookTitle: "Título para Compartir en Facebook",
-  facebookDescription: "Descripción para Compartir en Facebook",
-  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  url: import.meta.env.BASE_URL+"herramientas/",
+  facebookTitle: "Herramienta " + product.Modelo + product['Tipo de herramienta'],
+  facebookDescription: product.Descripción,
+  facebookImage: product.image, 
   facebookURL: "URL_canónica_de_la_Página_para_Facebook",
-  twitterTitle: "Título para Compartir en Twitter",
-  twitterDescription: "Descripción para Compartir en Twitter",
-  twitterImage: "URL_de_la_Imagen_para_Twitter"
+  twitterTitle: "Herramienta " + product.Modelo + product['Tipo de herramienta'],
+  twitterDescription: product.Descripción,
+  twitterImage: product.image, 
 }
 ---
 
 <Base frontmatter={frontmatter}>
     <section>
-      <Product />
+      <Product product={product} />
     </section>
     <footer>
       <CTA />

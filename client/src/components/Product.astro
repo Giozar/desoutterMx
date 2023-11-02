@@ -5,28 +5,7 @@ import DemoForm from "./DemoForm.astro";
 import QuestionForm from "./QuestionForm.astro";
 import Navegation from "./Navegation.astro";
 const {categoryId,categoryName,subcategoryId,subcategoryName} = Astro.params;
-
-const product = {
-        "Referencia": "6151654180 ",
-        "Modelo": "ELB12-600-P ",
-        "Descripción": "Lightest tool & ergonomics",
-        "Salida Hex": "HEX. 1/4\" F ",
-        "velocidad libre": "570 rpm",
-        "Tipo de herramienta": "Pistola ",
-        "rango de torque": "2.2-8.8 ft.lbs",
-        "Peso neto": "1.76 lb",
-        "Longitud": "8.46 \"",
-        "Altura sin batería": "7 \"",
-        "Peso sin batería": "1.76 lb",
-        "Voltage de bateria": "18 V",
-        "Tipo de Batería": "Li-ion ",
-        "categoryId": 1,
-        "subcategoryId": 1,
-        "subSubcategoryId": null,
-        "subSubSubcategoryId": null,
-        "image": "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
-        "href": "/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151654180/elb12-600-p"
-    };
+const {product} = Astro.props;
 
     const productAttributes = {
         categoryName, 
