@@ -1,4 +1,5 @@
 ---
+import Timeline from "./Timeline.astro";
 
 const team =
   "https://img.freepik.com/premium-photo/happy-coach-team-transparent-background_894067-17865.jpg";
@@ -8,155 +9,117 @@ const imageTeam = {
   alt: "Personal del equipo de Desumex posando para la foto",
   src: team,
 };
-
 ---
 
-<div class="dark:bg-gray-900">
+<article class="dark:bg-gray-900">
   <div class="mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="w-full p-10">
-      <header class="flex flex-col md:flex-row md:items-center sm:w-1/2">
+    <section class="w-full p-10">
+      <header class="">
         <h2
-          class="mt-2 text-4xl font-bold leading-tight text-red-600 hover:text-zinc-600 dark:text-red-300 dark:hover:text-zinc-300"
+          class="text-4xl font-bold leading-tight text-red-600 dark:text-red-300"
         >
-          Historia
+          Acerca de Nosotros
         </h2>
       </header>
 
-      <div class="mt-6 w-full space-y-4 grid grid-cols-1 min-[950px]:grid-cols-2">
-        <figure class="block px-2 object-contain">
+      <article
+        class="w-full max-[950px]:space-y-4 space-x-4 grid grid-cols-1 min-[950px]:grid-cols-3"
+      >
+        <figure class="block w-full">
           {
             imageTeam && (
               <img
                 src={imageTeam.src}
                 alt={imageTeam.alt}
                 title={imageTeam.title}
-                class="w-full h-full"
+                class="w-full"
                 loading="lazy"
               />
             )
           }
         </figure>
 
-        <div class="px-2">
-          <ol class="items-center sm:flex">
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                >
-                </div>
-              </div>
-              <div class="mt-3 sm:pr-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Flowbite Library v1.0.0
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >Released on December 2, 2021</time
-                >
-                <p
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  Get started with dozens of web components and interactive
-                  elements.
-                </p>
-              </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                >
-                </div>
-              </div>
-              <div class="mt-3 sm:pr-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Flowbite Library v1.2.0
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >Released on December 23, 2021</time
-                >
-                <p
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  Get started with dozens of web components and interactive
-                  elements.
-                </p>
-              </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                >
-                </div>
-              </div>
-              <div class="mt-3 sm:pr-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Flowbite Library v1.3.0
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >Released on January 5, 2022</time
-                >
-                <p
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  Get started with dozens of web components and interactive
-                  elements.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </div>
+        <section>
+          <article>
+            <header>
+              <h3
+                class="text-2xl font-bold leading-tight text-red-800 dark:text-red-300"
+              >
+                ¿Quiénes Sómos?
+              </h3>
+            </header>
+            <p class="dark:text-white text-base font-medium text-gray-900">
+              Desumex una empresa líder en la distribución y calibración de
+              herramientas de torque en toda la República Mexicana.
+            </p>
+          </article>
 
-      </div>
-    </div>
+          <article>
+            <header>
+              <h3
+                class="text-2xl font-bold leading-tight text-red-800 dark:text-red-300"
+              >
+                Nuestra experiencia
+              </h3>
+            </header>
+            <ul class="list-inside list-disc text-base font-medium text-gray-900 dark:text-white">
+              <li>
+                Más de 28 años de experiencia en el mercado.
+              </li>
+              <li>
+                Especialización en herramientas de torque y servicios
+                relacionados.
+              </li>
+              <li>
+                Líderes en el suministro de herramientas de torque de alta
+                tecnología.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="space-y-5">
+          <article>
+            <h3 class="text-lg font-bold leading-tight text-red-800 dark:text-red-300" >
+              Misión
+            </h3>
+            <p class="text-base font-medium text-gray-900 dark:text-white">
+              Brindar productos y servicios de la más alta calidad que contribuyan al éxito y la seguridad de nuestros clientes.
+            </p>
+          </article>
+
+          <article>
+            <h3 class="text-lg font-bold leading-tight text-red-800 dark:text-red-300" >
+              Visión
+            </h3>
+            <p class="text-base font-medium text-gray-900 dark:text-white">
+              Es llegar a ser la empresa referente en herramientas de torque en México, reconocida por su excelencia, innovación y compromiso con la satisfacción del cliente.
+            </p>
+          </article>
+
+          <article>
+            <h3 class="text-lg font-bold leading-tight text-red-800 dark:text-red-300" >
+              Valores
+            </h3>
+            <p class="text-base font-medium text-gray-900 dark:text-white">
+              Operar con la más alta ética y transparencia en todas nuestras interacciones con nuestros clientes.
+            </p>
+          </article>
+
+
+        </section>
+      </article>
+
+      <article>
+        <header class="my-5">
+          <h3
+            class="text-2xl font-bold leading-tight text-red-800 dark:text-red-300"
+          >
+            Historia
+          </h3>
+        </header>
+        <Timeline />
+      </article>
+    </section>
   </div>
-</div>
+</article>
