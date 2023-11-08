@@ -2,22 +2,20 @@
 import HeaderTools from "./HeaderTools.astro";
 import SubCategoryCard from "./SubCategoryCard.astro"
 
-const { categoryId, categoryName } = Astro.params;
-const { SubCategoriesAll} = Astro.props;
-// console.log(categoryId, categoryName);
-const CategoryId = Number(categoryId);
+const { subcategories } = Astro.props;
 
-const subcategories = SubCategoriesAll
-  .map(subcategories => subcategories.filter(subcategory => subcategory.categoryId === CategoryId))
-  .flat();
-
-// console.log(subcategories);
-
-export const prerender = true;
+const subcategoriesKey = (subcategories == null || subcategories == undefined) ? 
+    []:
+    //obtiene todas las propiedades y con slice excepto la última porque no me interesa
+    ( Object.keys(subcategories).slice(0, -1))
 ---
 <article>
-  <HeaderTools tools={subcategories} />
+  <HeaderTools tools={subcategoriesKey.length} />
   <div class='content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
-    {subcategories.map((subcategory) => <SubCategoryCard key={subcategory.id} subcategory={subcategory} />)}
+    { //recorre cada propiedad
+      subcategories !== null ? ( subcategoriesKey.map((key)=> <SubCategoryCard key={subcategories[key].id} subcategory={subcategories[key]} />)) :
+      <div>{'No hay subcategorias'}</div>
+      
+    }
   </div>
 </article>

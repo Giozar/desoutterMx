@@ -6,7 +6,7 @@ export const prerender = true;
 ---
 
 <article>
-  <HeaderTools tools={categories} />
+  <HeaderTools tools={categories.length} />
   <div class='content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
     {categories.map((category) => <CategoryCard key={category.id} category={category} />)}
   </div>
