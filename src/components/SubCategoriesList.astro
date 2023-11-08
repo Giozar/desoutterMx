@@ -4,7 +4,7 @@ import SubCategoryCard from "./SubCategoryCard.astro"
 
 const { subcategories } = Astro.props;
 
-const subcategoriesKey = (subcategories == null || subcategories == undefined) ? 
+const subcategoriesKey = (subcategories === null || subcategories === undefined) ? 
     []:
     //obtiene todas las propiedades y con slice excepto la última porque no me interesa
     ( Object.keys(subcategories).slice(0, -1))

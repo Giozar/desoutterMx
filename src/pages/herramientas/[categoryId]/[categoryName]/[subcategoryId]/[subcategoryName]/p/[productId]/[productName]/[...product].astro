@@ -2,39 +2,32 @@
 import CTA from '../../../../../../../../../components/CTA.astro';
 import Product from '../../../../../../../../../components/Product.astro';
 import Base from '../../../../../../../../../layouts/Base.astro';
-const product = {
-        "Referencia": "6151654180 ",
-        "Modelo": "ELB12-600-P ",
-        "Descripción": "Lightest tool & ergonomics",
-        "Salida Hex": "HEX. 1/4\" F ",
-        "velocidad libre": "570 rpm",
-        "Tipo de herramienta": "Pistola ",
-        "rango de torque": "2.2-8.8 ft.lbs",
-        "Peso neto": "1.76 lb",
-        "Longitud": "8.46 \"",
-        "Altura sin batería": "7 \"",
-        "Peso sin batería": "1.76 lb",
-        "Voltage de bateria": "18 V",
-        "Tipo de Batería": "Li-ion ",
-        "categoryId": 1,
-        "subcategoryId": 1,
-        "subSubcategoryId": null,
-        "subSubSubcategoryId": null,
-        "image": "https://www.desouttertools.mx/media/cache/thumb_1140x400_tools/uploads/catalog/products/ELB12-600-P.jpg",
-        "href": "/herramientas/1/herramientas-de-montaje-de-bateria/17/serie-e-lit/p/6151654180/elb12-600-p"
-    };
+const backendPort = import.meta.env.BACKENDPORT;
+const {categoryId, categoryName, subcategoryId, subcategoryName, productId, productName} = Astro.params;
+
+// Función para realizar la petición fetch por categoría
+async function getProduct(categoryId, categoryName, subcategoryId, subcategoryName, productId, productName) {
+  const response = 
+  await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/p/${productId}/${productName}`);
+  return response.json();
+}
+
+// Realiza la petición fetch y almacena los datos en el objeto
+const product = await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, productId, productName);
+// console.log(product);
+
 const frontmatter = {
-  title: "Desoutter México Herramientas " + product.Modelo,
+  title: "Desoutter México Herramientas " + product.pathName,
   description: product.Descripción,
   keywords: [product['Peso neto'], product['Peso sin batería'], product['Tipo de herramienta']],
   name: "Nombre del Autor",
   language: "es",
   url: import.meta.env.BASE_URL+"herramientas/",
-  facebookTitle: "Herramienta " + product.Modelo + product['Tipo de herramienta'],
+  facebookTitle: "Herramienta " + product.pathName + product['Tipo de herramienta'],
   facebookDescription: product.Descripción,
   facebookImage: product.image, 
   facebookURL: "URL_canónica_de_la_Página_para_Facebook",
-  twitterTitle: "Herramienta " + product.Modelo + product['Tipo de herramienta'],
+  twitterTitle: "Herramienta " + product.pathName + product['Tipo de herramienta'],
   twitterDescription: product.Descripción,
   twitterImage: product.image, 
 }

@@ -1,9 +1,6 @@
 ---
 const { subcategory } = Astro.props;
-
-const regex = /\/(\w+)\/(\d+)\/(\w+-\w+)+\/(\d+)\/(\w+-\w+)+/;
-const modifiedHref = subcategory.href.replace(regex, `$1/${subcategory.categoryId}/$3/${subcategory.id}/$5`);
-// console.log(modifiedHref);
+const {categoryId, categoryName} = Astro.params;
 ---
 
 <section class="group relative overflow-hidden bg-white w-11/12 h-64">
@@ -13,7 +10,7 @@ const modifiedHref = subcategory.href.replace(regex, `$1/${subcategory.categoryI
         <img src={subcategory.image} alt={subcategory.name} class="w-52 h-52">
       </picture>
     </div>
-    <a href={subcategory.href} title={subcategory.name}>
+    <a href=`${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryName}/${subcategory.id}/${subcategory.pathName}`>
       <figcaption
         class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >

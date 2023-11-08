@@ -1,6 +1,7 @@
 ---
 import SubCategoriesList from "../../../../components/SubCategoriesList.astro";
 import Base from "../../../../layouts/Base.astro";
+import HeaderTools from '../../../../components/HeaderTools.astro'
 const backendPort = import.meta.env.BACKENDPORT;
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);
@@ -20,17 +21,27 @@ const frontmatter = {
   twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 
-// Supongamos que tienes una función para realizar la petición fetch por categoría
+// Función para realizar la petición fetch por subcategoría
 async function getSubcategories(categoryId, categoryName) {
   const response = await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}`);
   return response.json();
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto organizado
-const subcategoriesData = await getSubcategories(categoryId, categoryName);
+const subcategoriesData = await getSubcategories(categoryId, categoryName).catch((error)=>{
+  console.log('No hay subcategoria en esta sección');
+});
+
+// console.log(subcategoriesData);
 
 
 ---
 <Base frontmatter={frontmatter}>
-    <SubCategoriesList subcategories={subcategoriesData[0]} />
+    {subcategoriesData !== undefined ? (
+      <SubCategoriesList subcategories={subcategoriesData} />
+    ):
+    (<div class="px-5">
+      <HeaderTools tools={0} />
+      <h4 class="dark:text-white">No hay herramientas disponibles en estos momentos</h4>
+    </div>)}
 </Base>
