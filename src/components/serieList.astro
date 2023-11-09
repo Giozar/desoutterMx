@@ -1,0 +1,30 @@
+---
+import HeaderTools from "./HeaderTools.astro";
+import ProductCard from "./ProductCard.astro";
+
+const { data, path } = Astro.props;
+
+---
+
+<article>
+  {
+    (
+      <>
+        <HeaderTools tools={data.length} />
+        {data.length > 0 ? (
+          <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
+            {data.map((product) => (
+              <ProductCard
+                key={product.Referencia}
+                product={product}
+                path={path}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>No hay herramientas en estos momentos</div>
+        )}
+      </>
+    )
+  }
+</article>
