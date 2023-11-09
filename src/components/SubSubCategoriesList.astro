@@ -3,11 +3,7 @@ import HeaderTools from "./HeaderTools.astro";
 import ProductCard from "./ProductCard.astro";
 import SubSubCategoryCard from "./SubSubCategoryCard.astro";
 
-const { categoryId, subcategoryId } = Astro.params;
-const { data } = Astro.props;
-
-const CategoryId = Number(categoryId);
-const SubCategoryId = Number(subcategoryId);
+const { data, path } = Astro.props;
 
 // verifica si data.lenght es indefinido son productos, de lo contrario
 // es un objeto(hay subsubcategorias) y recupera las propiedades excepto la última(porque no me interesa);
@@ -18,20 +14,29 @@ const subsubcategoriesKey = (data.length !== undefined) ?
 <article>
   
   {
-    data.length !== undefined ? (
+    data.length !== undefined ? 
+    (
       <HeaderTools tools={data.length} />
       <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
         {data.map((product)=>(
-        <ProductCard key={product.Referencia} product={product} />
-      ))}
+          <ProductCard key={product.Referencia} product={product} path={path} />
+        ))}
       </div>
-    ) : <div>
-            { //recorre cada propiedad
-                data !== null ? 
-                    ( subsubcategoriesKey.map((key)=> <SubSubCategoryCard key={data[key].id} subsubcategory={data[key]} />)) 
-                    :
-                    <div>No hay subsubcategorias</div>
+    ) 
+    : 
+    (
+      <>
+        <HeaderTools tools={subsubcategoriesKey.length} />
+        Estas son subsubcategorias, debería mostrar productos déspues de aquí
+        <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
+          { //recorre cada propiedad
+            data !== null ? 
+            ( subsubcategoriesKey.map((key)=> <SubSubCategoryCard key={data[key].id} subsubcategory={data[key]} />)) 
+            :
+            <div>No hay subsubcategorias</div>
             }
         </div>
+      </>
+    ) 
   }
 </article>

@@ -1,5 +1,5 @@
 ---
-const { product } = Astro.props;
+const { product, path } = Astro.props;
 const {categoryId, categoryName, subcategoryId, subcategoryName} = Astro.params;
 ---
 
@@ -10,7 +10,7 @@ const {categoryId, categoryName, subcategoryId, subcategoryName} = Astro.params;
         <img src={product.image} alt={product.Modelo} class="scale-150">
       </picture>
     </div>
-    <a href={`${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/p/${product.Referencia}/${product.pathName}`} title="Herramientas de montaje de batería">
+    <a href={`${path}/p/${product.Referencia}/${product.pathName}`} title="Herramientas de montaje de batería">
       <figcaption
         class="absolute top-0 z-20 grid w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >
