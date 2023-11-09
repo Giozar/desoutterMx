@@ -3,17 +3,17 @@ import CTA from '../../../../../../../../../../../components/CTA.astro';
 import Product from '../../../../../../../../../../../components/Product.astro';
 import Base from '../../../../../../../../../../../layouts/Base.astro';
 const backendPort = import.meta.env.BACKENDPORT;
-const {categoryId, categoryName, subcategoryId, subcategoryName, productId, productName} = Astro.params;
+const {categoryId, categoryName, subcategoryId, subcategoryName,subsubcategoryId, subsubcategoryName, productId, productName} = Astro.params;
 
 // Función para realizar la petición fetch por categoría
-async function getProduct(categoryId, categoryName, subcategoryId, subcategoryName, productId, productName) {
+async function getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, productId, productName) {
   const response = 
-  await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/p/${productId}/${productName}`);
+  await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/p/${productId}/${productName}`);
   return response.json();
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto
-const product = await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, productId, productName);
+const product = await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, productId, productName);
 // console.log(product);
 
 const frontmatter = {
