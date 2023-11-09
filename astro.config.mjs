@@ -3,11 +3,13 @@ import alpinejs from "@astrojs/alpinejs";
 import tailwind from "@astrojs/tailwind";
 import netlify from '@astrojs/netlify/functions';
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://desouttermx.netlify.app/',
   base: '/',
   output: "server",
-  adapter: netlify(),
+  adapter: vercel(),
   integrations: [alpinejs(), tailwind()]
 });
