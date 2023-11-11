@@ -1,7 +1,7 @@
 ---
 import Base from "../../../../../../layouts/Base.astro";
 import SubSubCategoriesList from "../../../../../../components/SubSubCategoriesList.astro";
-const backendPort = import.meta.env.BACKENDPORT;
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://o838a1j3hh.execute-api.us-east-1.amazonaws.com";
 const {categoryId, categoryName, subcategoryId,subcategoryName} = Astro.params;
 
 // console.log(subcategoryId, subcategoryName);
@@ -25,7 +25,7 @@ const path = `${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryNa
 // Función para realizar la petición fetch por subsubcategoría
 async function getSubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName) {
   const response = 
-  await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`);
+  await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`);
   return response.json();
 }
 

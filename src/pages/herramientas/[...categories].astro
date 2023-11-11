@@ -1,9 +1,9 @@
 ---
 import CategoriesList from '../../components/CategoriesList.astro';
 import Base from '../../layouts/Base.astro'
-const backendPort = import.meta.env.BACKENDPORT;
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://o838a1j3hh.execute-api.us-east-1.amazonaws.com";
 
-const categoriesRequest = await fetch(`${backendPort}/herramientas`);
+const categoriesRequest = await fetch(`${desoutterAPI}/herramientas`);
 const categories = await categoriesRequest.json();
 
 // console.log(categories);

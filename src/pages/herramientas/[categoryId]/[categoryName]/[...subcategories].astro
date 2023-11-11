@@ -2,7 +2,7 @@
 import SubCategoriesList from "../../../../components/SubCategoriesList.astro";
 import Base from "../../../../layouts/Base.astro";
 import HeaderTools from '../../../../components/HeaderTools.astro'
-const backendPort = import.meta.env.BACKENDPORT;
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://o838a1j3hh.execute-api.us-east-1.amazonaws.com";
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);
 const frontmatter = {
@@ -23,7 +23,7 @@ const frontmatter = {
 
 // Función para realizar la petición fetch por subcategoría
 async function getSubcategories(categoryId, categoryName) {
-  const response = await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}`);
+  const response = await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}`);
   return response.json();
 }
 

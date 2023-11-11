@@ -2,13 +2,13 @@
 import CTA from '../../../../../../../../../../../../../components/CTA.astro';
 import Product from '../../../../../../../../../../../../../components/Product.astro';
 import Base from '../../../../../../../../../../../../../layouts/Base.astro';
-const backendPort = import.meta.env.BACKENDPORT;
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://o838a1j3hh.execute-api.us-east-1.amazonaws.com";
 const {categoryId, categoryName, subcategoryId, subcategoryName,subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName, productId, productName} = Astro.params;
 
 // Función para realizar la petición fetch por categoría
 async function getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName, productId, productName) {
   const response = 
-  await fetch(`${backendPort}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}/p/${productId}/${productName}`);
+  await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}/p/${productId}/${productName}`);
   return response.json();
 }
 
