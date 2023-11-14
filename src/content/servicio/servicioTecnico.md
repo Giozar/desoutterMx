@@ -1,6 +1,7 @@
 ---
 title: 'Servicio técnico'
-description: 'Esta industria ofrece retos específicos cuando se trata de la difusión de herramientas y soluciones inteligentes. Aquí es donde entramos nosotros, con software inteligente y redes digitales, las herramientas de montaje pueden.'
+description: 'Nuestro equipo de especialistas altamente capacitados y experimentados está listo para brindarle una amplia gama de servicios, desde el mantenimiento preventivo hasta reparaciones rápidas y efectivas. Nos enorgullece ser tu socio en la búsqueda de la excelencia y la eficiencia en tus operaciones.
+Estamos comprometidos en minimizar el tiempo de inactividad, optimizar la vida útil de sus herramientas y garantizar la seguridad en el trabajo.'
 image: https://img.freepik.com/foto-gratis/reparacion-trabajador-mantenimiento-servicio_23-2149176718.jpg
 qya: [
     {

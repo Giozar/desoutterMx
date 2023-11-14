@@ -4,7 +4,7 @@ const { qya } = Astro.props;
 // console.log(qya);
 ---
 
-<article id="accordion-collapse" class="mb-28">
+<article id="accordion-collapse" class="mx-auto w-full max-w-screen-xl">
   {
     qya && (
       <section>
@@ -26,7 +26,7 @@ const { qya } = Astro.props;
           </div>
         ))}
 
-        <p class="text-gray-500 text-xl dark:text-gray-400 mt-16">
+        <p class="text-gray-500 max-[300px]:text-sm text-base dark:text-gray-400 mt-16">
           Para realizar un servicio o consulta mandanos un 
           <a
             href={import.meta.env.BASE_URL+"contacto"}
