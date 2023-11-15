@@ -1,7 +1,6 @@
 ---
 title: 'Capacitación'
-description: 'En nuestro servicio de capacitación, combinamos años de experiencia en la industria con un enfoque práctico y orientado a resultados. Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.
-Permítanos ser su socio en la búsqueda de la excelencia y la eficiencia en sus operaciones. Contáctenos hoy para obtener más información sobre cómo nuestra capacitación en herramientas de torque puede marcar la diferencia en su industria.'
+description: 'Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.'
 image: https://img.freepik.com/foto-gratis/camisa-roja-grupo-personas-conferencia-negocios-aula-moderna-dia_146671-16291.jpg
 qya: [
     {

@@ -1,14 +1,17 @@
 ---
 import Base from "../layouts/Base.astro";
-import CarouselContainer from "../components/CarouselContainer.astro";
-import IndustriesSectorsList from "../components/IndustriesSectorsList.astro";
-import Services from "../components/Services.astro";
+import CarouselContainer from "../components/principal/CarouselContainer.astro";
+import IndustriesSectorsList from "../components/principal/IndustriesSectorsList.astro";
+import Services from "../components/servicios/Services.astro";
 import CTA from "../components/CTA.astro";
 
 const frontmatter = {
   title: "Desoutter México | Herramientas Industriales",
   description: "Desoutter México: Herramientas Industriales y Soluciones de Ensamblaje Avanzadas. Una amplia gama de herramientas de ensamblaje de alta calidad y soluciones industriales líderes en el mercado. Desde herramientas eléctricas de precisión, neumáticas para la industria automotriz, aeronáutica  y servicios especializados. Explore nuestras soluciones innovadoras y confíe en nuestra experiencia para llevar su producción al siguiente nivel. ¡Bienvenido a la excelencia en ensamblaje con Desoutter México.",
-  keywords: ["Desoutter México", "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas de Ensamblaje", "Herramientas Eléctricas Industriales", "Herramientas Neumáticas", "Software de Ensamblaje", "Optimización de Procesos de Fabricación", "Productividad Industrial", "Eficiencia en Ensamblaje", "Tecnología de Ensamblaje", "Innovación Industrial", "Socios en Herramientas de Ensamblaje", "Fabricación de Precisión", "Herramientas de Calidad", "Servicios de Soporte Técnico", "Desoutter en México", "Equipo de Fabricación", "Soluciones para la Industria", "Automatización de Procesos", "Industria de la Construcción", "Herramientas de Ensamblaje Avanzadas", "Optimización de la Línea de Ensamblaje", "Tecnología Industrial", "Fabricación Eficiente", "Maquinaria Industrial", "Equipos de Soldadura", "Herramientas de Corte", "Máquinas CNC", "Tornos Industriales", "Máquinas para la Industria Metalmecánica", "Herramientas de Medición", "Instrumentos de Control de Calidad", "Equipo de Elevación y Manejo de Materiales", "Herramientas de Torque", "Máquinas para la Industria Automotriz", "Herramientas para la Industria Aeroespacial", "Equipos de Automatización Industrial", "Herramientas de Seguridad Industrial", "Herramientas para la Industria Alimentaria", "Equipos de Limpieza Industrial", "Herramientas para la Industria Química", "Suministros Industriales", "Materiales de Construcción Industrial", "Maquinaria de Procesamiento de Alimentos"],
+  keywords: [
+    "Desoutter México", "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
+    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
+  ],
   name: "Desoutter México",
   language: "es",
   url: "https://desouttermx.netlify.app",

@@ -1,22 +1,24 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import HeaderBanner from "../../components/HeaderBanner.astro";
+import HeaderBanner from "../../components/servicios/HeaderBanner.astro";
+
 const frontmatter = {
-  title: "Nuestros Servicios",
-  description: "Potenciando tu Éxito con Herramientas de Desoutter en México",
-  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
-  name: "Nombre del Autor",
+  title: "Nuestros Servicios | Desoutter México",
+  description: "Descubre los servicios de Desoutter México. Potenciamos tu éxito con herramientas de ensamblaje e innovación industrial. Conoce cómo nuestros servicios pueden impulsar la eficiencia en tu proceso de fabricación.",
+  keywords: ["Desoutter México", "Servicios Industriales", "Herramientas de Ensamblaje", "Innovación Industrial", "Eficiencia en Fabricación", "Soluciones a Medida"],
+  name: "Desoutter México",
   language: "es",
   url: "URL_canónica_de_la_Página",
-  facebookTitle: "Título para Compartir en Facebook",
-  facebookDescription: "Descripción para Compartir en Facebook",
+  facebookTitle: "Descubre Nuestros Servicios",
+  facebookDescription: "Explora los servicios personalizados de Desoutter México. Desde herramientas de ensamblaje hasta soluciones industriales, te ofrecemos lo mejor para potenciar la eficiencia en tu fabricación.",
   facebookImage: "URL_de_la_Imagen_para_Facebook",
   facebookURL: "URL_canónica_de_la_Página_para_Facebook",
-  twitterTitle: "Título para Compartir en Twitter",
-  twitterDescription: "Descripción para Compartir en Twitter",
-  twitterImage: "URL_de_la_Imagen_para_Twitter",
+  twitterTitle: "Servicios de Desoutter México",
+  twitterDescription: "Descubre cómo los servicios de Desoutter México pueden potenciar tu éxito en la fabricación. Herramientas de ensamblaje y soluciones industriales a medida para mejorar la eficiencia.",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
 };
+
 
 const image = "https://img.freepik.com/fotos-premium/collage-arte-manos-herramientas-fondo-surrealista-iconos-busqueda-internet_94558-7809.jpg?w=1380";
 const services = await getCollection("servicio");

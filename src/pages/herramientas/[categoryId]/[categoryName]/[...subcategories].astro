@@ -1,7 +1,7 @@
 ---
-import SubCategoriesList from "../../../../components/SubCategoriesList.astro";
+import SubCategoriesList from "../../../../components/herramientas/SubCategoriesList.astro";
 import Base from "../../../../layouts/Base.astro";
-import HeaderTools from '../../../../components/HeaderTools.astro'
+import HeaderTools from '../../../../components/herramientas/HeaderTools.astro'
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);

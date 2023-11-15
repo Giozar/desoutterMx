@@ -1,10 +1,10 @@
 ---
 import Base from "../../../../../../../../../../layouts/Base.astro";
-import SerieList from "../../../../../../../../../../components/serieList.astro";
+import SerieList from "../../../../../../../../../../components/herramientas/serieList.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName} = Astro.params;
 const frontmatter = {
-  title: "Título de la Página",
+  title: "Desoutter México",
   description: "Descripción de la Página",
   keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
   name: "Nombre del Autor",
