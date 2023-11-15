@@ -72,6 +72,8 @@ import Icon from "astro-icon";
 
     window.onload = init;
     document.addEventListener('DOMContentLoaded', init);
-    document.addEventListener('click', init);
+    init();
+    document.addEventListener('astro:after-swap', init);
+    
   </script>
   
