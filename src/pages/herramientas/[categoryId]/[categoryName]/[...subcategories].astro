@@ -2,6 +2,7 @@
 import SubCategoriesList from "../../../../components/herramientas/SubCategoriesList.astro";
 import Base from "../../../../layouts/Base.astro";
 import HeaderTools from '../../../../components/herramientas/HeaderTools.astro'
+import Navigation from "../../../../components/herramientas/Navigation.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);
@@ -37,6 +38,7 @@ const subcategoriesData = await getSubcategories(categoryId, categoryName).catch
 
 ---
 <Base frontmatter={frontmatter}>
+  <Navigation />
     {subcategoriesData !== undefined ? (
       <SubCategoriesList subcategories={subcategoriesData} />
     ):

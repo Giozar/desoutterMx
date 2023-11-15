@@ -3,7 +3,7 @@ import QuoteForm from "./QuoteForm.astro";
 import SpeedDial from "./SpeedDial.astro";
 import DemoForm from "./DemoForm.astro";
 import QuestionForm from "./QuestionForm.astro";
-import Navegation from "./Navegation.astro";
+import Navigation from "./Navigation.astro";
 const {categoryId,categoryName,subcategoryId,subcategoryName} = Astro.params;
 const {product} = Astro.props;
 
@@ -24,7 +24,7 @@ const productDetails = Object.entries (product);
 <article class="bg-white dark:bg-gray-800 p-10 w-full">
     
     <header class="mb-5">
-        <Navegation productAttributes={productAttributes}>
+        <Navigation productAttributes={productAttributes}>
     </header>
 
     <section class="flex max-[900px]:flex-col">
