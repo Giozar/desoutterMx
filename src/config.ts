@@ -26,22 +26,16 @@ export type Sidebar = Record<string, { text: string; link: string }[]>
 
 export const SIDEBAR: Sidebar = {
   'Menu de contacto': [
-    { text: 'Enviar mensaje', link: '#contactForm' },
-    { text: 'Nuestra ubicación', link: '#map' },
-    { text: 'Redes de contacto', link: '#socialContact' }
+    { text: 'Enviar mensaje', link: import.meta.env.BASE_URL + 'contacto#contactForm' },
+    { text: 'Nuestra ubicación', link: import.meta.env.BASE_URL + 'contacto#map' },
+    { text: 'Redes de contacto', link: import.meta.env.BASE_URL + 'contacto#socialContact' }
+  ], 
+  'Cotizar herramienta' : [
+    {text: "Realizar una cotización", link: import.meta.env.BASE_URL + 'contacto/cotizar'}
   ],
-  // 'Nuestros Servicios y soluciones': [
-  //   { text: 'Cotizar herramientas', link: import.meta.env.BASE_URL + "service/calibración-de-torque" },
-  //   { text: 'Capacitación de torque', link: import.meta.env.BASE_URL + "service/capacitación" },
-  //   { text: 'Calibración de torque', link: import.meta.env.BASE_URL + "service/calibración-de-torque" },
-  //   { text: 'Servicio técnico', link: import.meta.env.BASE_URL + "service/servicio-técnico" },
-  // ],
-  // 'Consulta su industria': [
-  //   { text: 'AereoEspacial', link: import.meta.env.BASE_URL + "industry/aereoespacial" },
-  //   { text: 'Automotriz', link: import.meta.env.BASE_URL + "industry/automotriz" },
-  //   { text: 'Ensamble', link: import.meta.env.BASE_URL + "industry/industria-general" },
-  // ],
-  // 'Conócenos': [{ text: 'Acerca de nosotros', link: import.meta.env.BASE_URL + "about" }],
+  "Demostración de herramienta" : [
+    {text: "Solicitar desmotración", link: import.meta.env.BASE_URL + 'contacto/demo'}
+  ]
 }
 
 export type Location = Record<string, { sede: string; location: object, email: object, phone: object }[]>

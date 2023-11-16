@@ -24,13 +24,15 @@ const frontmatter = {
 
 <Base frontmatter={frontmatter}>
     <section class="w-full">
-        <header class="flex justify-center">
-            <h3 class="text-2xl font-semibold border-b-2 border-red-600 my-5">SOLICITE UNA DEMOSTRACIÓN DE NUESTROS EXPERTOS</h3>
-        </header>
         <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             <LeftSidebar />
             <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
-                <DemoContactForm />
+                <div>
+                    <header class="flex justify-center">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-600 my-5">SOLICITE UNA DEMOSTRACIÓN DE NUESTROS EXPERTOS</h3>
+                    </header>
+                    <DemoContactForm />
+                </div>
                 <SocialContact />
             </section>
             <RightSidebar />
