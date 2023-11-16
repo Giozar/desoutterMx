@@ -1,10 +1,9 @@
 ---
-import Base from '../layouts/Base.astro'
-import Map from '../components/contacto/Map.astro'
-import LeftSidebar from '../components/contacto/LeftSidebar.astro';
-import ContactForm from '../components/contacto/ContactForm.astro';
-import SocialContact from '../components/contacto/SocialContact.astro';
-import RightSidebar from '../components/contacto/RightSidebar.astro';
+import LeftSidebar from "../../components/contacto/LeftSidebar.astro";
+import RightSidebar from "../../components/contacto/RightSidebar.astro";
+import SocialContact from "../../components/contacto/SocialContact.astro";
+import QuoteContactForm from '../../components/contacto/QuoteContactForm.astro'
+import Base from "../../layouts/Base.astro";
 
 const frontmatter = {
   title: "Desoutter México | Contacto",
@@ -24,15 +23,17 @@ const frontmatter = {
 ---
 
 <Base frontmatter={frontmatter}>
-  <section class="w-full">
-    <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-      <LeftSidebar />
-      <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
-        <ContactForm />
-        <Map />
-        <SocialContact />
-      </section>
-      <RightSidebar />
-    </article>
-  </section>
-</Base>
+    <section class="w-full">
+        <header class="flex justify-center">
+            <h3 class="text-2xl font-semibold border-b-2 border-red-600 my-5">SU COTIZACIÓN PARA HERRAMIENTAS INDUSTRIALES</h3>
+        </header>
+        <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+            <LeftSidebar />
+            <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
+                <QuoteContactForm />
+                <SocialContact />
+            </section>
+            <RightSidebar />
+        </article>
+    </section>
+  </Base>

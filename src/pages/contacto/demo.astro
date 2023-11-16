@@ -1,0 +1,39 @@
+---
+import DemoContactForm from "../../components/contacto/DemoContactForm.astro";
+import LeftSidebar from "../../components/contacto/LeftSidebar.astro";
+import RightSidebar from "../../components/contacto/RightSidebar.astro";
+import SocialContact from "../../components/contacto/SocialContact.astro";
+import Base from "../../layouts/Base.astro";
+
+const frontmatter = {
+  title: "Desoutter México | Contacto",
+  description: "Contacta con Desoutter México para soluciones industriales y herramientas de ensamblaje. Encuentra información de contacto y soporte técnico para tus necesidades de fabricación.",
+  keywords: ["Desoutter México", "Contacto", "Herramientas de Ensamblaje", "Soluciones Industriales", "Soporte Técnico", "Fabricación"],
+  name: "Desoutter México",
+  language: "es",
+  url: "URL_canónica_de_la_Página",
+  facebookTitle: "Contacto con Desoutter México",
+  facebookDescription: "Obtén soporte y contacto directo con Desoutter México para tus necesidades de herramientas de ensamblaje e industria. Soluciones eficientes para tu proceso de fabricación.",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Contacto con Desoutter México",
+  twitterDescription: "Encuentra información de contacto y soporte técnico de Desoutter México. Herramientas de ensamblaje y soluciones industriales para una fabricación eficiente.",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
+};
+---
+
+<Base frontmatter={frontmatter}>
+    <section class="w-full">
+        <header class="flex justify-center">
+            <h3 class="text-2xl font-semibold border-b-2 border-red-600 my-5">SOLICITE UNA DEMOSTRACIÓN DE NUESTROS EXPERTOS</h3>
+        </header>
+        <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+            <LeftSidebar />
+            <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
+                <DemoContactForm />
+                <SocialContact />
+            </section>
+            <RightSidebar />
+        </article>
+    </section>
+  </Base>

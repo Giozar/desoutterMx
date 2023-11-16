@@ -1,7 +1,7 @@
 ---
 import Base from "../../../../../../../../layouts/Base.astro";
 import SubSubSubCategoriesList from "../../../../../../../../components/herramientas/SubSubSubCategoriesList.astro";
-import Navigation from "../../../../../../../../components/herramientas/NavigationTools.astro";
+import NavigationTools from "../../../../../../../../components/herramientas/NavigationTools.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName} = Astro.params;
 const frontmatter = {
@@ -35,6 +35,6 @@ const data = await getSubsubsubcategories(categoryId, categoryName, subcategoryI
 
 ---
 <Base frontmatter={frontmatter}>
-  <Navigation />
+  <NavigationTools />
     <SubSubSubCategoriesList data={data} path={path}/>
 </Base>

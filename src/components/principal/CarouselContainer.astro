@@ -16,7 +16,7 @@ const carouselPages = [
         },
         {
           name: "Cotizar",
-          ref: "#",
+          ref: `${import.meta.env.BASE_URL + "contacto/cotizar"}`,
         },
       ],
     },
@@ -32,36 +32,15 @@ const carouselPages = [
       actions: [
         {
           name: "Herramientas",
-          ref: "#",
+          ref: `${import.meta.env.BASE_URL + "herramientas"}`,
         },
         {
           name: "Solicitar demo",
-          ref: "#",
+          ref: `${import.meta.env.BASE_URL + "contacto/cotizar"}`,
         },
       ],
     },
   },
-
-  {
-    name: "Contáctanos",
-    image: "https://www.desouttertools.mx/media/cache/thumb_1140x400/uploads/slides/5d78f4e4cbb95_Banni%C3%A8re_Download_Whitepaper_Human_Factor.jpg",
-    content: {
-      title: "El Socio Perfecto para tu industria ",
-      description:
-      "Estamos aquí para responder a tus preguntas y necesidades. No dudes en contactarnos para obtener asesoramiento personalizado y soluciones de herramientas industriales Desoutter.",
-      actions: [
-        {
-          name: "Contáctanos",
-          ref: "#",
-        },
-        {
-          name: "Cotizar",
-          ref: "#",
-        },
-      ],
-    },
-  },
-
   {
     name: "Acerca de nosotros",
     image: "https://www.desouttertools.mx/media/cache/thumb_1140x400/uploads/slides/5b0285bbbd0b6_banner-Connect_launch.jpg",
@@ -72,11 +51,11 @@ const carouselPages = [
       actions: [
         {
           name: "Acerca de nosotros",
-          ref: "#",
+          ref: `${import.meta.env.BASE_URL + "nosotros"}`,
         },
         {
-          name: "Historia",
-          ref: "#",
+          name: "Servicios",
+          ref: `${import.meta.env.BASE_URL + "servicios"}`,
         },
       ],
     },

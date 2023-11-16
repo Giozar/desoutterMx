@@ -1,0 +1,86 @@
+---
+import Icon from "astro-icon";
+---
+<div class="relative bg-white shadow dark:bg-gray-700">
+      <div class="px-6 py-6 lg:px-8">
+            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de demostración</h3>
+            <form>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
+                </div>
+
+                <fieldset class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número telefónico</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floatign_issue" id="floatign_issue" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer">
+                        <label for="floatign_issue" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 scale-100 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_tool" id="floating_tool" placeholder="ej. ELB12-600-P, Pistola, 6151654180" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+                        <label for="floating_tool" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-1 scale-75 -top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-1">Herramienta</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Elija la disponibilidad para la demo</h3>
+                        <ul class="grid w-full gap-6 md:grid-cols-3">
+                            <li>
+                                <input type="radio" id="availability-morning" name="availability" value="availability-morning" class="hidden peer" required>
+                                <label for="availability-morning" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
+                                    <div class="flex justify-center items-center">
+                                        <div class="w-full">Mañana</div>
+                                        <Icon pack="ph" name="sun" class="h-8 w-8" />
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="availability-half-day" name="availability" value="availability-half-day" class="hidden peer">
+                                <label for="availability-half-day" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
+                                    <div class="flex justify-center items-center">
+                                        <div class="w-full">Medio día</div>
+                                        <Icon pack="wi" name="day-hail" class="h-8 w-8" />
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="availability-afternoon" name="availability" value="availability-afternoon" class="hidden peer" required>
+                                <label for="availability-afternoon" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
+                                    <div class="flex justify-center items-center">
+                                        <div class="w-full">Tarde</div>
+                                        <Icon pack="wi" name="day-haze" class="h-8 w-8" />
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="relative z-0 w-full mb-6 group">
+                        <label for="floating_date-time" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
+                        <input type="date" name="floating_date-time" id="floating_date-time" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+            </form>
+        </div>
+  </div>
