@@ -23,32 +23,33 @@ const {product} = Astro.props;
             </legend>
           </div>
 
-        <div>
-            <button type="button" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+          <div>
+            <button type="button" id="botonImprimir" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="print" class="h-8 w-8" />
             </button>
-            <legend role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            <legend id="tooltipImprimir" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Imprimir
             </legend>
         </div>
-
+        
         <div>
-            <button type="button" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <button type="button" id="botonDescargar" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="baseline-download" class="h-8 w-8" />
             </button>
-            <legend role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            <legend id="tooltipDescargar" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Descargar
             </legend>
         </div>
-
+        
         <div>
-            <button type="button" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <button type="button" id="botonCopiar" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="uil" name="copy" class="h-8 w-8" />
             </button>
-            <legend role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            <legend id="tooltipCopiar" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Copiar
             </legend>
         </div>
+        
 
     </div>
 
@@ -61,6 +62,9 @@ const {product} = Astro.props;
 </div>
 
 <script>
+
+// Asocia las funciones a los eventos click de los botones
+async function init (){
     const $shareButton = document.getElementById('shareButton');
     const $nameProduct = await document.getElementById('nameProduct')?.getAttribute('value');
     const $descriptionProduct = document.getElementById('descriptionProduct')?.getAttribute('value');
@@ -99,4 +103,59 @@ const {product} = Astro.props;
         console.error('Error al compartir:', error);
     }
     });
+
+    // Función para imprimir la página
+    function imprimirPagina() {
+    window.print();
+    }
+
+    // Función para descargar un archivo (reemplaza la lógica según tus necesidades)
+    // Función para descargar un archivo de forma nativa (sin bibliotecas externas)
+    function descargarArchivo() {
+    // Contenido del archivo (reemplaza esto con el contenido real del archivo)
+    const contenidoArchivo = 'Manual de producto';
+
+    // Crear un blob con el contenido y establecer el tipo MIME adecuado
+    const blob = new Blob([contenidoArchivo], { type: 'text/plain;charset=utf-8' });
+
+    // Crear una URL para el blob
+    const urlBlob = URL.createObjectURL(blob);
+
+    // Crear un elemento <a> para el enlace de descarga
+    const enlaceDescarga = document.createElement('a');
+    enlaceDescarga.href = urlBlob;
+    enlaceDescarga.download = $nameProduct + ".pdf"; // Nombre del archivo a descargar
+
+    // Agregar el elemento <a> al DOM y simular un clic para iniciar la descarga
+    document.body.appendChild(enlaceDescarga);
+    enlaceDescarga.click();
+
+    // Limpiar el elemento <a> y liberar la URL del blob después de la descarga
+    document.body.removeChild(enlaceDescarga);
+    URL.revokeObjectURL(urlBlob);
+    }
+    // Función para copiar al portapapeles
+    function copiarAlPortapapeles() {
+    // Obtener el texto que deseas copiar
+    const textoACopiar = urlProduct;
+
+    // Utilizar la API navigator.clipboard para copiar al portapapeles
+    navigator.clipboard.writeText(textoACopiar)
+    .then(() => {
+        console.log('Texto copiado al portapapeles:', textoACopiar);
+    })
+    .catch((err) => {
+        console.error('Error al copiar al portapapeles:', err);
+    });
+
+    }
+    document.getElementById('botonImprimir').addEventListener('click', imprimirPagina);
+    document.getElementById('botonDescargar').addEventListener('click', descargarArchivo);
+    document.getElementById('botonCopiar').addEventListener('click', copiarAlPortapapeles);
+}
+
+init();
+document.addEventListener('astro:after-swap', init);
+
+
 </script>
