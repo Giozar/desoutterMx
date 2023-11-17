@@ -1,7 +1,47 @@
 ---
 import Icon from "astro-icon";
 const {productModel} = Astro.props;
+import { contactRequest, quoteRequest } from '../../api/emailAPI.js'
+const errors = { 
+    floating_tool: '',
+    floating_quantity: '',
+    floating_name: '',
+    floating_phone: '',
+    floating_company: '',
+    floating_message: ''
+}
 
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+    const floating_tool = data.get('floating_tool')
+    const floating_quantity = data.get('floating_quantity')
+    const floating_name = data.get('floating_name')
+    const floating_phone = data.get('floating_phone')
+    const floating_company = data.get('floating_company')
+    const floating_message = data.get('floating_message')
+
+    if (typeof name !== 'string' || name.length < 1) {
+      errors.floating_name += 'Ingresa tu nombre completo. '
+    }
+    const dataContact = {
+      floating_tool,
+      floating_quantity,
+      floating_name,
+      floating_phone,
+      floating_company,
+      floating_message,
+    }
+    console.log(dataContact)
+    // quoteRequest(dataContact);
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+// console.log(errors)
 ---
 
 <!-- Modal toggle -->
@@ -24,18 +64,20 @@ const {productModel} = Astro.props;
               </button>
               <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de cotización</h3>
-                    <form>
+                    <form method="post">
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_tool" id="floating_tool" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" disabled required>
+                                <input type="text" name="floating_tool" id="floating_tool" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
                                 <label for="floating_tool" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
                             </div>
+                            {errors.floating_tool && <p class='text-red-500'>{errors.floating_tool}</p>}
 
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="number" name="floating_quantity" id="floating_quantity" min="1" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" value="1" required>
                                 <label for="floating_quantity" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cantidad</label>
                             </div>
+                            {errors.floating_quantity && <p class='text-red-500'>{errors.floating_quantity}</p>}
                         </fieldset>
 
                         <div class="relative z-0 w-full mb-6 group">
@@ -43,10 +85,11 @@ const {productModel} = Astro.props;
                             <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
                         </div>
 
-                        <fieldset class="grid md:grid-cols-2 md:gap-6">
+                        <fieldset class="grid md:grid-cols-1 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                                <input type="text" name="floating_name" id="floating_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                                {errors.floating_name && <p class='text-red-500'>{errors.floating_name}</p>}
                             </div>
                         </fieldset>
 
@@ -55,10 +98,12 @@ const {productModel} = Astro.props;
                                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número telefónico</label>
                             </div>
+                            {errors.floating_phone && <p class='text-red-500'>{errors.floating_phone}</p>}
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
                             </div>
+                            {errors.floating_company && <p class='text-red-500'>{errors.floating_company}</p>}
                         </fieldset>
 
                         <fieldset>
@@ -66,6 +111,7 @@ const {productModel} = Astro.props;
                                 <textarea name="floating_message" id="floating_message" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="30" rows="10"></textarea>
                                 <label for="floating_message" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
                             </div>
+                            {errors.floating_message && <p class='text-red-500'>{errors.floating_message}</p>}
                         </fieldset>
 
                         <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
