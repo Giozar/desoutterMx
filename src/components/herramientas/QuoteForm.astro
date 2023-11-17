@@ -6,7 +6,7 @@ const errors = {
     floating_tool: '',
     floating_quantity: '',
     floating_name: '',
-    floating_phone: '',
+    floating_phone_quote: '',
     floating_company: '',
     floating_message: ''
 }
@@ -17,7 +17,7 @@ if (Astro.request.method === 'POST') {
     const floating_tool = data.get('floating_tool')
     const floating_quantity = data.get('floating_quantity')
     const floating_name = data.get('floating_name')
-    const floating_phone = data.get('floating_phone')
+    const floating_phone_quote = data.get('floating_phone_quote')
     const floating_company = data.get('floating_company')
     const floating_message = data.get('floating_message')
 
@@ -28,7 +28,7 @@ if (Astro.request.method === 'POST') {
       floating_tool,
       floating_quantity,
       floating_name,
-      floating_phone,
+      floating_phone_quote,
       floating_company,
       floating_message,
     }
@@ -88,17 +88,17 @@ if (Astro.request.method === 'POST') {
                         <fieldset class="grid md:grid-cols-1 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="floating_name" id="floating_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                                <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[0.5]">Nombre completo</label>
                                 {errors.floating_name && <p class='text-red-500'>{errors.floating_name}</p>}
                             </div>
                         </fieldset>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número telefónico</label>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone_quote" id="floating_phone_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
+                                <label for="floating_phone_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
                             </div>
-                            {errors.floating_phone && <p class='text-red-500'>{errors.floating_phone}</p>}
+                            {errors.floating_phone_quote && <p class='text-red-500'>{errors.floating_phone_quote}</p>}
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
@@ -134,6 +134,24 @@ if (Astro.request.method === 'POST') {
         btnCloseQuote?.addEventListener('click', ()=>{
             formQuote?.classList.replace('flex','hidden');
         })
+
+
+        document.getElementById('floating_phone_quote').addEventListener('input', function (e) {
+        // Eliminar cualquier caracter que no sea un número
+        const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
+
+        // Aplicar el formato
+        let formattedPhoneNumber = '';
+        for (let i = 0; i < phoneNumber.length; i++) {
+                if (i === 3 || i === 6) {
+                    formattedPhoneNumber += '-';
+                }
+                formattedPhoneNumber += phoneNumber[i];
+            }
+
+            // Actualizar el valor del campo de entrada
+            e.target.value = formattedPhoneNumber;
+        });
 
     }
     window.onload = init;
