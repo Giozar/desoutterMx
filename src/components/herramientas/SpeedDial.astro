@@ -1,17 +1,27 @@
 ---
 import Icon from "astro-icon";
-
+const {product} = Astro.props;
 ---
 <div class="flex flex-col space-y-2">
+    <input type="text" id="nameProduct" hidden value={product.name}>
+    <input type="text" id="descriptionProduct" hidden value={product['Descripción']}>
     <div class="flex flex-col space-y-4">
-        <div>
-            <button type="button" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
-                <Icon pack="ic" name="share" class="h-8 w-8" />
+        <div class="relative">
+            <button
+              type="button"
+              class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
+              id="shareButton"
+            >
+              <Icon pack="ic" name="share" class="h-8 w-8" />
             </button>
-            <legend id="tooltip-share" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-black transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                Compartir
+            <legend
+              id="tooltip-share"
+              role="tooltip"
+              class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-black transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            >
+              Compartir
             </legend>
-        </div>
+          </div>
 
         <div>
             <button type="button" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
@@ -49,3 +59,44 @@ import Icon from "astro-icon";
         </button>
     </div>
 </div>
+
+<script>
+    const $shareButton = document.getElementById('shareButton');
+    const $nameProduct = await document.getElementById('nameProduct')?.getAttribute('value');
+    const $descriptionProduct = document.getElementById('descriptionProduct')?.getAttribute('value');
+    const urlProduct = window.location.href;
+
+    $shareButton.addEventListener('click', async () => {
+    try {
+        const shareData = {
+        title: $nameProduct,
+        text: $descriptionProduct,
+        url: urlProduct
+        };
+
+        // Verifica si el navegador soporta la API Web Share
+        if (navigator.share) {
+        await navigator.share(shareData);
+        } else {
+        // Si la API Web Share no es compatible, puedes proporcionar enlaces a redes sociales
+        const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(shareData.title)}`;
+        window.open(twitterShareUrl, '_blank');
+
+        // Puedes agregar más botones para otras redes sociales
+        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`;
+        window.open(facebookShareUrl, '_blank');
+
+        const instagramShareUrl = `https://www.instagram.com/share?url=${encodeURIComponent(shareData.url)}`;
+        window.open(instagramShareUrl, '_blank');
+
+        const linkedInShareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}`;
+        window.open(linkedInShareUrl, '_blank');
+
+        const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`${shareData.title}\n${shareData.text}\n${shareData.url}`)}`;
+        window.open(whatsappShareUrl, '_blank');
+        }
+    } catch (error) {
+        console.error('Error al compartir:', error);
+    }
+    });
+</script>
