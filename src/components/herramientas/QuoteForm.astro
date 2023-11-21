@@ -17,59 +17,89 @@ if (subsubcategoryId) {
 }
 
 const errors = { 
-    floating_tool_quote: '',
-    floating_quantity_quote: '',
-    floating_email_quote: '',
-    floating_name_quote: '',
-    floating_phone_quote: '',
-    floating_company_quote: '',
-    floating_message_quote: ''
+    tool_quote: '',
+    quantity_quote: '',
+    email_quote: '',
+    name_quote: '',
+    phone_quote: '',
+    company_quote: '',
+    message_quote: ''
 }
 
 if (Astro.request.method === 'POST') {
   try {
     const data = await Astro.request.formData()
-    const floating_tool_quote = data.get('floating_tool_quote')
-    const floating_quantity_quote = data.get('floating_quantity_quote')
-    const floating_email_quote = data.get('floating_email_quote')
-    const floating_name_quote = data.get('floating_name_quote')
-    const floating_phone_quote = data.get('floating_phone_quote')
-    const floating_company_quote = data.get('floating_company_quote')
-    const floating_message_quote = data.get('floating_message_quote')
+
+    function getData(){
+        if( data.has('email_quote')) {
+            data.set("subject_quote","Cotización de herramientas");
+            return{
+                subject_quote: data.get('subject_quote'),
+                tool_quote : data.get('tool_quote'),
+                quantity_quote : data.get('quantity_quote'),
+                email_quote : data.get('email_quote'),
+                name_quote : data.get('name_quote'),
+                phone_quote : data.get('phone_quote'),
+                company_quote : data.get('company_quote'),
+                message_quote : data.get('message_quote'),
+            }
+        }
+
+        if (data.has('email_demo')) {
+            data.set("subject_demo","Demostración de herramientas");
+            return {
+                subject_demo: data.get('subject_demo'),
+                email_demo : data.get('email_demo'),
+                name_demo : data.get('name_demo'),
+                phone_demo : data.get('phone_demo'),
+                company_demo : data.get('company_demo'),
+                availability : data.get('availability'),
+                floatign_issue_demo : data.get('floatign_issue_demo'),
+                tool_demo : data.get('tool_demo'),
+                date_time_demo : data.get('date_time_demo'),
+            }
+        }
+
+        if (data.has('email_question')) {
+            data.set("subject_question","Preguntas generales");
+            return {
+                subject_question: data.get('subject_question'),
+                email_question : data.get('email_question'),
+                name_question : data.get('name_question'),
+                phone_question : data.get('phone_question'),
+                company_question : data.get('company_question'),
+                message_question : data.get('message_question'),
+            }
+        }
+        
+    }
 
     if (typeof name !== 'string' || name.length < 1) {
-      errors.floating_name_quote += 'Ingresa tu nombre completo. '
+      errors.name_quote += 'Ingresa tu nombre completo. '
     }
-    const dataContact = {
-      floating_tool_quote,
-      floating_quantity_quote,
-      floating_email_quote,
-      floating_name_quote,
-      floating_phone_quote,
-      floating_company_quote,
-      floating_message_quote,
-    }
-    fetch(desoutterAPI + urlFinal, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataContact),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(responseData => {
-        // Manejar la respuesta exitosa aquí
-        console.log('Respuesta exitosa:', responseData);
-    })
-    .catch(error => {
-        // Manejar errores aquí
-        console.error('Error en la solicitud:', error);
-    });
+    const dataContact = getData();
+    console.log(dataContact);
+    // fetch(desoutterAPI + urlFinal, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(dataContact),
+    // })
+    // .then(response => {
+    //     if (!response.ok) {
+    //         throw new Error(`HTTP error! Status: ${response.status}`);
+    //     }
+    //     return response.json();
+    // })
+    // .then(responseData => {
+    //     // Manejar la respuesta exitosa aquí
+    //     console.log('Respuesta exitosa:', responseData);
+    // })
+    // .catch(error => {
+    //     // Manejar errores aquí
+    //     console.error('Error en la solicitud:', error);
+    // });
 
   } catch (error) {
     if (error instanceof Error) {
@@ -103,50 +133,50 @@ if (Astro.request.method === 'POST') {
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_tool_quote" id="floating_tool_quote" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
-                                <label for="floating_tool_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
+                                <input type="text" name="tool_quote" id="tool_quote" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+                                <label for="tool_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
                             </div>
-                            {errors.floating_tool_quote && <p class='text-red-500'>{errors.floating_tool_quote}</p>}
+                            {errors.tool_quote && <p class='text-red-500'>{errors.tool_quote}</p>}
 
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="number" name="floating_quantity_quote" id="floating_quantity_quote" min="1" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" value="1" required>
-                                <label for="floating_quantity_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cantidad</label>
+                                <input type="number" name="quantity_quote" id="quantity_quote" min="1" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" value="1" required>
+                                <label for="quantity_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cantidad</label>
                             </div>
-                            {errors.floating_quantity_quote && <p class='text-red-500'>{errors.floating_quantity_quote}</p>}
+                            {errors.quantity_quote && <p class='text-red-500'>{errors.quantity_quote}</p>}
                         </fieldset>
 
                         <div class="relative z-0 w-full mb-6 group">
-                            <input type="email" name="floating_email_quote" id="floating_email_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                            <label for="floating_email_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
+                            <input type="email" name="email_quote" id="email_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                            <label for="email_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
                         </div>
-                        {errors.floating_email_quote && <p class='text-red-500'>{errors.floating_email_quote}</p>}
+                        {errors.email_quote && <p class='text-red-500'>{errors.email_quote}</p>}
                         <fieldset class="grid md:grid-cols-1 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_name_quote" id="floating_name_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_name_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[0.5]">Nombre completo</label>
-                                {errors.floating_name_quote && <p class='text-red-500'>{errors.floating_name_quote}</p>}
+                                <input type="text" name="name_quote" id="name_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="name_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[0.5]">Nombre completo</label>
+                                {errors.name_quote && <p class='text-red-500'>{errors.name_quote}</p>}
                             </div>
                         </fieldset>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone_quote" id="floating_phone_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
-                                <label for="floating_phone_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_quote" id="phone_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
+                                <label for="phone_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
                             </div>
-                            {errors.floating_phone_quote && <p class='text-red-500'>{errors.floating_phone_quote}</p>}
+                            {errors.phone_quote && <p class='text-red-500'>{errors.phone_quote}</p>}
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_company_quote" id="floating_company_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_company_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
+                                <input type="text" name="company_quote" id="company_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="company_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
                             </div>
-                            {errors.floating_company_quote && <p class='text-red-500'>{errors.floating_company_quote}</p>}
+                            {errors.company_quote && <p class='text-red-500'>{errors.company_quote}</p>}
                         </fieldset>
 
                         <fieldset>
                             <div class="relative z-0 w-full mb-6 group">
-                                <textarea name="floating_message_quote" id="floating_message_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="30" rows="10"></textarea>
-                                <label for="floating_message_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
+                                <textarea name="message_quote" id="message_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="30" rows="10"></textarea>
+                                <label for="message_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
                             </div>
-                            {errors.floating_message_quote && <p class='text-red-500'>{errors.floating_message_quote}</p>}
+                            {errors.message_quote && <p class='text-red-500'>{errors.message_quote}</p>}
                         </fieldset>
 
                         <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
@@ -171,7 +201,7 @@ if (Astro.request.method === 'POST') {
         })
 
 
-        document.getElementById('floating_phone_quote').addEventListener('input', function (e) {
+        document.getElementById('phone_quote').addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
 

@@ -1,88 +1,17 @@
 ---
 import Icon from "astro-icon";
 const {productModel} = Astro.props;
-const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName, productId, productName} = Astro.params;
-const baseTools = `${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`
-const baseSubsub = `/${subsubcategoryId}/${subsubcategoryName}`
-const baseSubsubsub = `/${subsubsubcategoryId}/${subsubsubcategoryName}`
-const baseProduct = `/p/${productId}/${productName}`
-const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-let urlFinal = baseTools;
-if (subsubcategoryId) {
-    urlFinal = baseTools + baseSubsub + baseProduct;
-} else if (subsubsubcategoryId){
-    urlFinal = baseTools + baseSubsub + baseSubsubsub + baseProduct
-} else {
-    urlFinal += baseProduct; 
-}
+
 
 const errors = {
-    floating_email_demo: '', 
-    floating_tool_demo: '',
-    floating_quantity_demo: '',
-    floating_name_demo: '',
-    floating_phone_demo: '',
-    floating_company_demo: '',
-    floating_message_demo: '',
+    email_demo: '', 
+    name_demo: '',
+    phone_demo: '',
+    company_demo: '',
+    availabilitySelected: '',
     floatign_issue_demo: '',
-    floating_date_time_demo: ''
-}
-
-if (Astro.request.method === 'POST') {
-  try {
-    const data = await Astro.request.formData()
-    const floating_email_demo = data.get('floating_email_demo')
-    const floating_tool_demo = data.get('floating_tool_demo')
-    const floating_quantity_demo = data.get('floating_quantity_demo')
-    const floating_name_demo = data.get('floating_name_demo')
-    const floating_phone_demo = data.get('floating_phone_demo')
-    const floating_company_demo = data.get('floating_company_demo')
-    const floating_message_demo = data.get('floating_message_demo')
-    const floatign_issue_demo = data.get('floatign_issue_demo')
-    const floating_date_time_demo = data.get('floating_date_time_demo')
-
-    if (typeof name !== 'string' || name.length < 1) {
-      errors.floating_name_demo += 'Ingresa tu nombre completo. '
-    }
-    const dataContact = {
-      floating_tool_demo,
-      floating_quantity_demo,
-      floating_email_demo,
-      floating_name_demo,
-      floating_phone_demo,
-      floating_company_demo,
-      floating_message_demo,
-      floatign_issue_demo,
-      floating_date_time_demo
-
-    }
-    // fetch(desoutterAPI + urlFinal, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(dataContact),
-    // })
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error(`HTTP error! Status: ${response.status}`);
-    //     }
-    //     return response.json();
-    // })
-    // .then(responseData => {
-    //     // Manejar la respuesta exitosa aquí
-    //     console.log('Respuesta exitosa:', responseData);
-    // })
-    // .catch(error => {
-    //     // Manejar errores aquí
-    //     console.error('Error en la solicitud:', error);
-    // });
-
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message)
-    }
-  }
+    tool_demo: '',
+    date_time_demo: '',
 }
 
 ---
@@ -107,32 +36,32 @@ if (Astro.request.method === 'POST') {
               </button>
               <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de demostración</h3>
-                    <form>
+                    <form method="post">
 
                         <div class="relative z-0 w-full mb-6 group">
-                            <input type="email" name="floating_email_demo" id="floating_email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                            <label for="floating_email_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-                            {errors.floating_email_demo && <p class='text-red-500'>{errors.floating_email_demo}</p>}
+                            <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                            <label for="email_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
+                            {errors.email_demo && <p class='text-red-500'>{errors.email_demo}</p>}
                         </div>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_name_demo" id="floating_name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_name_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                                {errors.floating_name_demo && <p class='text-red-500'>{errors.floating_name_demo}</p>}
+                                <input type="text" name="name_demo" id="name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="name_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                                {errors.name_demo && <p class='text-red-500'>{errors.name_demo}</p>}
                             </div>
                         </fieldset>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone_demo" id="floating_phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
-                                <label for="floating_phone_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
-                                {errors.floating_phone_demo && <p class='text-red-500'>{errors.floating_phone_demo}</p>}
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_demo" id="phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
+                                <label for="phone_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
+                                {errors.phone_demo && <p class='text-red-500'>{errors.phone_demo}</p>}
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_company_demo" id="floating_company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                                <label for="floating_company_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                                {errors.floating_company_demo && <p class='text-red-500'>{errors.floating_company_demo}</p>}
+                                <input type="text" name="company_demo" id="company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="company_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
+                                {errors.company_demo && <p class='text-red-500'>{errors.company_demo}</p>}
                             </div>
                         </fieldset>
 
@@ -143,9 +72,9 @@ if (Astro.request.method === 'POST') {
                                 {errors.floatign_issue_demo && <p class='text-red-500'>{errors.floatign_issue_demo}</p>}
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="floating_tool_demo" id="floating_tool_demo" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" disabled required>
-                                <label for="floating_tool_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
-                                {errors.floating_tool_demo && <p class='text-red-500'>{errors.floating_tool_demo}</p>}
+                                <input type="text" name="tool_demo" id="tool_demo" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+                                <label for="tool_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
+                                {errors.tool_demo && <p class='text-red-500'>{errors.tool_demo}</p>}
                             </div>
                         </fieldset>
 
@@ -184,9 +113,9 @@ if (Astro.request.method === 'POST') {
                             </div>
 
                             <div class="relative z-0 w-full mb-6 group">
-                                <label for="floating_date_time_demo" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
-                                <input type="date" name="floating_date_time_demo" id="floating_date_time_demo" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
-                                {errors.floating_date_time_demo && <p class='text-red-500'>{errors.floating_date_time_demo}</p>}
+                                <label for="date_time_demo" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
+                                <input type="date" name="date_time_demo" id="date_time_demo" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
+                                {errors.date_time_demo && <p class='text-red-500'>{errors.date_time_demo}</p>}
                             </div>
                         </fieldset>
 
@@ -211,7 +140,7 @@ if (Astro.request.method === 'POST') {
             formDemo?.classList.replace('flex','hidden');
         })
 
-        document.getElementById('floating_phone_demo').addEventListener('input', function (e) {
+        document.getElementById('phone_demo').addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
 
@@ -228,20 +157,24 @@ if (Astro.request.method === 'POST') {
             e.target.value = formattedPhoneNumber;
         });
 
+        const $dateTime = document.getElementById('date_time_demo');
+        const currentDateTime = new Date();
+        currentDateTime.setDate(currentDateTime.getDate() + 1); // Agregamos un día más
+        const day = currentDateTime.getDate().toString().padStart(2, '0');
+        const month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0');
+        const year = currentDateTime.getFullYear();
+        // const hours = currentDateTime.getHours().toString().padStart(2, '0');
+        // const minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+        const date = `${year}-${month}-${day}`;
+        $dateTime?.setAttribute('value', date);
+        $dateTime?.setAttribute('min', date);
 
-        // Obtener todos los radiosButtons con el mismo nombre
-        const radios = document.querySelectorAll('[name="availability"]');
-        // Añadir un event listener a cada uno para detectar el cambio
-        radios.forEach((radio) => {
-            radio.addEventListener("change", (e) => {
-            // Obtener el valor del radio button marcado
-            const selected = document.querySelector('name="availability":checked').value;
-            // Guardar el valor en una variable
-            let availability = selected;
-            // Enviar el valor a algún lugar
-            console.log(availability);
-            });
-        });
+        // Obtene el valor de la fecha selecionada
+        const dateTimeSelected = $dateTime?.addEventListener('change', ()=>{
+            // console.log($dateTime?.value);
+             return $dateTime?.value;
+        })
+
 
 
     }
