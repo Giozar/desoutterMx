@@ -1,64 +1,153 @@
+---
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
+
+
+const errors = { 
+    email_quote: '',
+    phone_quote: '',
+    name_quote: '',
+    company_quote: '',
+    tool_quote: '',
+    quantity_quote: '',
+    message_quote: ''
+}
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+
+    function getData(){
+        if( data.has('email_quote')) {
+            data.set("subject_quote","Cotización de herramientas");
+            return{
+                subject_quote: data.get('subject_quote'),
+                email_quote : data.get('email_quote'),
+                phone_quote : data.get('phone_quote'),
+                name_quote : data.get('name_quote'),
+                company_quote : data.get('company_quote'),
+                tool_quote : data.get('tool_quote'),
+                quantity_quote : data.get('quantity_quote'),
+                message_quote : data.get('message_quote')
+            }
+        }
+        
+    }
+
+    if (typeof name !== 'string' || name.length < 1) {
+      errors.name_quote += 'Ingresa tu nombre completo. '
+    }
+    const dataContact = getData();
+    console.log(dataContact);
+    fetch(desoutterAPI + '/contacto/cotizar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataContact),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(responseData => {
+        // Manejar la respuesta exitosa aquí
+        console.log('Respuesta exitosa:', responseData);
+    })
+    .catch(error => {
+        // Manejar errores aquí
+        console.error('Error en la solicitud:', error);
+    });
+
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+---
 <div class="relative bg-white shadow dark:bg-gray-700">
     <div class="px-6 py-6 lg:px-8">
           <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de cotización</h3>
-          <form>
+          <form method="post">
 
-              <fieldset class="grid md:grid-cols-2 md:gap-6">
+            <fieldset class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-6 group">
-                    <input type="text" name="tool" id="tool" placeholder="ej. ELB12-600-P, Pistola, 6151654180" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
-                    <label for="tool" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-1 scale-75 -top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-1">Herramienta</label>
+                    <input type="text" name="tool_quote" id="tool_quote" placeholder="ej. ELB12-600-P, Pistola, 6151654180" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+                    <label for="tool_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Herramienta</label>
+                    {errors.tool_quote && <p class='text-red-500'>{errors.tool_quote}</p>}
                 </div>
+                {errors.tool_quote && <p class='text-red-500'>{errors.tool_quote}</p>}
 
-                  <div class="relative z-0 w-full mb-6 group">
-                      <input type="number" name="quantity" id="quantity" min="1" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" value="1" required>
-                      <label for="quantity" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cantidad</label>
-                  </div>
-              </fieldset>
-
-              <div class="relative z-0 w-full mb-6 group">
-                  <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                  <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-              </div>
-
-              <fieldset class="grid md:grid-cols-2 md:gap-6">
-                  <div class="relative z-0 w-full mb-6 group">
-                      <input type="text" name="first_name" id="first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                      <label for="first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                  </div>
-              </fieldset>
-
-              <fieldset class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-6 group">
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
-                    <label for="phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
+                    <input type="number" name="quantity_quote" id="quantity_quote" min="1" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" value="1" required>
+                    <label for="quantity_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cantidad</label>
                 </div>
-                  <div class="relative z-0 w-full mb-6 group">
-                      <input type="text" name="company" id="company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                      <label for="company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                  </div>
-              </fieldset>
+                {errors.quantity_quote && <p class='text-red-500'>{errors.quantity_quote}</p>}
+            </fieldset>
 
-              <fieldset>
-                  <div class="relative z-0 w-full mb-6 group">
-                      <textarea name="message" id="message" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="30" rows="10"></textarea>
-                      <label for="message" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
-                  </div>
-              </fieldset>
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="email" name="email_quote" id="email_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                <label for="email_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
+            </div>
+            {errors.email_quote && <p class='text-red-500'>{errors.email_quote}</p>}
+            <fieldset class="grid md:grid-cols-1 md:gap-6">
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="name_quote" id="name_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                    <label for="name_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[0.5]">Nombre completo</label>
+                    {errors.name_quote && <p class='text-red-500'>{errors.name_quote}</p>}
+                </div>
+            </fieldset>
 
-              <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
-          </form>
+            <fieldset class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_quote" id="phone_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
+                    <label for="phone_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
+                </div>
+                {errors.phone_quote && <p class='text-red-500'>{errors.phone_quote}</p>}
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="company_quote" id="company_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                    <label for="company_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
+                </div>
+                {errors.company_quote && <p class='text-red-500'>{errors.company_quote}</p>}
+            </fieldset>
+
+            <fieldset>
+                <div class="relative z-0 w-full mb-6 group">
+                    <textarea name="message_quote" id="message_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="30" rows="10"></textarea>
+                    <label for="message_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
+                </div>
+                {errors.message_quote && <p class='text-red-500'>{errors.message_quote}</p>}
+            </fieldset>
+
+            <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+        </form>
       </div>
 </div>
 
 <script>
-    async function init () {
-        document.getElementById('phone').addEventListener('input', function (e) {
-            // Eliminar cualquier caracter que no sea un número
-            const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
+    function init() { 
+        const btnQuote = document.querySelector("#btn-quote"); 
+        const formQuote = document.querySelector("#form-quote"); 
+        const btnCloseQuote = document.querySelector("#btn-close-quote");
 
-            // Aplicar el formato
-            let formattedPhoneNumber = '';
-            for (let i = 0; i < phoneNumber.length; i++) {
+        btnQuote?.addEventListener('click', ()=>{
+            formQuote?.classList.replace('hidden', 'flex');
+        });
+
+        btnCloseQuote?.addEventListener('click', ()=>{
+            formQuote?.classList.replace('flex','hidden');
+        })
+
+
+        document.getElementById('phone_quote').addEventListener('input', function (e) {
+        // Eliminar cualquier caracter que no sea un número
+        const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
+
+        // Aplicar el formato
+        let formattedPhoneNumber = '';
+        for (let i = 0; i < phoneNumber.length; i++) {
                 if (i === 3 || i === 6) {
                     formattedPhoneNumber += '-';
                 }
@@ -68,7 +157,10 @@
             // Actualizar el valor del campo de entrada
             e.target.value = formattedPhoneNumber;
         });
+
     }
+    window.onload = init;
+    document.addEventListener('DOMContentLoaded', init);
     init();
     document.addEventListener('astro:after-swap', init);
 </script>
