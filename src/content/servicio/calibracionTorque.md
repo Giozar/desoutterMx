@@ -1,7 +1,7 @@
 ---
 title: 'Calibración de torque'
 description: 'Valoramos la satisfacción del cliente y estamos comprometidos en brindar soluciones que marquen la diferencia en su industria.'
-image: https://img.freepik.com/foto-gratis/fabrica-nuevas-tecnologias_1098-13994.jpg
+image: https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.avif
 qya: [
     {
         q: "¿Por qué es importante la calibración de torque en la industria general?",

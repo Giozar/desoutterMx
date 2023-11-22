@@ -1,7 +1,7 @@
 ---
 title: 'Capacitación'
 description: 'Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.'
-image: https://img.freepik.com/foto-gratis/camisa-roja-grupo-personas-conferencia-negocios-aula-moderna-dia_146671-16291.jpg
+image: https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.avif
 qya: [
     {
         q: "¿Por qué es importante la capacitación en el uso de herramientas industriales, especialmente en entornos automatizados?",
