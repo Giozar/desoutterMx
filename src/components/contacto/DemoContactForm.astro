@@ -165,18 +165,7 @@ if (Astro.request.method === 'POST') {
 
   <script>
     function init() {
-        const btnDemo = document.querySelector('#btn-demo');
-        const formDemo = document.querySelector('#form-demo');
-        const btnCloseDemo = document.querySelector('#btn-close-demo');
-
-        btnDemo?.addEventListener('click', ()=>{
-            formDemo?.classList.replace('hidden', 'flex');
-        });
-
-        btnCloseDemo?.addEventListener('click', ()=>{
-            formDemo?.classList.replace('flex','hidden');
-        })
-
+        
         document.getElementById('phone_demo').addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);

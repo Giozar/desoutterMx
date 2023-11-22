@@ -128,18 +128,6 @@ if (Astro.request.method === 'POST') {
 
 <script>
     function init() { 
-        const btnQuote = document.querySelector("#btn-quote"); 
-        const formQuote = document.querySelector("#form-quote"); 
-        const btnCloseQuote = document.querySelector("#btn-close-quote");
-
-        btnQuote?.addEventListener('click', ()=>{
-            formQuote?.classList.replace('hidden', 'flex');
-        });
-
-        btnCloseQuote?.addEventListener('click', ()=>{
-            formQuote?.classList.replace('flex','hidden');
-        })
-
 
         document.getElementById('phone_quote').addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
