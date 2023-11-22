@@ -1,5 +1,6 @@
 ---
 import HeaderTools from "./HeaderTools.astro";
+import NotFoundTools from "./NotFoundTools.astro";
 import ProductCard from "./ProductCard.astro";
 import SubSubCategoryCard from "./SubSubCategoryCard.astro";
 
@@ -26,7 +27,7 @@ const subsubcategoriesKey = (data.length !== undefined) ?
         ))}
       </div>
         ):(
-          <div>No hay herramientas en estos momentos</div>
+          <NotFoundTools />
         )}
       </>
     ) 
@@ -34,13 +35,14 @@ const subsubcategoriesKey = (data.length !== undefined) ?
     (
       <>
         <HeaderTools tools={subsubcategoriesKey.length} />
-        Estas son subsubcategorias, debería mostrar productos déspues de aquí
+        
         <div class="content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4">
           { //recorre cada propiedad
             data !== null ? 
             ( subsubcategoriesKey.map((key)=> <SubSubCategoryCard key={data[key].id} subsubcategory={data[key]} />)) 
             :
-            <div>No hay subsubcategorias</div>
+            // <div>No hay subsubcategorias</div>
+            <NotFoundTools />
             }
         </div>
       </>

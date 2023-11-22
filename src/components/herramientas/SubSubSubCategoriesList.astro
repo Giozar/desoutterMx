@@ -1,5 +1,6 @@
 ---
 import HeaderTools from "./HeaderTools.astro";
+import NotFoundTools from "./NotFoundTools.astro";
 import ProductCard from "./ProductCard.astro";
 import SubSubSubCategoryCard from "./SubSubSubCategoryCard.astro";
 
@@ -22,7 +23,7 @@ const subsubsubcategoriesKey = (data.length !== undefined) ?
             <ProductCard key={product.Referencia} product={product} path={path} />
           ))}
         </div>
-        ): (<div>No hay herramientas en estos momentos</div>) }
+        ): (<NotFoundTools />) }
       </>
     ) : (
       <>
@@ -32,7 +33,8 @@ const subsubsubcategoriesKey = (data.length !== undefined) ?
             data !== null ? 
             ( subsubsubcategoriesKey.map((key)=> <SubSubSubCategoryCard key={data[key].id} subsubsubcategory={data[key]} path={path} />)) 
             :
-            <div>No hay subsubcategorias</div>
+            // <div>No hay subsubcategorias</div>
+            <NotFoundTools />
             }
         </div>
       </>

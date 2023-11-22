@@ -3,6 +3,7 @@ import SubCategoriesList from "../../../../components/herramientas/SubCategories
 import Base from "../../../../layouts/Base.astro";
 import HeaderTools from '../../../../components/herramientas/HeaderTools.astro'
 import NavigationTools from "../../../../components/herramientas/NavigationTools.astro";
+import NotFoundTools from "../../../../components/herramientas/NotFoundTools.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);
@@ -44,6 +45,6 @@ const subcategoriesData = await getSubcategories(categoryId, categoryName).catch
     ):
     (<div class="px-5">
       <HeaderTools tools={0} />
-      <h4 class="dark:text-white">No hay herramientas disponibles en estos momentos</h4>
+      <NotFoundTools />
     </div>)}
 </Base>
