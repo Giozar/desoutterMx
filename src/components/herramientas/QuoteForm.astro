@@ -17,12 +17,12 @@ if (subsubcategoryId) {
 }
 
 const errors = { 
+    email_quote: '',
+    phone_quote: '',
+    name_quote: '',
+    company_quote: '',
     tool_quote: '',
     quantity_quote: '',
-    email_quote: '',
-    name_quote: '',
-    phone_quote: '',
-    company_quote: '',
     message_quote: ''
 }
 
@@ -35,13 +35,13 @@ if (Astro.request.method === 'POST') {
             data.set("subject_quote","Cotización de herramientas");
             return{
                 subject_quote: data.get('subject_quote'),
+                email_quote : data.get('email_quote'),
+                phone_quote : data.get('phone_quote'),
+                name_quote : data.get('name_quote'),
+                company_quote : data.get('company_quote'),
                 tool_quote : data.get('tool_quote'),
                 quantity_quote : data.get('quantity_quote'),
-                email_quote : data.get('email_quote'),
-                name_quote : data.get('name_quote'),
-                phone_quote : data.get('phone_quote'),
-                company_quote : data.get('company_quote'),
-                message_quote : data.get('message_quote'),
+                message_quote : data.get('message_quote')
             }
         }
 
@@ -50,13 +50,13 @@ if (Astro.request.method === 'POST') {
             return {
                 subject_demo: data.get('subject_demo'),
                 email_demo : data.get('email_demo'),
-                name_demo : data.get('name_demo'),
                 phone_demo : data.get('phone_demo'),
+                name_demo : data.get('name_demo'),
                 company_demo : data.get('company_demo'),
                 availability : data.get('availability'),
                 floatign_issue_demo : data.get('floatign_issue_demo'),
                 tool_demo : data.get('tool_demo'),
-                date_time_demo : data.get('date_time_demo'),
+                date_time_demo : data.get('date_time_demo')
             }
         }
 
@@ -65,10 +65,10 @@ if (Astro.request.method === 'POST') {
             return {
                 subject_question: data.get('subject_question'),
                 email_question : data.get('email_question'),
-                name_question : data.get('name_question'),
                 phone_question : data.get('phone_question'),
+                name_question : data.get('name_question'),
                 company_question : data.get('company_question'),
-                message_question : data.get('message_question'),
+                message_question : data.get('message_question')
             }
         }
         
@@ -79,27 +79,27 @@ if (Astro.request.method === 'POST') {
     }
     const dataContact = getData();
     console.log(dataContact);
-    // fetch(desoutterAPI + urlFinal, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(dataContact),
-    // })
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error(`HTTP error! Status: ${response.status}`);
-    //     }
-    //     return response.json();
-    // })
-    // .then(responseData => {
-    //     // Manejar la respuesta exitosa aquí
-    //     console.log('Respuesta exitosa:', responseData);
-    // })
-    // .catch(error => {
-    //     // Manejar errores aquí
-    //     console.error('Error en la solicitud:', error);
-    // });
+    fetch(desoutterAPI + urlFinal, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataContact),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(responseData => {
+        // Manejar la respuesta exitosa aquí
+        console.log('Respuesta exitosa:', responseData);
+    })
+    .catch(error => {
+        // Manejar errores aquí
+        console.error('Error en la solicitud:', error);
+    });
 
   } catch (error) {
     if (error instanceof Error) {
