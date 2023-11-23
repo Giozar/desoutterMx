@@ -1,0 +1,55 @@
+---
+import Base404 from "../layouts/Base404.astro";
+
+const frontmatter = {
+  title: "Desoutter México | Herramientas Industriales",
+  description: "Desoutter México: Herramientas Industriales y Soluciones de Ensamblaje Avanzadas. Una amplia gama de herramientas de ensamblaje de alta calidad y soluciones industriales líderes en el mercado. Desde herramientas eléctricas de precisión, neumáticas para la industria automotriz, aeronáutica  y servicios especializados. Explore nuestras soluciones innovadoras y confíe en nuestra experiencia para llevar su producción al siguiente nivel. ¡Bienvenido a la excelencia en ensamblaje con Desoutter México.",
+  keywords: [
+    "Desoutter México", "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
+    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
+  ],
+  name: "Desoutter México",
+  language: "es",
+  url: "https://desouttermx.netlify.app",
+  facebookTitle: "Desoutter México",
+  facebookDescription: "Desoutter México: Su Socio en Herramientas Industriales y Soluciones de Ensamblaje Avanzadas. Descubra nuestra amplia gama de herramientas de ensamblaje de alta calidad y soluciones industriales líderes en el mercado en Desoutter México. Desde herramientas eléctricas de precisión hasta software de vanguardia y servicios especializados, estamos comprometidos a optimizar la eficiencia y la productividad en su proceso de fabricación. Explore nuestras soluciones innovadoras y confíe en nuestra experiencia para llevar su producción al siguiente nivel. ¡Bienvenido a la excelencia en ensamblaje con Desoutter México",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
+}
+---
+
+<Base404 frontmatter={frontmatter}>
+
+    <section>
+        <header class="grid justify-items-center space-y-4 py-4">
+            <h2 class="text-3xl font-semibold">Sección de la página no encontrada</h2>
+            <h3 class="text-xl font-medium">Por favor ingrese a uno de los siguientes enlaces para continuar su experiencia</h3>
+            <nav class="my-5">
+                <ul class="grid justify-items-center">
+                    <a href={import.meta.env.BASE_URL}>
+                        <li class="text-red-500">Inicio</li>
+                    </a>
+                    <a href={import.meta.env.BASE_URL + "herramientas"}>
+                        <li class="text-red-500">Herramientas</li>
+                    </a>
+                    <a href={import.meta.env.BASE_URL + "servicios"}>
+                        <li class="text-red-500">Servicios</li>
+                    </a>
+                    <a href={import.meta.env.BASE_URL + "contacto"}>
+                        <li class="text-red-500">Contáctanos</li>
+                    </a>
+                    <a href={import.meta.env.BASE_URL + "nosotros"}>
+                        <li class="text-red-500">Nosotros</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <article class="flex justify-center">
+            <img src="https://s3.amazonaws.com/desumex.com.mx/404/error404.svg" alt="Imagen que representa a la página no encontrada">
+        </article>
+    </section>
+
+</Base404>
