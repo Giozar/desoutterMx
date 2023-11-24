@@ -34,18 +34,20 @@ if (Astro.request.method === 'POST') {
         }
         
     }
+    
+    const dataContact = getData();
 
-    if (typeof name !== 'string' || name.length < 1) {
+    if (typeof dataContact?.name_demo !== 'string' || dataContact?.name_demo.length < 1) {
       errors.name_demo += 'Ingresa tu nombre completo. '
     }
-    const dataContact = getData();
-    console.log(dataContact);
-    fetch(desoutterAPI + '/contacto/demo', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataContact),
+    // console.log(dataContact);
+
+    fetch(desoutterAPI + '/contacto/cotizar', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataContact),
     })
     .then(response => {
         if (!response.ok) {
@@ -54,11 +56,13 @@ if (Astro.request.method === 'POST') {
         return response.json();
     })
     .then(responseData => {
-        // Manejar la respuesta exitosa aquí
-        console.log('Respuesta exitosa:', responseData);
+        if (responseData.success) {
+            console.log('Mensaje de éxito:', responseData.message);
+        } else {
+            console.error('Error en la solicitud:', responseData.message);
+        }
     })
     .catch(error => {
-        // Manejar errores aquí
         console.error('Error en la solicitud:', error);
     });
 

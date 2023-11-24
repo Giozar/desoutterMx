@@ -14,7 +14,7 @@ if (Astro.request.method === 'POST') {
                 subject: data.get('subject'),
                 email : data.get('email'),
                 phone : data.get('phone'),
-                name : data.get('fullName'),
+                fullName : data.get('fullName'),
                 company : data.get('company'),
                 message : data.get('message'),
                 informations : data.get('informations'),
@@ -27,18 +27,21 @@ if (Astro.request.method === 'POST') {
         
     }
 
-    if (typeof name !== 'string' || name.length < 1) {
+    const dataContact = getData();
+
+    if (typeof dataContact?.fullName !== 'string' || dataContact?.fullName.length < 1) {
       errors.fullName += 'Ingresa tu nombre completo. '
     }
 
-    const dataContact = getData();
-    console.log(dataContact);
-    fetch(desoutterAPI + '/contacto', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataContact),
+
+    // console.log(dataContact);
+
+    fetch(desoutterAPI + '/contacto/cotizar', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataContact),
     })
     .then(response => {
         if (!response.ok) {
@@ -47,13 +50,16 @@ if (Astro.request.method === 'POST') {
         return response.json();
     })
     .then(responseData => {
-        // Manejar la respuesta exitosa aquí
-        console.log('Respuesta exitosa:', responseData);
+        if (responseData.success) {
+            console.log('Mensaje de éxito:', responseData.message);
+        } else {
+            console.error('Error en la solicitud:', responseData.message);
+        }
     })
     .catch(error => {
-        // Manejar errores aquí
         console.error('Error en la solicitud:', error);
     });
+
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)
