@@ -79,7 +79,7 @@ if (Astro.request.method === 'POST') {
 <div class="relative bg-white shadow dark:bg-gray-700">
       <div class="px-6 py-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de demostración</h3>
-            <form method="post">
+            <form method="post" id="demo-form">
 
                 <div class="relative z-0 w-full mb-6 group">
                     <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
@@ -162,7 +162,11 @@ if (Astro.request.method === 'POST') {
                     </div>
                 </fieldset>
 
-                <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+                <button type="submit"
+                data-sitekey="6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB"
+                data-callback='onSubmit'
+                data-action='submit'
+                class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
             </form>
         </div>
   </div>
@@ -170,7 +174,7 @@ if (Astro.request.method === 'POST') {
   <script>
     function init() {
         
-        document.getElementById('phone_demo').addEventListener('input', function (e) {
+        document.getElementById('phone_demo')?.addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
 
@@ -205,7 +209,11 @@ if (Astro.request.method === 'POST') {
              return $dateTime?.value;
         })
 
+        function onSubmit(token) {
+        document.getElementById("demo-form")?.submit();
+      }
 
+      window.onSubmit = onSubmit;
 
     }
 

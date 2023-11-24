@@ -70,7 +70,7 @@ if (Astro.request.method === 'POST') {
 ---
 
 <article class='w-full py-10' id="contactForm">
-  <form method="post">
+  <form method="post" id="contact-form">
     <h1 class='mb-14 text-center text-4xl font-bold leading-8 dark:text-white'>Contáctenos</h1>
     <div class='mb-12'>
       <h2 class='text-base font-semibold leading-7 text-gray-900'>Información personal</h2>
@@ -197,7 +197,11 @@ if (Astro.request.method === 'POST') {
     </fieldset>
 
     <div class="flex justify-end py-4">
-      <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+      <button type="submit"
+      data-sitekey="6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB"
+      data-callback='onSubmit'
+      data-action='submit'
+      class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
     </div>
 
 </form>
@@ -207,7 +211,7 @@ if (Astro.request.method === 'POST') {
 <script>
   function init() { 
 
-        document.getElementById('phone').addEventListener('input', function (e) {
+        document.getElementById('phone')?.addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
 
@@ -223,6 +227,12 @@ if (Astro.request.method === 'POST') {
             // Actualizar el valor del campo de entrada
             e.target.value = formattedPhoneNumber;
         });
+
+      function onSubmit(token) {
+        document.getElementById("contact-form")?.submit();
+      }
+
+      window.onSubmit = onSubmit;
 
     }
     window.onload = init;
