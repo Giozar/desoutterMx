@@ -70,7 +70,7 @@ async function init (){
     const $descriptionProduct = document.getElementById('descriptionProduct')?.getAttribute('value');
     const urlProduct = window.location.href;
 
-    $shareButton.addEventListener('click', async () => {
+    $shareButton?.addEventListener('click', async () => {
     try {
         const shareData = {
         title: $nameProduct,
@@ -149,9 +149,9 @@ async function init (){
     });
 
     }
-    document.getElementById('botonImprimir').addEventListener('click', imprimirPagina);
-    document.getElementById('botonDescargar').addEventListener('click', descargarArchivo);
-    document.getElementById('botonCopiar').addEventListener('click', copiarAlPortapapeles);
+    document.getElementById('botonImprimir')?.addEventListener('click', imprimirPagina);
+    document.getElementById('botonDescargar')?.addEventListener('click', descargarArchivo);
+    document.getElementById('botonCopiar')?.addEventListener('click', copiarAlPortapapeles);
 }
 
 init();

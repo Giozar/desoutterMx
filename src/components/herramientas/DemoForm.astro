@@ -140,7 +140,7 @@ const errors = {
             formDemo?.classList.replace('flex','hidden');
         })
 
-        document.getElementById('phone_demo').addEventListener('input', function (e) {
+        document.getElementById('phone_demo')?.addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
         const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
 
