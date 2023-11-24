@@ -6,34 +6,32 @@ const {product} = Astro.props;
     <input type="text" id="nameProduct" hidden value={product.name}>
     <input type="text" id="descriptionProduct" hidden value={product['Descripción']}>
     <div class="flex flex-col space-y-4">
-        <div class="relative">
-            <button
-              type="button"
-              class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
-              id="shareButton"
-            >
+
+        <div
+        id="container-tooltip-share" 
+        class="relative translate-y-[265px] z-0 transition-transform duration-[900ms]">
+            <button type="button" id="shareButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400" >
               <Icon pack="ic" name="share" class="h-8 w-8" />
             </button>
-            <legend
-              id="tooltip-share"
-              role="tooltip"
-              class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-black transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
+            <legend id="tooltip-share" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-black transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700" >
               Compartir
             </legend>
-          </div>
+        </div>
 
-          <div>
-            <button type="button" id="botonImprimir" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+        <div 
+        id="container-tooltip-print" 
+        class="relative translate-y-[200px] z-0 transition-transform duration-700">
+            <button type="button" id="printButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="print" class="h-8 w-8" />
             </button>
-            <legend id="tooltipImprimir" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            <legend id="tooltipPrint" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Imprimir
             </legend>
         </div>
         
-        <div>
-            <button type="button" id="botonDescargar" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+        <div id="container-tooltip-download" 
+        class="relative translate-y-[130px] z-0 transition-transform duration-500">
+            <button type="button" id="downloadButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="baseline-download" class="h-8 w-8" />
             </button>
             <legend id="tooltipDescargar" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
@@ -41,8 +39,9 @@ const {product} = Astro.props;
             </legend>
         </div>
         
-        <div>
-            <button type="button" id="botonCopiar" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+        <div id="container-tooltip-copy" 
+        class="relative translate-y-[60px] z-0 transition-transform duration-300">
+            <button type="button" id="copyButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="uil" name="copy" class="h-8 w-8" />
             </button>
             <legend id="tooltipCopiar" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
@@ -53,8 +52,9 @@ const {product} = Astro.props;
 
     </div>
 
-    <div>
-        <button type="button" class="flex items-center justify-center text-white bg-[#E40520] rounded-full w-14 h-14 hover:bg-red-800 dark:bg-red-600 dark:hover:bg-[#E40520] focus:ring-4 focus:ring-red-300 focus:outline-none dark:focus:ring-red-800">
+    <div class="z-10">
+        <button type="button" id="btnMenu" 
+        class="flex items-center justify-center text-white bg-[#E40520] rounded-full w-14 h-14 hover:bg-red-800 dark:bg-red-600 dark:hover:bg-[#E40520] focus:ring-4 focus:ring-red-300 focus:outline-none dark:focus:ring-red-800">
             <Icon pack="ic" name="baseline-plus" class="h-8 w-8" />
             <span class="sr-only">Abrir Menu</span>
         </button>
@@ -149,9 +149,61 @@ async function init (){
     });
 
     }
-    document.getElementById('botonImprimir')?.addEventListener('click', imprimirPagina);
+
+    function showSpeeDials () {
+        const tooltipShare = document.getElementById('container-tooltip-share');
+        const btnShare = document.getElementById('shareButton');
+
+        const tooltipPrint = document.getElementById('container-tooltip-print');
+        const btnPrint = document.getElementById('printButton');
+        
+        const tooltipDownload = document.getElementById('container-tooltip-download');        
+        const btnDownload = document.getElementById('downloadButton');
+
+        const tooltipCopy = document.getElementById('container-tooltip-copy');        
+        const btnCopy = document.getElementById('copyButton');
+
+        if (tooltipShare?.classList.contains('translate-y-[0px]')) {
+            tooltipShare.classList.replace('translate-y-[0px]','translate-y-[265px]')
+            btnShare?.classList.replace('rotate-0', 'rotate-180')
+        }
+        else {
+            tooltipShare?.classList.replace('translate-y-[265px]','translate-y-[0px]')
+            btnShare?.classList.replace('rotate-180', 'rotate-0')
+        }
+
+        if (tooltipPrint?.classList.contains('translate-y-[0px]')) {
+            tooltipPrint.classList.replace('translate-y-[0px]','translate-y-[200px]')
+            btnPrint?.classList.replace('rotate-0', 'rotate-180')
+        }
+        else {
+            tooltipPrint?.classList.replace('translate-y-[200px]','translate-y-[0px]')
+            btnPrint?.classList.replace('rotate-180', 'rotate-0')
+        }
+
+        if (tooltipDownload?.classList.contains('translate-y-[0px]')) {
+            tooltipDownload.classList.replace('translate-y-[0px]','translate-y-[130px]')
+            btnDownload?.classList.replace('rotate-0', 'rotate-180')
+        }
+        else {
+            tooltipDownload?.classList.replace('translate-y-[130px]','translate-y-[0px]')
+            btnDownload?.classList.replace('rotate-180', 'rotate-0')
+        }
+
+        if (tooltipCopy?.classList.contains('translate-y-[0px]')) {
+            tooltipCopy.classList.replace('translate-y-[0px]','translate-y-[60px]')
+            btnCopy?.classList.replace('rotate-0', 'rotate-180')
+        }
+        else {
+            tooltipCopy?.classList.replace('translate-y-[60px]','translate-y-[0px]')
+            btnCopy?.classList.replace('rotate-180', 'rotate-0')
+        }
+    }
+    
+    document.getElementById('botonPrint')?.addEventListener('click', imprimirPagina);
     document.getElementById('botonDescargar')?.addEventListener('click', descargarArchivo);
     document.getElementById('botonCopiar')?.addEventListener('click', copiarAlPortapapeles);
+    document.getElementById('btnMenu')?.addEventListener('click', showSpeeDials)
 }
 
 init();
