@@ -1,5 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro'
+import BaseReCaptcha from '../../layouts/BaseReCaptcha.astro'
 import Map from '../../components/contacto/Map.astro'
 import LeftSidebar from '../../components/contacto/LeftSidebar.astro';
 import ContactForm from '../../components/contacto/ContactForm.astro';
@@ -23,7 +23,7 @@ const frontmatter = {
 };
 ---
 
-<Base frontmatter={frontmatter}>
+<BaseReCaptcha frontmatter={frontmatter}>
   <section class="w-full">
     <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
       <LeftSidebar />
@@ -35,4 +35,4 @@ const frontmatter = {
       <RightSidebar />
     </article>
   </section>
-</Base>
+</BaseReCaptcha>

@@ -3,7 +3,7 @@ import LeftSidebar from "../../components/contacto/LeftSidebar.astro";
 import RightSidebar from "../../components/contacto/RightSidebar.astro";
 import SocialContact from "../../components/contacto/SocialContact.astro";
 import QuoteContactForm from '../../components/contacto/QuoteContactForm.astro'
-import Base from "../../layouts/Base.astro";
+import BaseReCaptcha from "../../layouts/BaseReCaptcha.astro";
 
 const frontmatter = {
   title: "Desoutter México | Contacto",
@@ -22,7 +22,7 @@ const frontmatter = {
 };
 ---
 
-<Base frontmatter={frontmatter}>
+<BaseReCaptcha frontmatter={frontmatter}>
     <section class="w-full">
         <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             <LeftSidebar />
@@ -38,4 +38,4 @@ const frontmatter = {
             <RightSidebar />
         </article>
     </section>
-  </Base>
+  </BaseReCaptcha>
