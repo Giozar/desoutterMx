@@ -1,14 +1,14 @@
 ---
-
+const {title, subtitle} = Astro.props;
 ---
 
 <div class="bg-slate-50 dark:bg-gray-800">
   <div
     class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-16">
     <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
-      <span class="block dark:text-white">Necesitas herremientas?</span>
+      <span class="block dark:text-white">{title}</span>
       <span class="block text-red-600 dark:text-red-300"
-        >Busca y obtiene todo lo que necesitas.
+        >{subtitle}
       </span>
     </h2>
     <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">

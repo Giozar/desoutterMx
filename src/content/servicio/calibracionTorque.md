@@ -1,6 +1,6 @@
 ---
 title: 'Calibración de torque'
-description: 'Valoramos la satisfacción del cliente y estamos comprometidos en brindar soluciones que marquen la diferencia en su industria.'
+description: 'Contamos con instalaciones de calibración de última generación y personal experto para garantizar que sus herramientas de torque estén siempre calibradas con precisión y cumplan con los estándares internacionales. '
 image: https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.avif
 qya: [
     {

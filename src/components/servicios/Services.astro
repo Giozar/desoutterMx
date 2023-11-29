@@ -2,30 +2,22 @@
 const services = [
   {
     name: '1. Herramientas de ensamble',
-    shortDescription: 'En Desumex, ofrecemos una amplia gama de herramientas de ensamblaje Desoutter de primera calidad.',
-    averageDescription:"En Desumex, ofrecemos una amplia gama de herramientas de ensamblaje Desoutter de primera calidad. Potencia tus operaciones con nuestras soluciones de ensamblaje de vanguardia...",
-    description: 'En Desumex, ofrecemos una amplia gama de herramientas de ensamblaje Desoutter de primera calidad. Potencia tus operaciones con nuestras soluciones de ensamblaje de vanguardia y asegura la calidad en cada paso de tu proceso de producción.',
+    description: 'Potencia tus operaciones con nuestras soluciones de ensamblaje de vanguardia y asegura la calidad en cada paso de tu proceso de producción.',
     image: "https://s3.amazonaws.com/desumex.com.mx/servicios/herramientas-de-ensamble.avif",
   },
   {
     name: '2. Capacitación en Torque',
-    shortDescription: 'Aprende a utilizar las herramientas Desoutter de manera eficiente y precisa.',
-    averageDescription:"Aprende a utilizar las herramientas Desoutter de manera eficiente y precisa. Confía en nosotros para mejorar tus conocimientos",
-    description: 'Aprende a utilizar las herramientas Desoutter de manera eficiente y precisa. Confía en nosotros para mejorar tus conocimientos y garantizar que tus productos cumplan con los estándares más exigentes.',
+    description: 'Utiliza tus herramientas de una manera segura, eficiente y precisa, garantiza que tus productos cumplan con los estándares más exigentes.',
     image: "https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.avif",
   },
   {
     name: '3. Calibración en Torque',
-    shortDescription: 'Nuestros servicios de calibración en torque garantizan que tus herramientas Desoutter funcionen de manera óptima.',
-    averageDescription:"Nuestros servicios de calibración en torque garantizan que tus herramientas Desoutter funcionen de manera óptima. Con calibraciones regulares, puedes mantener la confianza en la calidad y la seguridad de tus productos.",
-    description: 'Nuestros servicios de calibración en torque garantizan que tus herramientas Desoutter funcionen de manera óptima. Con calibraciones regulares, puedes mantener la confianza en la calidad y la seguridad de tus productos. Confía en nosotros para mantener tus operaciones en la cima del rendimiento.',
+    description: 'Con calibraciones regulares, puedes mantener la confianza en la calidad y la seguridad de tus productos.',
     image: "https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.avif",
   },
   {
     name: '4. Servicio técnico',
-    shortDescription: 'Tus herramientas siempre seguras, respaldamos lo que vendemos con un servicio técnico excepcional.',
-    averageDescription:"Tus herramientas siempre seguras, respaldamos lo que vendemos con un servicio técnico excepcional. Nuestro equipo de expertos está siempre listo para brindarte soporte y asesoramiento.",
-    description: 'Tus herramientas siempre seguras, respaldamos lo que vendemos con un servicio técnico excepcional. Nuestro equipo de expertos está siempre listo para brindarte soporte y asesoramiento. Mantén tus herramientas en perfecto estado y reduce el tiempo de inactividad con nuestro servicio técnico de confianza.',
+    description: 'Mantén tus herramientas en perfecto estado y reduce el tiempo de inactividad con nuestro servicio técnico de confianza.',
     image: "https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.avif",
   }
 ]
@@ -62,13 +54,7 @@ const services = [
                 </p>
               </dt>
               <dd class='mt-2 text-base dark:text-gray-400'>
-                <p class="md:hidden">
-                  {service.shortDescription}
-                </p>
-                <p class="hidden md:block xl:hidden">
-                  {service.averageDescription}
-                </p>
-                <p class="hidden xl:block">
+                <p class="block">
                   {service.description}
                 </p>
               </dd>
