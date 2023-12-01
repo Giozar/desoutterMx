@@ -1,6 +1,7 @@
 ---
 import Icon from "astro-icon";
-import CTA from "../CTA.astro";
+import CTA1 from "../CTA1.astro";
+import CTA2 from "../CTA2.astro";
 const { qya } = Astro.props;
 
 // console.log(qya);
@@ -10,7 +11,13 @@ const { qya } = Astro.props;
   {
     qya && (
       <>
-        <section class="grid grid-cols-2">
+      <CTA2
+          title="Para realizar un servicio o consulta"
+          subtitle="Estamos dispuesto a constestar cualquier pregunta o cuestión que tegas con nuestro equipo."
+          btn1="Preguntanos lo que necesites"
+          href1="contacto#contactForm"
+       />
+        <section class="grid grid-cols-2 mx-auto max-w-7xl px-8 py-12">
           {qya.map((questionAsnwer: string) => (
             <div>
               <header class="grid grid-cols-9 justify-items-center items-center max-sm:grid-cols-7">
@@ -28,9 +35,13 @@ const { qya } = Astro.props;
             </div>
           ))}
         </section>
-        <CTA
+        <CTA1
           title="Para realizar un servicio o consulta"
           subtitle="mandanos un mensaje o contáctanos en redes sociales"
+          btn1="Cotizar"
+          btn2="Contáctanos"
+          href1="contacto/cotizar"
+          href2="contacto"
         />
       </>
     )

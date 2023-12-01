@@ -1,5 +1,5 @@
 ---
-import CTA from '../../../../../../../../../components/CTA.astro';
+import CTA1 from '../../../../../../../../../components/CTA1.astro';
 import Product from '../../../../../../../../../components/herramientas/Product.astro';
 import BaseReCaptcha from '../../../../../../../../../layouts/BaseReCaptcha.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
@@ -38,6 +38,12 @@ const frontmatter = {
       <Product product={product} />
     </section>
     <footer>
-      <CTA />
+      <CTA1
+            title="¿Necesitas herremientas?" subtitle="Busca y obtiene todo lo que necesitas." 
+            btn1="Cotizar"
+            btn2="Contáctanos"
+            href1="contacto/cotizar"
+            href2="contacto"
+       />
     </footer>
 </BaseReCaptcha>

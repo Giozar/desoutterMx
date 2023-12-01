@@ -1,5 +1,5 @@
 ---
-const {title, subtitle} = Astro.props;
+const {title, subtitle, btn1, btn2, href1, href2} = Astro.props;
 ---
 
 <div class="bg-slate-50 dark:bg-gray-800">
@@ -14,18 +14,16 @@ const {title, subtitle} = Astro.props;
     <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
       <div class="inline-flex shadow">
         <a
-          href={import.meta.env.BASE_URL + 'contacto/cotizar'}
+          href={import.meta.env.BASE_URL + href1}
           class="inline-flex items-center justify-center border border-transparent bg-red-600 px-5 py-3 text-base font-medium text-white hover:bg-red-400">
-          Cotizar
+          {btn1}
         </a>
       </div>
       <div class="ml-4 inline-flex shadow lg:ml-3">
         <a
-          href={import.meta.env.BASE_URL + 'contacto'}
-          rel="noopener noreferrer"
-          target="_blank"
+          href={import.meta.env.BASE_URL + href2}
           class="inline-flex items-center justify-center border border-transparent bg-white px-5 py-3 text-base font-medium text-red-600 hover:bg-red-100">
-          Contáctenos
+          {btn2}
         </a>
       </div>
     </div>

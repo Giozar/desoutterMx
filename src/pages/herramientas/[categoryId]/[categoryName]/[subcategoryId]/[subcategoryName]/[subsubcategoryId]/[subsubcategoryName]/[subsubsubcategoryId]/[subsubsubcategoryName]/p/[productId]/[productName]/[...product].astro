@@ -1,5 +1,5 @@
 ---
-import CTA from '../../../../../../../../../../../../../components/CTA.astro';
+import CTA1 from '../../../../../../../../../../../../../components/CTA1.astro';
 import Product from '../../../../../../../../../../../../../components/herramientas/Product.astro';
 import BaseReCaptcha from '../../../../../../../../../../../../../layouts/BaseReCaptcha.astro';
 import BaseReCaptcha from '../../../../../../../../../../../../../layouts/BaseReCaptcha.astro';
@@ -39,6 +39,11 @@ const frontmatter = {
       <Product product={product} />
     </section>
     <footer>
-      <CTA />
+      <CTA1 title="¿Necesitas herremientas?" subtitle="Busca y obtiene todo lo que necesitas." 
+            btn1="Cotizar"
+            btn2="Contáctanos"
+            href1="contacto/cotizar"
+            href2="contacto"
+      />
     </footer>
 </BaseReCaptcha>

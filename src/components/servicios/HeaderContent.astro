@@ -11,7 +11,36 @@ const { title, description, image } = Astro.props
 <section
   class='relative mx-auto w-full max-w-screen-xl bg-white from-slate-600 dark:bg-gradient-to-t max-[705px]:my-5 my-10'
 >
-  <article class='grid h-full grid-cols-3 max-[1124px]:grid-cols-2 max-[705px]:grid-cols-1'>
+  <article class='grid h-full grid-cols-2 max-[1124px]:grid-cols-2 max-[705px]:grid-cols-1'>
+    
+    <section
+      class='top-0 z-20 flex w-full justify-center bg-white bg-opacity-10 p-4 col-span-1 max-[1124px]:col-span-1'
+    >
+      <div class='flex justify-center'>
+        <header>
+          <h2 class='border-b border-red-500 lg:text-lg xl:text-3xl font-bold leading-tight text-black'>
+             Cónoce más sobre nuestro servicio
+             <div class="text-red-500">
+              {title}
+             </div>
+          </h2>
+          <p class="text-sm font-semibold text-gray-800">prepárate para mejorar en tu industria</p>
+          <div class="py-5">
+            <a href={import.meta.env.BASE_URL + "contacto"} class="px-2 py-2 bg-red-500 text-white text-base font-bold">
+              Sólicitalo ya!
+            </a>
+          </div>
+          <p class='text-lg font-medium text-gray-600'>¿Qué estás esperando?</p>
+          <div class="text-sm font-semibold text-zinc-800">
+            <p>Calibra con precisión tus herramientas y cumple normativas de calidad.</p>
+            <p>Nuestro servicio certificado garantiza los niveles exactos de torque según cada herramienta manual, eléctrica o neumática. </p>
+            <p>Mejora eficiencia, seguridad y productividad.</p>
+          </div>
+        </header>
+      </div>
+      <slot />
+    </section>
+
     <figure class='flex items-center justify-center h-full w-full'>
       {
         image && (
@@ -19,18 +48,5 @@ const { title, description, image } = Astro.props
         )
       }
     </figure>
-    <section
-      class='top-0 z-20 flex w-full justify-center bg-white bg-opacity-10 p-4 col-span-2 max-[1124px]:col-span-1 max-[705px]:order-first'
-    >
-      <div class='flex items-center justify-center'>
-        <header>
-          <h2 class='border-b border-red-500 lg:text-lg xl:text-3xl font-bold leading-tight text-black'>
-            {title}
-          </h2>
-          <p class='text-sm font-medium text-slate-800'>{description}</p>
-        </header>
-      </div>
-      <slot />
-    </section>
   </article>
 </section>
