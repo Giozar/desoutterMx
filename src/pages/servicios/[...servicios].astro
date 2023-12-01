@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import HeaderBanner from "../../components/servicios/HeaderBanner.astro";
 
+const image = "https://s3.amazonaws.com/desumex.com.mx/servicios/servicios.avif";
+
 const frontmatter = {
   title: "Nuestros Servicios | Desoutter México",
   description: "Descubre los servicios de Desoutter México. Potenciamos tu éxito con herramientas de ensamblaje e innovación industrial. Conoce cómo nuestros servicios pueden impulsar la eficiencia en tu proceso de fabricación.",
@@ -12,23 +14,22 @@ const frontmatter = {
   url: "URL_canónica_de_la_Página",
   facebookTitle: "Descubre Nuestros Servicios",
   facebookDescription: "Explora los servicios personalizados de Desoutter México. Desde herramientas de ensamblaje hasta soluciones industriales, te ofrecemos lo mejor para potenciar la eficiencia en tu fabricación.",
-  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookImage: image,
   facebookURL: "URL_canónica_de_la_Página_para_Facebook",
   twitterTitle: "Servicios de Desoutter México",
   twitterDescription: "Descubre cómo los servicios de Desoutter México pueden potenciar tu éxito en la fabricación. Herramientas de ensamblaje y soluciones industriales a medida para mejorar la eficiencia.",
-  twitterImage: "URL_de_la_Imagen_para_Twitter"
+  twitterImage: image
 };
 
-
-const image = "https://s3.amazonaws.com/desumex.com.mx/servicios/servicios.avif";
 const services = await getCollection("servicio");
 ---
 
 <Base frontmatter={frontmatter}>
   <header class="sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16">
     <HeaderBanner
-      title={frontmatter.title}
-      description={frontmatter.description}
+      title="Servicios Industriales"
+      subtitle="Excelencia e innovación profesional"
+      description="¿Busca optimizar las operaciones y cumplir con los más altos estándares en sus procesos de manufactura o ensamblaje? Nuestros servicios especializados en calibración, capacitación y mantenimiento de herramientas de torque son la solución."
       image={image}
     />
   </header>
