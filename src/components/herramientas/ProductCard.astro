@@ -4,9 +4,9 @@ const { product, path } = Astro.props;
 
 <section class="group relative overflow-hidden bg-white w-11/12 h-64">
   <figure class="z-0">
-    <div class="flex justify-center">
-      <picture>
-        <img src={product.image} alt={product.Modelo} class="scale-150">
+    <div class="flex justify-center overflow-hidden">
+      <picture class="flex justify-center items-center h-40 w-full">
+        <img src={product.image} alt={product.Modelo} class="scale-50">
       </picture>
     </div>
     <a href={`${path}/p/${product.Referencia}/${product.pathName}`} title={product.pathName}>
