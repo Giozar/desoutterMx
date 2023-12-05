@@ -6,7 +6,7 @@ const { product, path } = Astro.props;
   <figure class="z-0">
     <div class="flex justify-center overflow-hidden">
       <picture class="flex justify-center items-center h-40 w-full">
-        <img src={product.image} alt={product.Modelo} class="scale-50">
+        <img src={product.image} alt={product.Modelo} class="h-40">
       </picture>
     </div>
     <a href={`${path}/p/${product.Referencia}/${product.pathName}`} title={product.pathName}>
