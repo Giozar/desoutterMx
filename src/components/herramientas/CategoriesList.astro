@@ -1,13 +1,19 @@
 ---
 import CategoryCard from './CategoryCard.astro'
 import HeaderTools from './HeaderTools.astro';
-const {categories} = Astro.props;
-export const prerender = true;
+// Define un tipo para los objetos de categoría
+type CategoryType = {
+  id: string; // Ajusta el tipo según el tipo real de 'id'
+  // Otras propiedades de la categoría...
+};
+
+// Usa el tipo definido para el array 'categories'
+const { categories } = Astro.props as { categories: CategoryType[] };
 ---
 
 <article>
   <HeaderTools tools={categories.length} />
   <div class='content-center grid grid-cols-1 xl:grid-cols-4 justify-items-center gap-4'>
-    {categories.map((category) => <CategoryCard key={category.id} category={category} />)}
+    {categories.map((category: CategoryType) => <CategoryCard key={category.id} category={category} />)}
   </div>
 </article>

@@ -141,23 +141,28 @@ const errors = {
         })
 
         document.getElementById('phone_demo')?.addEventListener('input', function (e) {
-        // Eliminar cualquier caracter que no sea un número
-        const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
+            if(e.target){
+                // Hacer un type assertion para informar a TypeScript sobre el tipo
+                const targetWithvalue = e.target as HTMLInputElement;
 
-        // Aplicar el formato
-        let formattedPhoneNumber = '';
-        for (let i = 0; i < phoneNumber.length; i++) {
-                if (i === 3 || i === 6) {
-                    formattedPhoneNumber += '-';
-                }
-                formattedPhoneNumber += phoneNumber[i];
-            }
+                // Ahora puedes acceder a la propiedad 'value' sin errores
+                const phoneNumber = targetWithvalue.value.replace(/\D/g, '').slice(0, 10);
 
-            // Actualizar el valor del campo de entrada
-            e.target.value = formattedPhoneNumber;
+                // Aplicar el formato
+                let formattedPhoneNumber = '';
+                for (let i = 0; i < phoneNumber.length; i++) {
+                        if (i === 3 || i === 6) {
+                            formattedPhoneNumber += '-';
+                        }
+                        formattedPhoneNumber += phoneNumber[i];
+                    }
+
+                    // Actualizar el valor del campo de entrada
+                    targetWithvalue.value = formattedPhoneNumber;
+                    }
         });
 
-        const $dateTime = document.getElementById('date_time_demo');
+        const $dateTime = document.getElementById('date_time_demo') as HTMLInputElement | null;;
         const currentDateTime = new Date();
         currentDateTime.setDate(currentDateTime.getDate() + 1); // Agregamos un día más
         const day = currentDateTime.getDate().toString().padStart(2, '0');
@@ -170,10 +175,13 @@ const errors = {
         $dateTime?.setAttribute('min', date);
 
         // Obtene el valor de la fecha selecionada
-        const dateTimeSelected = $dateTime?.addEventListener('change', ()=>{
-            // console.log($dateTime?.value);
-             return $dateTime?.value;
-        })
+        // const dateTimeSelected = por si se llega a necesitar el valor 
+        if($dateTime){
+            $dateTime?.addEventListener('change', ()=>{
+                // console.log($dateTime?.value);
+                return $dateTime?.value;
+            })
+        }
 
 
 

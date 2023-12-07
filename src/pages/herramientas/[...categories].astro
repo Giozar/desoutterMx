@@ -21,6 +21,7 @@ async function getCategories() {
     // Manejar cualquier error que ocurra durante la solicitud o al analizar la respuesta JSON
     // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
     console.error('Error en la solicitud:', (error as Error).message);
+  }
 }
 
 const categories = await getCategories().catch((error)=>{
