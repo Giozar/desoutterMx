@@ -9,7 +9,7 @@ const {product} = Astro.props;
 
         <div
         id="container-tooltip-share" 
-        class="relative translate-y-[265px] z-0 transition-transform duration-[900ms]">
+        class="relative translate-y-[0px] z-0 transition-transform duration-[900ms]">
             <button type="button" id="shareButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400" >
               <Icon pack="ic" name="share" class="h-8 w-8" />
             </button>
@@ -20,7 +20,7 @@ const {product} = Astro.props;
 
         <div 
         id="container-tooltip-print" 
-        class="relative translate-y-[200px] z-0 transition-transform duration-700">
+        class="relative translate-y-[0px] z-0 transition-transform duration-700">
             <button type="button" id="printButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="print" class="h-8 w-8" />
             </button>
@@ -30,7 +30,7 @@ const {product} = Astro.props;
         </div>
         
         <div id="container-tooltip-download" 
-        class="relative translate-y-[130px] z-0 transition-transform duration-500">
+        class="relative translate-y-[0px] z-0 transition-transform duration-500">
             <button type="button" id="downloadButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="ic" name="baseline-download" class="h-8 w-8" />
             </button>
@@ -40,7 +40,7 @@ const {product} = Astro.props;
         </div>
         
         <div id="container-tooltip-copy" 
-        class="relative translate-y-[60px] z-0 transition-transform duration-300">
+        class="relative translate-y-[0px] z-0 transition-transform duration-300">
             <button type="button" id="copyButton" class="flex justify-center items-center w-[52px] h-[52px] rotate-0 transition-transform duration-1000 text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-400 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
                 <Icon pack="uil" name="copy" class="h-8 w-8" />
             </button>
@@ -163,39 +163,39 @@ async function init (){
         const tooltipCopy = document.getElementById('container-tooltip-copy');        
         const btnCopy = document.getElementById('copyButton');
 
-        if (tooltipShare?.classList.contains('translate-y-[0px]')) {
-            tooltipShare.classList.replace('translate-y-[0px]','translate-y-[265px]')
+        if (tooltipShare?.classList.contains('translate-y-[265px]')) {
+            tooltipShare.classList.replace('translate-y-[265px]','translate-y-[0px]')
             btnShare?.classList.replace('rotate-0', 'rotate-180')
         }
         else {
-            tooltipShare?.classList.replace('translate-y-[265px]','translate-y-[0px]')
+            tooltipShare?.classList.replace('translate-y-[0px]','translate-y-[265px]')
             btnShare?.classList.replace('rotate-180', 'rotate-0')
         }
 
-        if (tooltipPrint?.classList.contains('translate-y-[0px]')) {
-            tooltipPrint.classList.replace('translate-y-[0px]','translate-y-[200px]')
+        if (tooltipPrint?.classList.contains('translate-y-[200px]')) {
+            tooltipPrint.classList.replace('translate-y-[200px]','translate-y-[0px]')
             btnPrint?.classList.replace('rotate-0', 'rotate-180')
         }
         else {
-            tooltipPrint?.classList.replace('translate-y-[200px]','translate-y-[0px]')
+            tooltipPrint?.classList.replace('translate-y-[0px]','translate-y-[200px]')
             btnPrint?.classList.replace('rotate-180', 'rotate-0')
         }
 
-        if (tooltipDownload?.classList.contains('translate-y-[0px]')) {
-            tooltipDownload.classList.replace('translate-y-[0px]','translate-y-[130px]')
+        if (tooltipDownload?.classList.contains('translate-y-[130px]')) {
+            tooltipDownload.classList.replace('translate-y-[130px]','translate-y-[0px]')
             btnDownload?.classList.replace('rotate-0', 'rotate-180')
         }
         else {
-            tooltipDownload?.classList.replace('translate-y-[130px]','translate-y-[0px]')
+            tooltipDownload?.classList.replace('translate-y-[0px]','translate-y-[130px]')
             btnDownload?.classList.replace('rotate-180', 'rotate-0')
         }
 
-        if (tooltipCopy?.classList.contains('translate-y-[0px]')) {
-            tooltipCopy.classList.replace('translate-y-[0px]','translate-y-[60px]')
+        if (tooltipCopy?.classList.contains('translate-y-[60px]')) {
+            tooltipCopy.classList.replace('translate-y-[60px]','translate-y-[0px]')
             btnCopy?.classList.replace('rotate-0', 'rotate-180')
         }
         else {
-            tooltipCopy?.classList.replace('translate-y-[60px]','translate-y-[0px]')
+            tooltipCopy?.classList.replace('translate-y-[0px]','translate-y-[60px]')
             btnCopy?.classList.replace('rotate-180', 'rotate-0')
         }
     }
@@ -207,7 +207,7 @@ async function init (){
 }
 
 init();
-document.addEventListener('astro:page-load', init);
+document.addEventListener('astro:after-swap', init);
 
 
 </script>
