@@ -8,40 +8,49 @@ const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj
 const { categoryId, categoryName } = Astro.params;
 // console.log(categoryId, categoryName);
 const frontmatter = {
-  title: categoryName,
-  description: "Descripción de la Página",
+  title: categoryName + "| Desoutter México",
+  description: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
   keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
-  name: "Nombre del Autor",
+  name: "Desoutter México",
   language: "es",
-  url: "URL_canónica_de_la_Página",
-  facebookTitle: "Título para Compartir en Facebook",
-  facebookDescription: "Descripción para Compartir en Facebook",
+  url: Astro.url.href,
+  facebookTitle: categoryName + "| Desoutter México",
+  facebookDescription: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
   facebookImage: "URL_de_la_Imagen_para_Facebook",
-  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
-  twitterTitle: "Título para Compartir en Twitter",
-  twitterDescription: "Descripción para Compartir en Twitter",
+  facebookURL: Astro.url.href,
+  twitterTitle: categoryName + "| Desoutter México",
+  twitterDescription: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
   twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
 
 // Función para realizar la petición fetch por subcategoría
-async function getSubcategories(categoryId, categoryName) {
-  const response = await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}`);
-  return response.json();
+async function getSubcategories(categoryId:String|undefined, categoryName:String|undefined) {
+  try {
+    if(categoryName !== '[object Object]'){
+      const response = await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}`);
+      if (!response.ok) {
+        // Si la respuesta no es exitosa, lanzar un error con el status
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('Error en la solicitud:', error.message);
+  }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto organizado
-const subcategoriesData = await getSubcategories(categoryId, categoryName).catch((error)=>{
+const subcategories = await getSubcategories(categoryId, categoryName).catch((error)=>{
   console.log('No hay subcategoria en esta sección');
+  console.error(error);
 });
-
-// console.log(subcategoriesData);
-
 
 ---
 <Base frontmatter={frontmatter}>
   <NavigationTools />
-    {subcategoriesData !== undefined ? (
-      <SubCategoriesList subcategories={subcategoriesData} />
+    {subcategories !== undefined ? (
+      <SubCategoriesList subcategories={subcategories} />
     ):
     (<div class="px-5">
       <HeaderTools tools={0} />

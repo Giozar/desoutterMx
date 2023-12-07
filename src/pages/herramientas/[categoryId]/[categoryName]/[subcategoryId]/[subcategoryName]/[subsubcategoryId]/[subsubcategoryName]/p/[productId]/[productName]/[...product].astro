@@ -6,15 +6,28 @@ const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj
 const {categoryId, categoryName, subcategoryId, subcategoryName,subsubcategoryId, subsubcategoryName, productId, productName} = Astro.params;
 
 // Función para realizar la petición fetch por categoría
-async function getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, productId, productName) {
-  const response = 
-  await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/p/${productId}/${productName}`);
-  return response.json();
+async function getProduct(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, subsubcategoryId:String|undefined, subsubcategoryName:String|undefined, productId:String|undefined, productName:String|undefined) {
+  try {
+    const response = 
+    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/p/${productId}/${productName}`);
+    if (!response.ok) {
+        // Si la respuesta no es exitosa, lanzar un error con el status
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error en la solicitud:', error.message);
+  }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto
-const product = await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, productId, productName);
-// console.log(product);
+
+const product = (productName !== '[object Object]') ?
+await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, productId, productName).catch((error)=>{
+    console.log('No hay herramientas en esta sección');
+    console.error(error);
+   }) : {};
+
 
 const frontmatter = {
   title: "Desoutter México Herramientas " + product.pathName,

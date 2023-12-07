@@ -24,14 +24,27 @@ const path = `${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryNa
 
 // Aquí va la petición fetch para recibir data
 // Función para realizar la petición fetch por subsubcategoría
-async function getTools(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName) {
-  const response = 
-  await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`);
-  return response.json();
+async function getTools(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, subsubcategoryId:String|undefined, subsubcategoryName:String|undefined, subsubsubcategoryId:String|undefined, subsubsubcategoryName:String|undefined) {
+  try {
+    const response = 
+    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`);
+    if (!response.ok) {
+        // Si la respuesta no es exitosa, lanzar un error con el status
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error en la solicitud:', error.message);
+  }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto
-const tools = await getTools(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName );
+
+const tools = (subsubsubcategoryName !== '[object Object]') ? 
+await getTools(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName ).catch((error)=>{
+    console.log('No hay series en esta sección');
+    console.error(error);
+   })  : {}
 
 ---
 <Base frontmatter={frontmatter}>

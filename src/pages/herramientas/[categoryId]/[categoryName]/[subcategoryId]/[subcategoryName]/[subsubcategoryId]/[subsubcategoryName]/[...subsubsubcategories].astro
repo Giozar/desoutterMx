@@ -24,14 +24,28 @@ const path = `${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryNa
 
 // Aquí va la petición fetch para recibir data
 // Función para realizar la petición fetch por subsubcategoría
-async function getSubsubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName) {
-  const response = 
-  await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`);
-  return response.json();
+async function getSubsubsubcategories(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, subsubcategoryId:String|undefined, subsubcategoryName:String|undefined) {
+  try {
+    const response = 
+    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`);
+    if (!response.ok) {
+        // Si la respuesta no es exitosa, lanzar un error con el status
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error en la solicitud:', error.message);
+  }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto
-const data = await getSubsubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName);
+
+const data = (subsubcategoryName !== '[object Object]') ? 
+await getSubsubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName).catch((error)=>{
+    console.log('No hay subsubsubcategoria en esta sección');
+    console.error(error);
+   })  : {}
+
 
 ---
 <Base frontmatter={frontmatter}>

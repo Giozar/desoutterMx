@@ -5,10 +5,28 @@ import Base from '../../layouts/Base.astro'
 import ToolsCTA from '../../components/herramientas/ToolsCTA.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 
-const categoriesRequest = await fetch(`${desoutterAPI}/herramientas`);
-const categories = await categoriesRequest.json();
+async function getCategories() {
+  try {
+  const response = await fetch(`${desoutterAPI}/herramientas`);
 
-// console.log(categories);
+  if (!response.ok) {
+    // Si la respuesta no es exitosa, lanzar un error con el status
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  
+  return await response.json();
+  
+  // console.log(categories);
+  } catch (error) {
+    // Manejar cualquier error que ocurra durante la solicitud o al analizar la respuesta JSON
+    console.error('Error en la solicitud:', error.message);
+  }
+}
+
+const categories = await getCategories().catch((error)=>{
+  console.log('No hay categoria en esta sección');
+  console.error(error);
+})
 
 const frontmatter = {
   title: "Herramientas Industriales | Desoutter México",
@@ -19,11 +37,11 @@ const frontmatter = {
   ],
   name: "Desoutter México",
   language: "es",
-  url: "URL_canónica_de_la_Página",
+  url: Astro.url.href,
   facebookTitle: "Herramientas Industriales en Desoutter México",
   facebookDescription: "Explora nuestra amplia gama de herramientas industriales. Desde herramientas de ensamblaje de precisión hasta maquinaria industrial, ofrecemos soluciones líderes en el mercado para impulsar la eficiencia en tu fabricación.",
   facebookImage: "URL_de_la_Imagen_para_Facebook",
-  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  facebookURL: Astro.url.href,
   twitterTitle: "Herramientas Industriales en Desoutter México",
   twitterDescription: "Descubre nuestra amplia gama de herramientas industriales en Desoutter México. Herramientas de ensamblaje y soluciones avanzadas para potenciar tu fabricación. ¡Optimiza tu proceso con nuestras herramientas de calidad!",
   twitterImage: "URL_de_la_Imagen_para_Twitter"
