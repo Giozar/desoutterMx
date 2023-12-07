@@ -25,7 +25,7 @@ const { frontmatter } = Astro.props;
       }
     };
     setDarkMode(); //initial navigation
-    document.addEventListener("astro:after-swap", setDarkMode); // Runs on view transitions navigation
+    document.addEventListener("astro:page-load", setDarkMode); // Runs on view transitions navigation
     </script>
     <style is:inline>
       [x-cloak] {
