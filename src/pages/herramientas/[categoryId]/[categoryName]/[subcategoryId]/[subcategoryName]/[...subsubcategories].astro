@@ -34,7 +34,8 @@ async function getSubsubcategories(categoryId:String|undefined, categoryName:Str
     }
     return await response.json();
   } catch (error) {
-    console.error('Error en la solicitud:', error.message);
+     // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
+      console.error('Error en la solicitud:', (error as Error).message);
   }
 }
 
