@@ -1,7 +1,7 @@
 ---
-import CTA1 from '../../../../../../../../../../../components/CTA1.astro';
-import Product from '../../../../../../../../../../../components/herramientas/Product.astro';
-import BaseReCaptcha from '../../../../../../../../../../../layouts/BaseReCaptcha.astro';
+import CTA1 from '@components/CTA1.astro';
+import Product from '@components/herramientas/Product.astro';
+import BaseReCaptcha from '@layouts/BaseReCaptcha.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const {categoryId, categoryName, subcategoryId, subcategoryName,subsubcategoryId, subsubcategoryName, productId, productName} = Astro.params;
 

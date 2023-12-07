@@ -1,8 +1,8 @@
 ---
-import NavigationTools from '../../components/herramientas/NavigationTools.astro'
-import CategoriesList from '../../components/herramientas/CategoriesList.astro';
-import Base from '../../layouts/Base.astro'
-import ToolsCTA from '../../components/herramientas/ToolsCTA.astro';
+import NavigationTools from '@components/herramientas/NavigationTools.astro'
+import CategoriesList from '@components/herramientas/CategoriesList.astro';
+import Base from '@layouts/Base.astro'
+import ToolsCTA from '@components/herramientas/ToolsCTA.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 
 async function getCategories() {
