@@ -1,8 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
 
-import { IconDesumexSVG } from "../config";
-import { IconDesumexIco } from "../config";
+import { IconDesumexIco48, IconDesumexIco96, IconDesumexIco144 } from "../config";
 ---
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -12,8 +11,18 @@ import { IconDesumexIco } from "../config";
     <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
 
     <!-- Iconos del sitio -->
-    <link rel="icon" href={IconDesumexIco} sizes="any" />
-    <link rel="icon" href={IconDesumexSVG} type="image/svg+xml" />
+    <link rel="icon" type="image/x-icon" sizes="48x48" href={IconDesumexIco48}>
+    <link rel="icon" type="image/x-icon" sizes="96x96" href={IconDesumexIco96}>
+    <link rel="icon" type="image/x-icon" sizes="144x144" href={IconDesumexIco144}>
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="48x48" href={IconDesumexIco48}>
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="96x96" href={IconDesumexIco96}>
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href={IconDesumexIco144}>
+    <link rel="apple-touch-icon-precomposed" sizes="48x48" type="image/x-icon" href={IconDesumexIco48}>
+    <link rel="apple-touch-icon-precomposed" sizes="96x96" type="image/x-icon" href={IconDesumexIco96}>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" type="image/x-icon" href={IconDesumexIco144}>
+    <link rel="shortcut icon" type="image/x-icon" sizes="48x48" href={IconDesumexIco48}>
+    <link rel="shortcut icon" type="image/x-icon" sizes="96x96" href={IconDesumexIco96}>
+    <link rel="shortcut icon" type="image/x-icon" sizes="144x144" href={IconDesumexIco144}>
 
     <!-- Información general -->
     <title>{frontmatter.title}</title>

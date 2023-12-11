@@ -8,8 +8,9 @@ export const SiteMetadata = {
   },
 }
 
-export { default as IconDesumexSVG} from './assets/svg/desumex/desumex.svg'
-export { default as IconDesumexIco} from './assets/ico/desumex/desumex.ico'
+export { default as IconDesumexIco48} from './assets/ico/desumex/desumex48.ico'
+export { default as IconDesumexIco96} from './assets/ico/desumex/desumex96.ico'
+export { default as IconDesumexIco144} from './assets/ico/desumex/desumex144.ico'
 
 export { default as Logo } from './assets/svg/desumex/desumex256.svg'
 
