@@ -18,11 +18,8 @@ const { title, description, image } = Astro.props
     >
       <div class='flex justify-center items-center'>
         <header>
-          <h2 class='border-b border-red-500 lg:text-lg xl:text-3xl font-bold leading-tight text-black'>
-             Cónoce más sobre nuestro servicio
-             <div class="text-red-500">
+          <h2 class='border-b border-red-500 text-red-500 lg:text-lg xl:text-3xl font-bold leading-tight'>
               {title}
-             </div>
           </h2>
           <p class="text-sm font-semibold text-gray-800 dark:text-white">prepárate para mejorar en tu industria</p>
           <div class="py-5">
@@ -30,7 +27,6 @@ const { title, description, image } = Astro.props
               Sólicitalo ya!
             </a>
           </div>
-          <p class='text-lg font-semibold text-gray-600 dark:text-red-500'>¿Qué estás esperando?</p>
           <div class="text-sm font-medium text-gray-500 dark:text-white">
             <p>
               {description}

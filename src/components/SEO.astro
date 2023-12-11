@@ -26,12 +26,12 @@ import { IconDesumexIco48, IconDesumexIco96, IconDesumexIco144 } from "../config
 
     <!-- Información general -->
     <title>{frontmatter.title}</title>
-    <meta name="author" content={frontmatter.name} />
+    <meta name="author" content={frontmatter.authorName} />
     <meta name="description" content={frontmatter.description} />
     <meta name="keywords" content={frontmatter.keywords} />
     <meta name="language" content={frontmatter.language} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={frontmatter.url} />
+    <link rel="canonical" href={frontmatter.canonicalUrl} />
 
     <!-- Etiquetas Open Graph para redes sociales -->
     <meta property="og:title" content={frontmatter.facebookTitle} />

@@ -1,6 +1,7 @@
 ---
 title: 'Servicio técnico'
-description: 'Nuestro equipo de especialistas altamente capacitados y experimentados está listo para brindarle una amplia gama de servicios, desde el mantenimiento preventivo hasta reparaciones rápidas y efectivas.'
+previewDescription: 'Nuestro equipo de especialistas altamente capacitados y experimentados está listo para brindarle una amplia gama de servicios, desde el mantenimiento preventivo hasta reparaciones rápidas y efectivas.'
+description: ''
 image: https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.avif
 qya: [
     {

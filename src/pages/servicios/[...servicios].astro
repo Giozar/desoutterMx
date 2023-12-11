@@ -9,13 +9,13 @@ const frontmatter = {
   title: "Nuestros Servicios | Desoutter Tools México",
   description: "Descubre los servicios de Desoutter Tools México. Potenciamos tu éxito con herramientas de ensamblaje e innovación industrial. Conoce cómo nuestros servicios pueden impulsar la eficiencia en tu proceso de fabricación.",
   keywords: ["Desoutter Tools México", "Servicios Industriales", "Herramientas de Ensamblaje", "Innovación Industrial", "Eficiencia en Fabricación", "Soluciones a Medida"],
-  name: "Desoutter Tools México",
+  authorName: "Desumex",
   language: "es",
-  url: "URL_canónica_de_la_Página",
+  canonicalUrl: Astro.url.href,
   facebookTitle: "Descubre Nuestros Servicios",
   facebookDescription: "Explora los servicios personalizados de Desoutter Tools México. Desde herramientas de ensamblaje hasta soluciones industriales, te ofrecemos lo mejor para potenciar la eficiencia en tu fabricación.",
   facebookImage: image,
-  facebookURL: "URL_canónica_de_la_Página_para_Facebook",
+  facebookURL: Astro.url.href,
   twitterTitle: "Servicios de Desoutter Tools México",
   twitterDescription: "Descubre cómo los servicios de Desoutter Tools México pueden potenciar tu éxito en la fabricación. Herramientas de ensamblaje y soluciones industriales a medida para mejorar la eficiencia.",
   twitterImage: image
@@ -46,7 +46,8 @@ const services = await getCollection("servicio");
                 <figure class="relative mb-4 h-full w-full overflow-hidden bg-red-100 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 dark:bg-red-600 sm:h-64">
                   <img
                     src={service.data.image}
-                    alt={service.data.description}
+                    alt={service.data.previewDescription}
+                    title={service.data.title}
                     class="h-full w-full object-cover object-center"
                     loading="lazy"
                   />
@@ -55,7 +56,7 @@ const services = await getCollection("servicio");
                     {service.data.title}
                 </h3>
                 <p class="text-base text-gray-900 dark:text-gray-400">
-                  {service.data.description}
+                  {service.data.previewDescription}
                 </p>
               </article>
             </a>

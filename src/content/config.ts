@@ -6,6 +6,7 @@ import { z, defineCollection, reference } from 'astro:content';
     schema: () =>
       z.object({
         title: z.string(),
+        previewDescription: z.string(),
         description: z.string(),
         image: z.string(),
         qya: z.array(z.object({

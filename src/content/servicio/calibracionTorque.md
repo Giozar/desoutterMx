@@ -1,8 +1,9 @@
 ---
 title: 'Calibración de torque'
-description: 'Calibra con precisión tus herramientas y cumple normativas de calidad,
+previewDescription: 'Calibra con precisión tus herramientas y cumple normativas de calidad,
               nuestro servicio certificado garantiza los niveles exactos de torque según cada herramienta manual, eléctrica o neumática.
               Mejora eficiencia, seguridad y productividad. '
+description: ''
 image: https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.avif
 qya: [
     {

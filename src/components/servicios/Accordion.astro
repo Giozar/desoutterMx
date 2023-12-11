@@ -1,30 +1,27 @@
 ---
 import Icon from "astro-icon";
 import CTA1 from "../CTA1.astro";
-import CTA2 from "../CTA2.astro";
+// import CTA2 from "../CTA2.astro";
 const { qya } = Astro.props;
 
 // console.log(qya);
 ---
 
 <article class="mx-auto w-full max-w-screen-xl">
+  <header>
+    <h3>Preguntas frecuentes</h3>
+  </header>
   {
     qya && (
       <>
-      <CTA2
-          title="Para realizar un servicio o consulta"
-          subtitle="Estamos dispuesto a constestar cualquier pregunta o cuestión que tengas con nuestro equipo."
-          btn1="Preguntanos lo que necesites"
-          href1="contacto#contactForm"
-       />
         <section class="grid grid-cols-2 mx-auto max-w-7xl px-8 py-12">
           {qya.map((questionAsnwer: string) => (
             <div>
               <header class="grid grid-cols-9 justify-items-center items-center max-sm:grid-cols-7">
                 <Icon pack="mdi" name="faq" class="w-10 text-red-500" />
-                <h4 class="grid col-span-8 max-sm:col-span-6 w-full max-md:text-base max-sm:text-sm p-1 font-medium text-left text-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-800 dark:bg-gray-400">
+                <h2 class="grid col-span-8 max-sm:col-span-6 w-full max-md:text-base max-sm:text-sm p-1 font-medium text-left text-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-800 dark:bg-gray-400">
                   <p>{questionAsnwer.q}</p>
-                </h4>
+                </h2>
               </header>
               <article class="grid justify-items-start grid-cols-9 p-5 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                 <span></span>

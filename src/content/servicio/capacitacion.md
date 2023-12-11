@@ -1,6 +1,7 @@
 ---
 title: 'Capacitación'
-description: 'Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.'
+previewDescription: 'Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.'
+description: ''
 image: https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.avif
 qya: [
     {
