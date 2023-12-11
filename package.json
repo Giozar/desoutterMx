@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "description": "Desoutter México is a web platform of Desumex, is a product catalog page. Made with frontend technologies such as astro, tailwind.",
+  "description": "Desoutter Tools México is a web platform of Desumex, is a product catalog page. Made with frontend technologies such as astro, tailwind.",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

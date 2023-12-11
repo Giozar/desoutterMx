@@ -1,9 +1,9 @@
 export const SiteMetadata = {
-  title: 'Desoutter México',
-  description: 'Página de herramientas industriales de Desoutter México.',
+  title: 'Desoutter Tools México',
+  description: 'Página de herramientas industriales de Desoutter Tools México.',
   author: {
     name: 'Giovanni Cortazar',
-    url: 'https://giozar04.netlify.app/',
+    url: 'https://desoutter-mx.vercel.app/',
     email: 'manuelgiozar04@gmail.com',
   },
 }

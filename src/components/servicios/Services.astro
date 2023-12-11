@@ -23,12 +23,12 @@ const services = [
 ]
 ---
 
-<div class='bg-white py-12 dark:bg-gray-800'>
+<section class='bg-white py-12 dark:bg-gray-800'>
   <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-    <div class='lg:text-center'>
-      <h2 class='text-base font-semibold uppercase tracking-wide text-red-800 dark:text-red-300'>
+    <header class='lg:text-center'>
+      <h5 class='text-base font-semibold uppercase tracking-wide text-red-800 dark:text-red-300'>
         Herramientas y trabajos de calidad
-      </h2>
+      </h5>
       <p
         class='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl'
       >
@@ -38,30 +38,30 @@ const services = [
         Nuestra pasión por la excelencia y nuestro compromiso con la satisfacción del cliente son
         los pilares que sustentan nuestro éxito continuo.
       </p>
-    </div>
+    </header>
 
     <div class='pt-10'>
       <dl class='grid md:grid-cols-2 xl:grid-cols-4 md:space-y-0'>
         {
           services.map((service) => (
-            <div class='relative p-10 border dark:border-gray-700'>
+            <article class='relative p-10 border dark:border-gray-700'>
               <figure class="mb-8">
                 <img loading="lazy" src={service.image} alt={service.name} />
               </figure>
-              <dt>
-                <p class='text-lg font-medium leading-6 text-gray-900 dark:text-gray-200 '>
+              <header>
+                <h4 class='text-lg font-medium leading-6 text-gray-900 dark:text-gray-200 '>
                   {service.name}
-                </p>
-              </dt>
+                </h4>
+              </header>
               <dd class='mt-2 text-base dark:text-gray-400'>
                 <p class="block">
                   {service.description}
                 </p>
               </dd>
-            </div>
+            </article>
           ))
         }
       </dl>
     </div>
   </div>
-</div>
+</section>

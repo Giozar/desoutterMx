@@ -7,7 +7,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://desouttermx.netlify.app/',
+  site: 'https://desoutter-mx.vercel.app/',
   base: '/',
   output: "server",
   adapter: vercel(),

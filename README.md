@@ -1,7 +1,7 @@
-# Desoutter México
+# Desoutter Tools México
 ***
 ## Description
-- Proyecto de Desoutter México.
+- Proyecto de Desoutter Tools México.
 
 ## Table of Contents
 1. [General Info](#general-info)
