@@ -4,7 +4,7 @@ previewDescription: 'Calibra con precisión tus herramientas y cumple normativas
               nuestro servicio certificado garantiza los niveles exactos de torque según cada herramienta manual, eléctrica o neumática.
               Mejora eficiencia, seguridad y productividad. '
 description: ''
-image: https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.avif
+image: https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-de-torque.jpg
 qya: [
     {
         q: "¿Por qué es importante la calibración de torque en la industria general?",

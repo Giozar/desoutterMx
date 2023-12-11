@@ -2,7 +2,7 @@
 title: 'Servicio técnico'
 previewDescription: 'Nuestro equipo de especialistas altamente capacitados y experimentados está listo para brindarle una amplia gama de servicios, desde el mantenimiento preventivo hasta reparaciones rápidas y efectivas.'
 description: ''
-image: https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.avif
+image: https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.jpg
 qya: [
     {
         q: "¿Cuáles son las principales ventajas de utilizar software inteligente y redes digitales en el servicio técnico de herramientas industriales?",
