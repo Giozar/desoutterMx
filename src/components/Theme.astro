@@ -43,7 +43,7 @@ import { Icon } from 'astro-icon'
         <Icon class="h-6 w-6 ml-2" pack="heroicons-outline" name="star" />
         <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
         <span
-          class="ml-1 block truncate max-[300px]:w-[100px] max-[300px]:text-xs"
+          class="ml-1 block max-[300px]:w-[100px] max-[430px]:text-[10px]"
           x-bind:class="localStorage.theme ? 'font-normal' : 'font-semibold'">Principal</span
         >
       </div>
@@ -63,7 +63,7 @@ import { Icon } from 'astro-icon'
         <Icon class="h-6 w-6" pack="heroicons-outline" name="sun" />
         <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
         <span
-          class="ml-1 block truncate max-[300px]:w-[100px] max-[300px]:text-xs"
+          class="ml-1 block max-[300px]:w-[100px] max-[430px]:text-[10px]"
           x-bind:class="localStorage.theme == 'light' ? 'font-semibold' : 'font-normal'">Claro</span
         >
       </div>
@@ -82,7 +82,7 @@ import { Icon } from 'astro-icon'
         <Icon class="h-6 w-6" pack="heroicons-solid" name="moon" />
         <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
         <span
-          class="ml-1 block truncate max-[300px]:w-[100px] max-[300px]:text-xs"
+          class="ml-1 block max-[300px]:w-[100px] max-[430px]:text-[10px]"
           x-bind:class="localStorage.theme == 'dark' ? 'font-semibold' : 'font-normal'">Oscuro</span
         >
       </div>
