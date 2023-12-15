@@ -6,10 +6,12 @@ import { z, defineCollection } from 'astro:content';
     schema: () =>
       z.object({
         title: z.string(),
-        description: z.string(),
+        description: z.array(z.string()),
         previewDescription: z.string(),
         image: z.string(),
+        imageDescription: z.string(),
         imageBanner: z.string(),
+        imageBannerDescription: z.string(),
         qya: z.array(z.object({
           q: z.string().optional(),
           a: z.string().optional(),

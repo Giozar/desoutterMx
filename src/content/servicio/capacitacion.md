@@ -1,9 +1,13 @@
 ---
 title: 'Capacitación'
 previewDescription: 'Nuestros instructores altamente capacitados lo guiarán a través de los fundamentos de las herramientas de torque, las mejores prácticas en su uso y las técnicas de calibración.'
-description: 'Nuestro programa de capacitación tiene como objetivo brindar a tu equipo el conocimiento técnico y las habilidades prácticas necesarias para maximizar la eficiencia en el uso de herramientas fundamentales en tu entorno industrial.'
+description: [
+    'Nuestro programa de capacitación tiene como objetivo brindar a tu equipo el conocimiento técnico y las habilidades prácticas necesarias para maximizar la eficiencia en el uso de herramientas fundamentales en tu entorno industrial.',
+]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/capacitacion.jpg"
+imageDescription: " "
+imageBannerDescription: ""
 qya: [
     {
         q: "¿Por qué es importante la capacitación en el uso de herramientas industriales, especialmente en entornos automatizados?",

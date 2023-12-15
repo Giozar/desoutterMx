@@ -3,6 +3,7 @@ import { getEntry } from "astro:content";
 import Base from "@layouts/Base.astro";
 import HeaderContent from "@components/servicios/HeaderContent.astro";
 import Accordion from '@components/servicios/Accordion.astro'
+import CTA1 from "@components/CTA1.astro";
 
 const { servicioNombre } = Astro.params;
 
@@ -28,6 +29,7 @@ const serviceDetails = {
   title: detail!.data.title.toLocaleUpperCase(),
   description: detail!.data.description,
   image: detail!.data.imageBanner,
+  imageDescription: detail!.data.imageBannerDescription,
   qya: detail!.data.qya,
 };
 
@@ -43,9 +45,18 @@ const serviceDetails = {
       title={serviceDetails.title}
       description={serviceDetails.description}
       image={serviceDetails.image}
+      imageDescription={serviceDetails.imageDescription}
     />
   </header>
   <section class="pt-10 mx-2 dark:bg-gray-900 w-full mb-10">
     <Accordion qya={serviceDetails.qya} />
   </section>
+  <CTA1
+          title="Para realizar un servicio o consulta"
+          subtitle="mandanos un mensaje o contáctanos en redes sociales"
+          btn1="Cotizar"
+          btn2="Contáctanos"
+          href1="contacto/cotizar"
+          href2="contacto"
+        />
 </Base>

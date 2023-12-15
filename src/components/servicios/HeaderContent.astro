@@ -1,15 +1,16 @@
 ---
 export interface Props {
   title: string
-  description?: string
+  description?: Array<String>
   image?: string
+  imageDescription?: string 
 }
 
-const { title, description, image } = Astro.props
+const { title, description, image, imageDescription } = Astro.props
 ---
 
 <section
-  class='relative mx-auto w-full max-w-screen-xl bg-white dark:bg-slate-800 max-[705px]:my-5 my-10'
+  class='relative mx-auto w-full max-w-screen-xl dark:bg-slate-800 max-[705px]:my-5 my-10'
 >
   <article class='grid h-full grid-cols-2 max-[1124px]:grid-cols-2 max-[705px]:grid-cols-1'>
     
@@ -22,15 +23,17 @@ const { title, description, image } = Astro.props
               {title}
           </h2>
           <p class="text-sm font-semibold text-gray-800 dark:text-white">prepárate para mejorar en tu industria</p>
-          <div class="py-5">
-            <a href={import.meta.env.BASE_URL + "contacto"} class="px-2 py-2 bg-red-500 text-white text-base font-bold">
-              Sólicitalo ya!
-            </a>
-          </div>
+          
           <div class="text-sm font-medium text-gray-500 dark:text-white">
-            <p>
-              {description}
-            </p>
+            {description?.map((p)=>(
+              <p>{p}</p><br />
+            ))}
+          </div>
+
+          <div class="py-5">
+            <a href={import.meta.env.BASE_URL + "contacto"} class="px-2 py-2 bg-red-500 hover:bg-red-400 text-white text-base font-bold">
+              ¡Sólicitalo ya!
+            </a>
           </div>
         </header>
       </div>
@@ -40,7 +43,7 @@ const { title, description, image } = Astro.props
     <figure class='flex items-center justify-center h-full w-full'>
       {
         image && (
-          <img src={image} alt={title} class='object-contain h-full w-full' />
+          <img src={image} alt={imageDescription} title={title} class='object-contain h-full w-full' />
         )
       }
     </figure>

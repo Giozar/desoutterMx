@@ -1,9 +1,14 @@
 ---
 title: 'Servicio técnico'
 previewDescription: 'Nuestro equipo de especialistas altamente capacitados y experimentados está listo para brindarle una amplia gama de servicios, desde el mantenimiento preventivo hasta reparaciones rápidas y efectivas.'
-description: 'Nuestro Servicio de Asistencia Técnica se compromete a asegurar un rendimiento óptimo de sus equipos. Contamos con personal altamente capacitado que brinda servicios de mantenimiento, reparación y calibración de herramientas industriales.'
+description: [
+    "Nuestro Servicio de Asistencia Técnica se compromete a asegurar un rendimiento óptimo de sus equipos. ", 
+    "Contamos con personal altamente capacitado que brinda servicios de mantenimiento, reparación y calibración de herramientas industriales.",
+]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/servicio-tecnico.jpg"
+imageDescription: " "
+imageBannerDescription: ""
 qya: [
     {
         q: "¿Cuáles son las principales ventajas de utilizar software inteligente y redes digitales en el servicio técnico de herramientas industriales?",
