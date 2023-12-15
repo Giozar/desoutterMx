@@ -1,8 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-import Base from "../../../layouts/Base.astro";
-import HeaderContent from "../../../components/servicios/HeaderContent.astro";
-import Accordion from '../../../components/servicios/Accordion.astro'
+import Base from "@layouts/Base.astro";
+import HeaderContent from "@components/servicios/HeaderContent.astro";
+import Accordion from '@components/servicios/Accordion.astro'
 
 const { servicioNombre } = Astro.params;
 
@@ -27,7 +27,7 @@ const frontmatter = {
 const serviceDetails = {
   title: detail!.data.title.toLocaleUpperCase(),
   description: detail!.data.description,
-  image: detail!.data.image,
+  image: detail!.data.imageBanner,
   qya: detail!.data.qya,
 };
 

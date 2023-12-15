@@ -29,15 +29,13 @@ const services = await getCollection("servicio");
     <HeaderBanner
       title="Servicios Industriales"
       subtitle="Excelencia e innovación profesional"
-      description="¿Busca optimizar las operaciones y cumplir con los más altos estándares en sus procesos de manufactura o ensamblaje? Nuestros servicios especializados en calibración, capacitación y mantenimiento de herramientas de torque son la solución."
-      image={image}
     />
   </header>
   <section class="mt-8 bg-gray-100 dark:bg-gray-900 sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl pb-16 sm:pb-32 lg:max-w-none lg:pb-24">
         <div
-          class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0"
+          class="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0"
         >
           {
             services.map((service) => (
@@ -46,8 +44,7 @@ const services = await getCollection("servicio");
                 <figure class="relative mb-4 h-full w-full overflow-hidden bg-red-100 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 dark:bg-red-600 sm:h-64">
                   <img
                     src={service.data.image}
-                    alt={service.data.previewDescription}
-                    title={service.data.title}
+                    alt={service.data.description}
                     class="h-full w-full object-cover object-center"
                     loading="lazy"
                   />
