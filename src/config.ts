@@ -36,6 +36,9 @@ export const SIDEBAR: Sidebar = {
   ],
   "Demostración de herramienta" : [
     {text: "Solicitar desmotración", link: import.meta.env.BASE_URL + 'contacto/demo'}
+  ],
+  "Solicitud de servicios" : [
+    {text: "Solicitar servicio", link: import.meta.env.BASE_URL + 'contacto/servicios'}
   ]
 }
 

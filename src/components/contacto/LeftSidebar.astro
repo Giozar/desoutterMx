@@ -3,9 +3,9 @@ import { SIDEBAR } from '../../config'
 ---
 
 <aside
-  class="hidden bg-red-50 dark:bg-gray-800 lg:sticky lg:top-16 lg:-ml-6 lg:block lg:h-[calc(100vh-4rem)] lg:flex-none lg:overflow-y-auto lg:py-16 lg:pl-6">
+  class="hidden container-left bg-red-50 dark:bg-gray-800 lg:sticky lg:top-16 lg:-ml-6 lg:block lg:h-[calc(100vh-4rem)] lg:flex-none lg:overflow-y-auto lg:py-16 lg:pl-6">
   <nav aria-labelledby="grid-left" class="w-64 pr-8 text-base lg:text-sm xl:w-72 xl:pr-16">
-    <ul role="list" class="space-y-9">
+    <ul role="list" class="space-y-1">
       {
         Object.entries(SIDEBAR).map(([header, children]) => (
           <li>
@@ -13,7 +13,7 @@ import { SIDEBAR } from '../../config'
               <h4 class="font-display font-medium text-red-800 dark:text-white">{header}</h4>
               <ul
                 role="list"
-                class="mt-2 space-y-1 border-l-2 border-red-200 dark:border-red-700 lg:mt-4 lg:space-y-2 lg:border-red-300">
+                class="mt-2 space-y-1 border-l-2 border-red-200 dark:border-red-700 lg:mt-4 lg:border-red-300">
                 {children.map((child) => {
                   const url = child.link
                   return (
@@ -34,3 +34,9 @@ import { SIDEBAR } from '../../config'
     </ul>
   </nav>
 </aside>
+
+<style>
+  .container-left::-webkit-scrollbar {
+    width: 0%;
+  }
+</style>
