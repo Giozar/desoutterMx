@@ -3,7 +3,7 @@ title: 'Herramientas De Ensamble'
 previewDescription: "Nuestras herramientas de ensamble diseñadas para optimizar sus operaciones de fabricación. Ofrecemos soluciones a medida para las necesidades de su línea de producción"
 description: ["Con Desoutter México, no solo obtienes herramientas, sino una solución integral para tus desafíos de ensamble.", "Cada producto está diseñado para ofrecer máxima productividad, garantizando la perfección en cada trabajo."]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/herramientas-ensamble.jpg"
-imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/herramientas-ensamble.jpg"
+imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-herramientas-ensamble.png"
 imageDescription: " "
 imageBannerDescription: ""
 qya: [

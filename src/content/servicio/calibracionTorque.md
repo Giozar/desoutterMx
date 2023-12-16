@@ -8,7 +8,7 @@ description: [
                 "Este procedimiento se lleva a cabo utilizando métodos que garantizan la trazabilidad metrológica, es decir, conectando la herramienta de medición con un patrón reconocido oficialmente según las normas internacionales.",
             ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-torque.jpg"
-imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/calibracion-torque.jpg"
+imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-calibracion-torque.png"
 imageDescription: ""
 imageBannerDescription: "Esta es una descipcion de imagen"
 qya: [

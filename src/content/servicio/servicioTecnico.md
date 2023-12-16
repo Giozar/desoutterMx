@@ -6,7 +6,7 @@ description: [
     "Contamos con personal altamente capacitado que brinda servicios de mantenimiento, reparación y calibración de herramientas industriales.",
 ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.jpg"
-imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/servicio-tecnico.jpg"
+imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-servicio-tecnico.png"
 imageDescription: " "
 imageBannerDescription: ""
 qya: [

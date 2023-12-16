@@ -4,6 +4,7 @@ import Base from "@layouts/Base.astro";
 import HeaderContent from "@components/servicios/HeaderContent.astro";
 import Accordion from '@components/servicios/Accordion.astro'
 import CTA1 from "@components/CTA1.astro";
+import NavigationServices from "@components/servicios/NavigationServices.astro";
 
 const { servicioNombre } = Astro.params;
 
@@ -37,10 +38,9 @@ const serviceDetails = {
 
 <Base frontmatter={frontmatter}>
   <header class="pt-10 mx-2 w-full">
-    <nav class="max-[300px]:text-xs max-[500px]:text-sm text-slate-500 mx-auto w-full max-w-screen-xl">
-      <a class="border-b-2 text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600" 
-      href={import.meta.env.BASE_URL+"servicios"}>Regresar a servicios</a>/<span>{frontmatter.title}</span>
-    </nav>
+
+    <NavigationServices service={frontmatter.title} />
+    
     <HeaderContent
       title={serviceDetails.title}
       description={serviceDetails.description}

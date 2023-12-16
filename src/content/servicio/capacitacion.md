@@ -5,7 +5,7 @@ description: [
     'Nuestro programa de capacitación tiene como objetivo brindar a tu equipo el conocimiento técnico y las habilidades prácticas necesarias para maximizar la eficiencia en el uso de herramientas fundamentales en tu entorno industrial.',
 ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.jpg"
-imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/capacitacion.jpg"
+imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-capacitacion.png"
 imageDescription: " "
 imageBannerDescription: ""
 qya: [

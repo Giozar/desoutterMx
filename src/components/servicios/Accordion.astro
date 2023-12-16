@@ -11,16 +11,16 @@ const { qya } = Astro.props;
 
 <article class="mx-auto w-full max-w-7xl">
   <header class="flex justify-center">
-    <h3 class="font-bold text-5xl dark:text-white">Preguntas frecuentes</h3>
+    <h3 class="font-bold text-4xl max-[768px]:text-xl max-[640px]:text-base dark:text-white">Preguntas frecuentes</h3>
   </header>
   {
     qya && (
       <>
-        <section class="grid grid-cols-2 mx-auto max-w-7xl px-8 py-12">
+        <section class="grid grid-cols-2 max-[640px]:grid-cols-1 mx-auto max-w-7xl px-8 py-12">
           {qya.map((questionAsnwer: questionAsnwer) => (
             <div>
-              <header class="grid grid-cols-9 justify-items-center items-center max-sm:grid-cols-7">
-                <Icon pack="mdi" name="faq" class="w-10 text-red-500" />
+              <header class="grid grid-cols-9 justify-items-center items-center max-sm:grid-cols-7 gap-4">
+                <Icon pack="mdi" name="faq" class="w-10 text-red-500 self-start" />
                 <h2 class="grid col-span-8 max-sm:col-span-6 w-full max-md:text-base max-sm:text-sm p-1 font-medium text-left text-gray-800 focus:ring-4 dark:border-gray-700 dark:text-blue-400">
                   <p>{questionAsnwer.q}</p>
                 </h2>
