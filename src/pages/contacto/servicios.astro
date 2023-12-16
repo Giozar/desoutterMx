@@ -1,0 +1,41 @@
+---
+import ServiceQuestionForms from "@components/contacto/servicesForm/ServiceQuestionForms.astro";
+import LeftSidebar from "@components/contacto/LeftSidebar.astro";
+import RightSidebar from "@components/contacto/RightSidebar.astro";
+import SocialContact from "@components/contacto/SocialContact.astro";
+import BaseReCaptcha from "@layouts/BaseReCaptcha.astro";
+
+const frontmatter = {
+  title: "Desoutter Tools México | Contacto",
+  description: "Contacta con Desoutter Tools México para soluciones industriales y herramientas de ensamblaje. Encuentra información de contacto y soporte técnico para tus necesidades de fabricación.",
+  keywords: ["Desoutter Tools México", "Contacto", "Herramientas de Ensamblaje", "Soluciones Industriales", "Soporte Técnico", "Fabricación"],
+  authorName: "Desumex",
+  language: "es",
+  canonicalUrl: Astro.url.href,
+  facebookTitle: "Contacto con Desoutter Tools México",
+  facebookDescription: "Obtén soporte y contacto directo con Desoutter Tools México para tus necesidades de herramientas de ensamblaje e industria. Soluciones eficientes para tu proceso de fabricación.",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: Astro.url.href,
+  twitterTitle: "Contacto con Desoutter Tools México",
+  twitterDescription: "Encuentra información de contacto y soporte técnico de Desoutter Tools México. Herramientas de ensamblaje y soluciones industriales para una fabricación eficiente.",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
+};
+---
+
+<BaseReCaptcha frontmatter={frontmatter}>
+    <section class="w-full">
+        <article class="contacto-container w-full grid grid-cols-1 justify-items-center gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+            <LeftSidebar />
+            <section class="w-full px-5 col-start-1 col-end-3 lg:col-span-2 lg:col-start-2">
+                <div>
+                    <header class="flex justify-center">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-600 my-5">SOLICITE O REALICE UNA PREGUNTA SOBRE EL SERVICIO</h3>
+                    </header>
+                    <ServiceQuestionForms />
+                </div>
+                <SocialContact />
+            </section>
+            <RightSidebar />
+        </article>
+    </section>
+  </BaseReCaptcha>
