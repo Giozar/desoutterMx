@@ -2,7 +2,6 @@
 import Base from "../layouts/Base.astro";
 import CarouselContainer from "../components/principal/CarouselContainer.astro";
 import IndustriesSectorsList from "../components/principal/IndustriesSectorsList.astro";
-import Services from "../components/servicios/Services.astro";
 import CTA1 from "../components/CTA1.astro";
 
 const frontmatter = {
@@ -33,12 +32,6 @@ const frontmatter = {
     </article>
   </section>
 
-  <section class="flex justify-center my-7 mx-4">
-    <article class="w-full sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
-      <IndustriesSectorsList />
-    </article>
-  </section>
-
   <section class="flex justify-center my-7 mx-4 ">
     <article class="w-full sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
       <CTA1 title="La industria y servicios que necesitas" subtitle="Todo lo que buscas en Desumex" 
@@ -52,9 +45,11 @@ const frontmatter = {
 
   <section class="flex justify-center my-7 mx-4">
     <article class="w-full sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
-      <Services />
+      <IndustriesSectorsList />
     </article>
   </section>
+
+  
 
   <section class="flex justify-center my-7 mx-4 ">
     <article class="w-full sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
