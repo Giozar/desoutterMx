@@ -4,8 +4,8 @@ previewDescription: "Calibra con precisión tus herramientas y cumple normativas
               nuestro servicio certificado garantiza los niveles exactos de torque según cada herramienta manual, eléctrica o neumática.
               Mejora eficiencia, seguridad y productividad."
 description: [
-                "Se realiza al comparar el valor que la herramienta mide con un valor de referencia establecido por un patrón de medida.", 
-                "Este procedimiento se lleva a cabo utilizando métodos que garantizan la trazabilidad metrológica, es decir, conectando la herramienta de medición con un patrón reconocido oficialmente según las normas internacionales.",
+                "En Desoutter México, nuestro servicio de calibración de torque cuenta con la prestigiosa acreditación otorgada por la Entidad Mexicana de Acreditación, EMA.", 
+                "Este reconocimiento respalda la excelencia y precisión de nuestro proceso de calibración, asegurando que tus herramientas de torque cumplan con los más altos estándares de calidad.",
             ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-torque.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-calibracion-torque.png"

@@ -11,7 +11,7 @@ imageDescription: " "
 imageBannerDescription: ""
 qya: [
     {
-        q: "¿Cuáles son las principales ventajas de utilizar software inteligente y redes digitales en el servicio técnico de herramientas industriales?",
+        q: "¿Cuáles son las principales ventajas de utilizar software inteligente y redes digitales en el servicio técnico de herramientas industriales",
         a: "El uso de software inteligente y redes digitales en el servicio técnico permite un monitoreo en tiempo real, diagnósticos precisos y la posibilidad de realizar ajustes y actualizaciones de forma remota, mejorando la eficiencia y reduciendo el tiempo de inactividad.",
     },
     {
@@ -22,9 +22,9 @@ qya: [
         q: "¿Qué tecnologías empleamos en la prestación de nuestros servicios?",
         a: "Empleamos tecnologías de última generación que aseguran eficiencia y precisión. Utilizamos equipos especializados respaldados por avances tecnológicos para garantizar un servicio técnico de alta calidad y resultados óptimos para nuestros clientes.",
     },
-     {
-        q: "¿Qué tecnologías empleamos en la prestación de nuestros servicios?",
-        a: "Empleamos tecnologías de última generación que aseguran eficiencia y precisión. Utilizamos equipos especializados respaldados por avances tecnológicos para garantizar un servicio técnico de alta calidad y resultados óptimos para nuestros clientes.",
+    {
+        q: "¿Por qué es importante contar con un proveedor de servicios técnicos?",
+        a: "La importancia de contar con un proveedor de servicios técnicos radica en varios aspectos fundamentales para las empresas. Estos proveedores no solo brindan soporte posventa y mantenimiento, sino que también juegan un papel crucial en la optimización y el mejoramiento del rendimiento de los servicios tecnológicos que ofrecen las empresas.",
     },
 ]
 ---
