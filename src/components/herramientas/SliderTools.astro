@@ -52,7 +52,7 @@ interface Category {
         categories.map((category:Category) => (
             <div class="swiper-slide">
                 <a href={`herramientas/${category.id}/${category.pathName}` } class="grid justify-items-center">
-                    <figure class="max-w-[350px] max-h-[350px]" >
+                    <figure class="max-w-[350px] max-h-[350px] border" >
                         <img src={category.image}
                         class="w-full h-full"
                         />
@@ -83,17 +83,12 @@ interface Category {
   function init() {
     new Swiper(".mySwiperTools", {
         slidesPerView: 3,
-        spaceBetween: 5,
+        spaceBetween: 0,
         loop: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
-        },
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",

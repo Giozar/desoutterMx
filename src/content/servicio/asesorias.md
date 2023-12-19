@@ -6,7 +6,7 @@ description: [
     "Con años de experiencia en el campo industrial, te brindamos una perspectiva informada y estratégica que te ayudará a superar los desafíos y alcanzar tus metas empresariales.",
 ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/asesorias.jpg"
-imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/asesorias.png"
+imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-asesorias.png"
 imageDescription: " "
 imageBannerDescription: ""
 qya: [
