@@ -39,20 +39,20 @@ interface Category {
 ---
 
 <div
-  style="--swiper-navigation-color: #000000; --swiper-pagination-color: #fff"
+  style="--swiper-navigation-color: #E40520; --swiper-pagination-color: #fff"
   class="swiper mySwiperTools w-full relative pt-14 pb-14"
 >
-    <header>
+    <header class="my-5">
         <h2 class="text-2xl font-semibold flex justify-center">
             Herramientas
         </h2>
   </header>
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper pb-10">
     {
         categories.map((category:Category) => (
             <div class="swiper-slide">
                 <a href={`herramientas/${category.id}/${category.pathName}` } class="grid justify-items-center">
-                    <figure class="max-w-[350px] max-h-[350px] border" >
+                    <figure class="max-w-[250px] max-h-[250px] border" >
                         <img src={category.image}
                         class="w-full h-full"
                         />
