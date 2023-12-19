@@ -1,0 +1,108 @@
+---
+import Icon from "astro-icon";
+import "swiper/css/bundle";
+
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
+
+async function getCategories() {
+  try {
+  const response = await fetch(`${desoutterAPI}/herramientas`);
+
+  if (!response.ok) {
+    // Si la respuesta no es exitosa, lanzar un error con el status
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  
+  return await response.json();
+  
+  // console.log(categories);
+  } catch (error) {
+    // Manejar cualquier error que ocurra durante la solicitud o al analizar la respuesta JSON
+    // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
+    console.error('Error en la solicitud:', (error as Error).message);
+  }
+}
+
+const categories = await getCategories().catch((error)=>{
+  console.log('No hay categoria en esta sección');
+  console.error(error);
+})
+
+// console.log(categories);
+
+interface Category {
+    id: string,
+    name: string,
+    pathName: string,
+    image: string
+}
+---
+
+<div
+  style="--swiper-navigation-color: #000000; --swiper-pagination-color: #fff"
+  class="swiper mySwiperTools w-full relative pt-14 pb-14"
+>
+    <header>
+        <h2 class="text-2xl font-semibold flex justify-center">
+            Herramientas
+        </h2>
+  </header>
+  <div class="swiper-wrapper">
+    {
+        categories.map((category:Category) => (
+            <div class="swiper-slide">
+                <a href={`herramientas/${category.id}/${category.pathName}` } class="grid justify-items-center">
+                    <figure class="max-w-[350px] max-h-[350px]" >
+                        <img src={category.image}
+                        class="w-full h-full"
+                        />
+                    </figure>
+                    <header>
+                        <h3 class="text-center font-bold text-gray-700 max-[400px]:text-[10px]">
+                            {category.name}
+                        </h3>
+                    </header>
+                </a>
+            </div>
+        ))
+    }
+  </div>
+  <Icon pack="mdi" name="arrow-right" class="swiper-button-next" />
+  <Icon pack="mdi" name="arrow-left" class="swiper-button-prev" />
+  <!-- <div class="swiper-pagination"></div> -->
+</div>
+
+<!-- Swiper JS -->
+<script>
+  // @ts-ignore
+  import Swiper from "swiper/bundle";
+
+  // import Swiper styles
+  import "swiper/css/bundle";
+
+  function init() {
+    new Swiper(".mySwiperTools", {
+        slidesPerView: 3,
+        spaceBetween: 5,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+      mousewheel: true,
+      keyboard: true,
+    });
+  }
+  init();
+  document.addEventListener('astro:page-load', init);
+</script>

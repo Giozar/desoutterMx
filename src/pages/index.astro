@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import CarouselContainer from "../components/principal/CarouselContainer.astro";
 import IndustriesSectorsList from "../components/principal/IndustriesSectorsList.astro";
 import CTA1 from "../components/CTA1.astro";
+import SliderTools from "@components/herramientas/SliderTools.astro"
 
 const frontmatter = {
   title: "Desoutter Tools México | Herramientas Industriales",
@@ -29,6 +30,12 @@ const frontmatter = {
   <section class="flex justify-center my-7 mx-4">
     <article class="w-full h-auto sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
       <CarouselContainer />
+    </article>
+  </section>
+
+  <section class="flex justify-center my-7 mx-4">
+    <article class="w-full h-auto sm:w-[690px] md:w-[720px] lg:w-[940px] xl:w-[1142px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.3)] bg-white dark:bg-gray-800">
+      <SliderTools />
     </article>
   </section>
 
