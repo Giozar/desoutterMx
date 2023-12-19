@@ -10,31 +10,31 @@ const { title, description, image, imageDescription } = Astro.props
 ---
 
 <section
-  class='relative mx-auto w-full max-w-[1140px] min-w-[280px] dark:bg-slate-800 max-[705px]:my-5 my-10'
+  class='relative mx-auto w-full max-w-[1140px] min-w-[280px] dark:bg-slate-800 max-[705px]:my-5 my-10
+  lg:h-[400px] max-[1024px]:h-[300px] max-[900px]:max-h-[250px] max-[640px]:min-h-[150px]
+  '
 >
-  <article class='h-full'>
+  <article>
     
     <section
       class='top-0 z-20 flex w-full justify-center items-center bg-white bg-opacity-10'
     >
       <div class='flex justify-center items-center'>
-        <header class="absolute space-y-8 left-5 top-1 max-w-[480px] max-[400px]:max-w-[148px]">
-          <h2 class='border-b flex justify-center border-red-500 text-red-500 max-[400px]:text-xs lg:text-lg xl:text-3xl font-bold leading-tight'>
+        <header class="absolute space-y-1 left-5 top-1 max-w-[480px] max-[400px]:max-w-[148px]">
+          <h2 class='border-b flex justify-center border-red-500 text-red-500 max-[400px]:text-xs max-[450px]:max-w-[150px] max-[300px]:max-w-[100px] max-[300px]:text-xs lg:text-lg xl:text-3xl font-bold leading-tight'>
               {title}
           </h2>
-          <p class="flex justify-center text-xl font-semibold text-gray-800 dark:text-white max-[400px]:text-[10px] max-[400px]:max-w-[120px]">prepárate para mejorar en tu industria</p>
+          <p class="flex justify-center pb-5 font-semibold text-gray-800 dark:text-white  text-2xl max-[950px]:text-lg max-[740px]:text-sm max-[400px]:text-[10px] max-[585px]:max-w-[200px] max-[450px]:max-w-[150px] max-[300px]:max-w-[100px] max-[300px]:text-xs">prepárate para mejorar en tu industria</p>
           
-          <div class="text-lg font-medium text-gray-700 dark:text-white max-[600px]:hidden">
+          <div class="min-[1024px]:text-lg max-[1024px]:text-sm max-[900px]:text-xs max-[1024px]:max-w-[400px] max-[940px]:max-w-[360px] max-[785px]:max-w-[300px] max-[700px]:max-w-[280px] max-[650px]:max-w-[250px] font-medium text-gray-700 dark:text-white max-[650px]:hidden">
             {description?.map((p)=>(
               <p>{p}</p><br />
             ))}
-
-            <div class="flex justify-center">
-              <a href={import.meta.env.BASE_URL + "contacto/servicios"} class="px-2 py-2 bg-red-500 hover:bg-red-400 text-white text-base max-[600px]:text-xs font-bold">
-                ¡Sólicitalo ya!
-              </a>
-            </div>
-
+          </div>
+          <div class="flex justify-center">
+            <a href={import.meta.env.BASE_URL + "contacto/servicios"} class="px-2 py-2 bg-red-500 hover:bg-red-400 text-white text-base max-[600px]:text-xs font-bold">
+              ¡Sólicitalo ya!
+            </a>
           </div>
         </header>
         
