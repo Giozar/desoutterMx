@@ -6,8 +6,8 @@ description: [
 ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/capacitacion.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-capacitacion.png"
-imageDescription: " "
-imageBannerDescription: ""
+imageDescription: "Instructora profesional de Desoutter Tools experta en herramientas industrial realizando capacitación a un ingeniero en instalaciones de una empresa"
+imageBannerDescription: "Capacitador profesional de herramientas industriales, en fabrica industrial capacitando a empleado de una empresa"
 qya: [
     {
         q: "¿Por qué es importante la capacitación en el uso de herramientas industriales, especialmente en entornos automatizados?",

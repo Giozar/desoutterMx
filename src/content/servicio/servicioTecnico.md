@@ -7,8 +7,8 @@ description: [
 ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/servicio-tecnico.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-servicio-tecnico.png"
-imageDescription: " "
-imageBannerDescription: ""
+imageDescription: "Tecnico industrial en mantenimiento, en una fabrica automotriz"
+imageBannerDescription: "Tecnico profesional en reparación de equipos electronicos"
 qya: [
     {
         q: "¿Cuáles son las principales ventajas de utilizar software inteligente y redes digitales en el servicio técnico de herramientas industriales",

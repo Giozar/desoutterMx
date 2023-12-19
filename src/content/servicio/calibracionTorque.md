@@ -9,8 +9,8 @@ description: [
             ]
 image: "https://s3.amazonaws.com/desumex.com.mx/servicios/calibracion-torque.jpg"
 imageBanner: "https://s3.amazonaws.com/desumex.com.mx/servicios/banners/banner-calibracion-torque.png"
-imageDescription: ""
-imageBannerDescription: "Esta es una descipcion de imagen"
+imageDescription: "Ingeniero trabajando en calibración de torquimetro, con un sistema de calibración profesional"
+imageBannerDescription: "Ingeniero experto en calibración de torque trabajando en laboratorio de par torsional"
 qya: [
     {
         q: "¿Por qué es importante la calibración de torque en la industria general?",
