@@ -1,0 +1,123 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "astro-icon";
+
+const frontmatter = {
+  title: "Desoutter Tools México | Herramientas Industriales",
+  description: "Desoutter Tools México: Herramientas Industriales y Soluciones de Ensamblaje Avanzadas. Una amplia gama de herramientas de ensamblaje de alta calidad y soluciones industriales. Desde herramientas eléctricas de precisión, neumáticas para la industria automotriz, aeronáutica y servicios especializados.",
+  keywords: [
+    "Desoutter Tools México", "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
+    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
+  ],
+  authorName: "Desumex",
+  language: "es",
+  canonicalUrl: Astro.url.href,
+  facebookTitle: "Desoutter Tools México",
+  facebookDescription: "Desoutter Tools México: Su Socio en Herramientas Industriales y Soluciones de Ensamblaje Avanzadas. Descubra nuestra amplia gama de herramientas de ensamblaje de alta calidad y soluciones industriales líderes en el mercado en Desoutter Tools México. Desde herramientas eléctricas de precisión hasta software de vanguardia y servicios especializados, estamos comprometidos a optimizar la eficiencia y la productividad en su proceso de fabricación. Explore nuestras soluciones innovadoras y confíe en nuestra experiencia para llevar su producción al siguiente nivel. ¡Bienvenido a la excelencia en ensamblaje con Desoutter Tools México",
+  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookURL: Astro.url.href,
+  twitterTitle: "Título para Compartir en Twitter",
+  twitterDescription: "Descripción para Compartir en Twitter",
+  twitterImage: "URL_de_la_Imagen_para_Twitter"
+}
+
+---
+
+<Base frontmatter={frontmatter}>
+  <div class="flex justify-center items-center h-full">
+    <section class="my-10 grid grid-cols-3 max-[860px]:grid-cols-1 max-w-[1142px]">
+      <article class="px-4 max-[860px]:max-w-[662px] self-center">
+        <header class="mt-2 mb-20">
+          <h2 class="text-2xl font-bold dark:text-blue-300">
+            Herramientas De Ensamble
+          </h2>
+        </header>
+  
+        <section class="mt-4 grid justify-items-center max-[860px]:mb-10">
+          <div class="text-base space-y-5 font-medium text-gray-600 dark:text-white">
+            <p>
+              Con Desoutter México, no solo obtienes herramientas, sino una solución integral para tus desafíos de ensamble.
+            </p>
+            <p>
+              Cada producto está diseñado para ofrecer máxima productividad, garantizando la perfección en cada trabajo.
+            </p>
+  
+            <p>
+              Nuestras herramientas de ensamble diseñadas para optimizar sus operaciones de fabricación. 
+            </p>
+
+            <p>
+              Ofrecemos soluciones a medida para las necesidades de su línea de producción.
+            </p>
+          </div>
+  
+           <div class="mt-20">
+            <a href="/herramientas" class="mt-2 px-4 py-2 text-white text-sm font-medium bg-[#023D75] hover:bg-[#003464]">Buscar Herramientas</a>
+           </div>
+  
+        </section>
+  
+      </article>
+  
+      <article class="px-4 grid grid-cols-2 gap-4 col-span-2">
+
+        <section class="grid justify-items-center">
+          <header>
+            <Icon pack="ep" name="tools" class="w-20 dark:text-red-100" />
+          </header>
+          <div class="text-center space-y-4 dark:text-gray-300">
+            <p class="text-lg font-medium">
+              ¿Cuál es la importancia de contar con herramientas de ensamble de calidad?
+            </p>
+            <p class="text-sm font-normal">La importancia de contar con herramientas de ensamble de calidad radica en que permite mejorar los procesos de producción y aumentar la productividad al planificar y producir. Además, reduce los costos y el desperdicio de materiales de producción, y garantiza la fabricación de productos confiables y de calidad.</p>
+          </div>
+        </section>
+
+        <section class="grid justify-items-center">
+          <header>
+            <Icon pack="icon-park-outline" name="robot-two" class="w-20 dark:text-red-100" />
+          </header>
+          <div class="text-center space-y-4 dark:text-gray-300">
+            <p class="text-lg font-medium">
+              ¿Qué tecnologías de la industria 4.0 se están utilizando en las herramientas Desoutter?
+            </p>
+            <p class="text-sm font-normal">
+              Desoutter México cuenta con tecnologías avanzadas para herramientas industriales, incluyendo herramientas eléctricas y neumáticas para las industrias  Estamos comprometidos a convertir la Industria 4.0 en productos y servicios que brinden el máximo beneficio a nuestros clientes y socios, lo que implica el uso de tecnologías de vanguardia.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid justify-items-center">
+          <header>
+            <Icon pack="mdi" name="computer" class="w-20 dark:text-red-100" />
+          </header>
+          <div class="text-center space-y-4 dark:text-gray-300">
+            <p class="text-lg font-medium">
+              ¿Qué es la industria 4.0 y cómo se relaciona con las herramientas desoutter? 
+            </p>
+            <p class="text-sm font-normal">
+              La Industria 4.0 se refiere a la cuarta revolución industrial, que implica la digitalización de los entornos de fabricación y el uso de tecnologías avanzadas. Desoutter se relaciona con la Industria 4.0 ofrecer soluciones adaptadas e innovadoras para mejorar los procesos de producción, y proporcionando herramientas y servicios que faciliten la implementación de esta revolución industrial.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid justify-items-center">
+          <header>
+            <Icon pack="ic" name="baseline-auto-graph" class="w-20 dark:text-red-100" />
+          </header>
+          <div class="text-center space-y-4 dark:text-gray-300">
+            <p class="text-lg font-medium">
+              ¿Cuáles son los beneficios de la industria 4.0 para las herramientas desoutter?
+            </p>
+            <p class="text-sm font-normal">
+              La Industria 4.0 ofrece varios beneficios para las herramientas Desoutter, incluyendo la posibilidad de acceder instantáneamente a los datos de rendimiento de las herramientas, la implementación de tecnologías avanzadas para mejorar los procesos de producción, y el uso de soluciones adaptadas e innovadoras para alcanzar objetivos específicos.
+            </p>
+          </div>
+        </section>
+
+  
+      </article>
+  
+    </section>
+  </div>
+</Base>
