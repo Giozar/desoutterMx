@@ -51,7 +51,9 @@ interface Category {
     {
         categories.map((category:Category) => (
             <div class="swiper-slide">
-                <a href={`herramientas/${category.id}/${category.pathName}` } class="grid justify-items-center">
+                <a href={`herramientas/${category.id}/${category.pathName}` }
+                title={category.name} 
+                class="grid justify-items-center">
                     <figure class="max-w-[250px] max-h-[250px] border" >
                         <img src={category.image}
                         title={"Herramienta para" + category.name}

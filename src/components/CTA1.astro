@@ -15,6 +15,7 @@ const {title, subtitle, btn1, btn2, href1, href2} = Astro.props;
       <div class="inline-flex shadow">
         <a
           href={"/" + href1}
+          title={btn1}
           class="inline-flex items-center justify-center border border-transparent bg-red-600 px-5 py-3 text-base font-medium text-white hover:bg-red-400">
           {btn1}
         </a>
@@ -22,6 +23,7 @@ const {title, subtitle, btn1, btn2, href1, href2} = Astro.props;
       <div class="ml-4 inline-flex shadow lg:ml-3">
         <a
           href={"/" + href2}
+          title={btn2}
           class="inline-flex items-center justify-center border border-transparent bg-white px-5 py-3 text-base font-medium text-red-600 hover:bg-red-100">
           {btn2}
         </a>
