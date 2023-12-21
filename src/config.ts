@@ -27,18 +27,18 @@ export type Sidebar = Record<string, { text: string; link: string }[]>
 
 export const SIDEBAR: Sidebar = {
   'Menu de contacto': [
-    { text: 'Enviar mensaje', link: import.meta.env.BASE_URL + 'contacto#contactForm' },
-    { text: 'Nuestra ubicación', link: import.meta.env.BASE_URL + 'contacto#map' },
-    { text: 'Redes de contacto', link: import.meta.env.BASE_URL + 'contacto#socialContact' }
+    { text: 'Enviar mensaje', link: '/contacto#contactForm' },
+    { text: 'Nuestra ubicación', link: '/contacto#map' },
+    { text: 'Redes de contacto', link: '/contacto#socialContact' }
   ], 
   'Cotizar herramienta' : [
-    {text: "Realizar una cotización", link: import.meta.env.BASE_URL + 'contacto/cotizar'}
+    {text: "Realizar una cotización", link: '/contacto/cotizar'}
   ],
   "Demostración de herramienta" : [
-    {text: "Solicitar desmotración", link: import.meta.env.BASE_URL + 'contacto/demo'}
+    {text: "Solicitar desmotración", link: '/contacto/demo'}
   ],
   "Solicitud de servicios" : [
-    {text: "Solicitar servicio", link: import.meta.env.BASE_URL + 'contacto/servicios'}
+    {text: "Solicitar servicio", link: '/contacto/servicios'}
   ]
 }
 

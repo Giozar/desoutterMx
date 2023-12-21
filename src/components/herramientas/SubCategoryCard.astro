@@ -10,7 +10,7 @@ const {categoryId, categoryName} = Astro.params;
         <img src={subcategory.image} alt={subcategory.name} class="w-52 h-52">
       </picture>
     </div>
-    <a href=`${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryName}/${subcategory.id}/${subcategory.pathName}` title={subcategory.pathName}>
+    <a href=`/herramientas/${categoryId}/${categoryName}/${subcategory.id}/${subcategory.pathName}` title={subcategory.pathName}>
       <figcaption
         class="absolute top-0 z-20 grid h-full w-full translate-y-48 gap-y-2 border-t border-red-600 bg-white bg-opacity-90 transition-transform duration-300 group-hover:-translate-y-0 group-hover:opacity-100"
       >

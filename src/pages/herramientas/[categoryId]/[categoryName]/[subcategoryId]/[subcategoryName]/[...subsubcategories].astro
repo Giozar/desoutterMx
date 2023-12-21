@@ -22,7 +22,7 @@ const frontmatter = {
   twitterDescription: "Descripción para Compartir en Twitter",
   twitterImage: "URL_de_la_Imagen_para_Twitter"
 }
-const path = `${import.meta.env.BASE_URL}herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`;
+const path = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`;
 // Función para realizar la petición fetch por subsubcategoría
 async function getSubsubcategories(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined) {
   try {
