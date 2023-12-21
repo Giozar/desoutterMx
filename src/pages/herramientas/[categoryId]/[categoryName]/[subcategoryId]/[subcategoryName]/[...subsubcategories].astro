@@ -5,22 +5,43 @@ import NavigationTools from "@components/herramientas/NavigationTools.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const {categoryId, categoryName, subcategoryId,subcategoryName} = Astro.params;
 
+const descriptionsCategories = [
+  "Descubre nuestras herramientas " + subcategoryName + " para la solución de montaje, ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
+  "Utiliza "+ subcategoryName + "para soluciones avanzadas para instalaciones solares, automotrices y baja tensión. Simplifica tus proyectos con nuestro sistema de montaje eléctrico.",
+  "Desata tu potencial usando "+ subcategoryName + " con nuestros desatornilladores eléctricos. Recargables, precisos, inalámbricos y con luz. La herramienta ideal para cualquier tarea.",
+  "Potencia y precisión en cada sujeción con " + subcategoryName + ". Descubre nuestras herramientas neumáticas para talleres mecánicos, automotrices y montaje industrial. ¡Optimiza tu trabajo!",
+  "Control total en aplicaciones automotrices con "+ subcategoryName+". Nuestro sistema de medición de torques te brinda precisión a distancia para llantas, amortiguadores y más. ¡Optimiza el rendimiento!",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+const descriptionPageTools = descriptionsCategories[Number(categoryId)];
 // console.log(subcategoryId, subcategoryName);
 
 const frontmatter = {
-  title: subcategoryName,
-  description: "Descripción de la Página",
-  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  title: "Desoutter Tools México | " + subcategoryName,
+  description: descriptionPageTools,
+  keywords: [
+  "Desoutter Tools México", categoryName, "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
+    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
+  ],
   authorName: "Desumex",
   language: "es",
   canonicalUrl: Astro.url.href,
-  facebookTitle: "Título para Compartir en Facebook",
-  facebookDescription: "Descripción para Compartir en Facebook",
-  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookTitle: "Desoutter Tools México" + subcategoryName,
+  facebookDescription: descriptionPageTools,
+  facebookImage: `https://s3.amazonaws.com/desumex.com.mx/subcategorias/${subcategoryName}.jpg`,
   facebookURL: Astro.url.href,
-  twitterTitle: "Título para Compartir en Twitter",
-  twitterDescription: "Descripción para Compartir en Twitter",
-  twitterImage: "URL_de_la_Imagen_para_Twitter"
+  twitterTitle: "Desoutter Tools México" + subcategoryName,
+  twitterDescription: descriptionPageTools,
+  twitterImage: `https://s3.amazonaws.com/desumex.com.mx/subcategorias/${subcategoryName}.jpg`
 }
 const path = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`;
 // Función para realizar la petición fetch por subsubcategoría

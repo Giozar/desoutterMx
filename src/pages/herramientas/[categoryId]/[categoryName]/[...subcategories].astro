@@ -6,21 +6,43 @@ import NavigationTools from "@components/herramientas/NavigationTools.astro";
 import NotFoundTools from "@components/herramientas/NotFoundTools.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const { categoryId, categoryName } = Astro.params;
+const descriptionsCategories = [
+  "Descubre nuestras herramientas de montaje, ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
+  "Soluciones avanzadas para instalaciones solares, automotrices y baja tensión. Simplifica tus proyectos con nuestro sistema de montaje eléctrico.",
+  "Desata tu potencial con nuestros desatornilladores eléctricos. Recargables, precisos, inalámbricos y con luz. La herramienta ideal para cualquier tarea.",
+  "Potencia y precisión en cada sujeción. Descubre nuestras herramientas neumáticas para talleres mecánicos, automotrices y montaje industrial. ¡Optimiza tu trabajo!",
+  "Control total en aplicaciones automotrices. Nuestro sistema de medición de torques te brinda precisión a distancia para llantas, amortiguadores y más. ¡Optimiza el rendimiento!",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+const descriptionPageTools = descriptionsCategories[Number(categoryId)];
+// console.log(descriptionPageTools);
 // console.log(categoryId, categoryName);
 const frontmatter = {
-  title: categoryName + "| Desoutter Tools México",
-  description: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
-  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  title: "Desoutter Tools México | " + categoryName,
+  description: descriptionPageTools,
+  keywords: [
+  "Desoutter Tools México", categoryName, "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
+    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
+  ],
   authorName: "Desumex",
   language: "es",
   canonicalUrl: Astro.url.href,
-  facebookTitle: categoryName + "| Desoutter Tools México",
+  facebookTitle: "Desoutter Tools México | " + categoryName  ,
   facebookDescription: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
-  facebookImage: "URL_de_la_Imagen_para_Facebook",
+  facebookImage: `https://s3.amazonaws.com/desumex.com.mx/categorias/${categoryName}.jpg`,
   facebookURL: Astro.url.href,
-  twitterTitle: categoryName + "| Desoutter Tools México",
+  twitterTitle: "Desoutter Tools México | " + categoryName,
   twitterDescription: "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación",
-  twitterImage: "URL_de_la_Imagen_para_Twitter"
+  twitterImage: `https://s3.amazonaws.com/desumex.com.mx/categorias/${categoryName}.jpg`
 }
 
 // Función para realizar la petición fetch por subcategoría

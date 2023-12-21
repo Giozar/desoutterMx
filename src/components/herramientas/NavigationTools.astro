@@ -4,36 +4,47 @@ const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryI
 <nav class="mx-10 my-5">
     <div class="max-[500px]:text-sm text-lg text-slate-500 dark:text-white flex">
       <span>
-        <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
-        href={`/`}>Inicio</a>
+        <a 
+          href={`/`}
+          title="Desoutter Tools México Inicio"
+          class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
+        >Inicio
+        </a>
         
         {(categoryName === undefined) ? <span> / Herramientas </span> 
         :
         <span> / 
           <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
+            title={"herramientas industriales"}
           href={`/herramientas`}>Herramientas </a>
 
           {(subcategoryName === undefined) ? <span>/ {categoryName}</span> :
           <span> /
             <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
+              title={"herramientas industriales"}
             href={`/herramientas/${categoryId}/${categoryName}`}> {categoryName} </a>
 
             {(subsubcategoryName === undefined) ? <span> {(productName === undefined) ? <span> / {subcategoryName} </span>  : <span> / <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
+                title={"herramientas industriales"}
               href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`}> {subcategoryName} </a> / {productName}</span>} </span>
             : <span> /
               
               <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
+                title={"herramientas industriales"}
               href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`}> {subcategoryName} </a>
 
                 {(subsubsubcategoryName === undefined) ? <span> {(productName === undefined) ? <span> / {subsubcategoryName} </span>  : <span> / <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
-              href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`}> {subsubcategoryName} </a> / {productName}</span>}  </span> 
+                  title={"herramientas industriales"}
+                  href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`}> {subsubcategoryName} </a> / {productName}</span>}  </span> 
                 : <span> /
 
                   <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
-                    href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`}> {subsubcategoryName} </a>
+                    title={"herramientas industriales"}  
+                  href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`}> {subsubcategoryName} </a>
 
                     {(productName === undefined) ? <span> / {subsubsubcategoryName} </span>  : <span> / <a class="border-b text-red-500 border-red-500 hover:text-gray-600 hover:border-gray-600 dark:hover:text-red-300 dark:hover:border-red-300" 
-                    href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`}> {subsubsubcategoryName} </a> / {productName}</span>}
+                      title={"herramientas industriales"}
+                      href={`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`}> {subsubsubcategoryName} </a> / {productName}</span>}
                   </span>}
               </span>
             }
