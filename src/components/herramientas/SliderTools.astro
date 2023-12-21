@@ -54,6 +54,8 @@ interface Category {
                 <a href={`herramientas/${category.id}/${category.pathName}` } class="grid justify-items-center">
                     <figure class="max-w-[250px] max-h-[250px] border" >
                         <img src={category.image}
+                        title={"Herramienta para" + category.name}
+                        alt={"silueta de herramienta industrial " + category.name}
                         class="w-full h-full"
                         />
                     </figure>

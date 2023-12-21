@@ -6,14 +6,15 @@ import CarouselContent from "./CarouselContent.astro";
 export interface Props {
   pages: {
     name: string;
-    image: string;
+    image?: string;
     title?: string;
     description?: string;
+    imageTitle?: string;
+    imageDescription?: string;
   }[];
 }
 
 const { pages } = Astro.props;
-
 ---
 
 <div
@@ -30,7 +31,8 @@ const { pages } = Astro.props;
           <figure class="right-0 top-0 z-0 m-0 md:absolute h-[150] w-[250] sm:h-full sm:w-full">
             <img
               src={page.image}
-              alt={page.name}
+              title={page.imageTitle}
+              alt={page.imageDescription}
               class="h-full w-full object-cover"
             />
           </figure>
