@@ -2,7 +2,7 @@
 import NavigationTools from '@components/herramientas/NavigationTools.astro'
 import CategoriesList from '@components/herramientas/CategoriesList.astro';
 import Base from '@layouts/Base.astro'
-import ToolsCTA from '@components/herramientas/ToolsCTA.astro';
+import DescriptionToolsPage from '@components/herramientas/DescriptionToolsPage.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 
 async function getCategories() {
@@ -29,6 +29,8 @@ const categories = await getCategories().catch((error)=>{
   console.error(error);
 })
 
+const descriptionPageTools = "Descubra el completo rango de herramientas industriales y soluciones personalizadas de Desoutter: herramientas de batería para ensamblaje, atornilladores eléctricos y herramientas neumáticas para fijación y mucho más.";
+
 const frontmatter = {
   title: "Herramientas Industriales | Desoutter Tools México",
   description: "Descubre nuestra amplia gama de herramientas industriales en Desoutter Tools México. Ofrecemos herramientas de ensamblaje de alta calidad para impulsar la eficiencia en tu proceso de fabricación.",
@@ -53,7 +55,7 @@ const frontmatter = {
 <Base frontmatter={frontmatter}>
   <header class='sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16'>
     <NavigationTools />
-    <ToolsCTA />
+    <DescriptionToolsPage description={descriptionPageTools} />
   </header>
   <main>
     <section class='px-10 sm:mx-5 sm:my-5 md:mx-10 md:my-10 lg:mx-20 lg:my-16'>

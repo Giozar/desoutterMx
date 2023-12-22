@@ -30,19 +30,38 @@ await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, subsu
    }) : {};
 
 
+   const descriptionsCategories = [
+  "Descubre nuestras herramientas de montaje "+product.name+", ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
+  "Desoutter Smart Hub: "+product.name+" Plataforma industrial conectada para herramientas inteligentes. Monitoreo en tiempo real, mantenimiento predictivo y eficiencia energética. ¡Optimiza tu producción!",
+  "Soluciones avanzadas para instalaciones "+product.name+", automotrices y baja tensión. Simplifica tus proyectos con nuestro sistema de montaje eléctrico.",
+  "Desata tu potencial con nuestros desatornilladores eléctricos."+product.name+" Recargables, precisos, inalámbricos y con luz. La herramienta ideal para cualquier tarea.",
+  "Potencia y precisión en cada sujeción."+product.name+" Descubre nuestras herramientas neumáticas para talleres mecánicos, automotrices y montaje industrial. ¡Optimiza tu trabajo!",
+  "Control total en aplicaciones automotrices."+product.name+" Nuestro sistema de medición de torques te brinda precisión a distancia para llantas, amortiguadores y más. ¡Optimiza el rendimiento!",
+  "Procesos PivotWare de Desoutter Tools:"+product.name+" Soluciones avanzadas para control de procesos industriales 4.0. Monitoreo en tiempo real, automatización y calidad mejorada. ¡Optimiza tu producción con PivotWare!",
+  "Tiempo Real y Trazabilidad de Desoutter Tools:"+product.name+" Reportes instantáneos, trazabilidad avanzada y control de producción. ¡Optimiza tu eficiencia con nuestra plataforma de informes en tiempo real!",
+  "Descubre nuestras soluciones avanzadas para perforación manual y neumática."+product.name+" Perfectas para industrias automotrices e industriales, con sistemas hidráulicos de alta eficiencia.",
+  "Explora nuestras herramientas de roscado y equipos de remachado industrial."+product.name+" Tecnología de fijación de alta velocidad y resistencia para aplicaciones industriales exigentes.",
+  "Potentes herramientas neumáticas para lijado y amolado industrial."+product.name+" Equipos de alta potencia y precisión para la preparación de superficies en la industria.",
+  "Optimiza tu proceso con taladros y roscadoras automáticas obsoletas"+product.name+". Herramientas de perforación de última generación para soluciones precisas y eficientes.",
+  "Descubre nuestra gama de motores de aire industriales para aplicaciones en entornos industriales"+product.name+". Eficiencia y durabilidad en sistemas de propulsión neumática.",
+  "Explora nuestras herramientas diversas, desde trazadores de aire hasta martillos y trituradoras"+product.name+". Soluciones eficientes para una variedad de aplicaciones industriales.",
+  "Optimiza tus estaciones de trabajo con "+product.name+ " accesorios especializados como brazos de reacción telescópicos, balanceadores y dispensadores automáticos de tornillos. Mejora la eficiencia con nuestras soluciones.",
+]
+const descriptionPageTools = descriptionsCategories[Number(categoryId)-1];
+
 const frontmatter = {
   title: "Desoutter Tools México Herramientas " + product.pathName,
-  description: product.Descripción,
-  keywords: [product['name'], product['Descripción'], product['Tipo de herramienta']],
+  description: descriptionPageTools,
+  keywords: [product['name'], product['Descripción'], product['Tipo de herramienta'],"herramientas de montaje", "herramientas eléctricas", "herramientas neumáticas", "sistemas de montaje", "desatornilladores eléctricos", "soluciones de barrenado",],
   authorName: "Desumex",
   language: "es",
   canonicalUrl: Astro.url.href,
   facebookTitle: "Herramienta " + product.pathName + product['Tipo de herramienta'],
-  facebookDescription: product.Descripción,
+  facebookDescription: descriptionPageTools,
   facebookImage: product.image, 
   facebookURL: Astro.url.href,
   twitterTitle: "Herramienta " + product.pathName + product['Tipo de herramienta'],
-  twitterDescription: product.Descripción,
+  twitterDescription: descriptionPageTools,
   twitterImage: product.image, 
 }
 ---

@@ -4,35 +4,33 @@ import Base from "@layouts/Base.astro";
 import HeaderTools from '@components/herramientas/HeaderTools.astro'
 import NavigationTools from "@components/herramientas/NavigationTools.astro";
 import NotFoundTools from "@components/herramientas/NotFoundTools.astro";
+import DescriptionToolsPage from "@components/herramientas/DescriptionToolsPage.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
 const { categoryId, categoryName } = Astro.params;
 const descriptionsCategories = [
   "Descubre nuestras herramientas de montaje, ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
-  "Soluciones avanzadas para instalaciones solares, automotrices y baja tensión. Simplifica tus proyectos con nuestro sistema de montaje eléctrico.",
+  "Desoutter Smart Hub: Plataforma industrial conectada para herramientas inteligentes. Monitoreo en tiempo real, mantenimiento predictivo y eficiencia energética. ¡Optimiza tu producción!",
+  "Soluciones avanzadas para instalaciones eléctricas, automotrices y baja tensión. Simplifica tus proyectos con nuestro sistema de montaje eléctrico.",
   "Desata tu potencial con nuestros desatornilladores eléctricos. Recargables, precisos, inalámbricos y con luz. La herramienta ideal para cualquier tarea.",
   "Potencia y precisión en cada sujeción. Descubre nuestras herramientas neumáticas para talleres mecánicos, automotrices y montaje industrial. ¡Optimiza tu trabajo!",
   "Control total en aplicaciones automotrices. Nuestro sistema de medición de torques te brinda precisión a distancia para llantas, amortiguadores y más. ¡Optimiza el rendimiento!",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
+  "Procesos PivotWare de Desoutter Tools: Soluciones avanzadas para control de procesos industriales 4.0. Monitoreo en tiempo real, automatización y calidad mejorada. ¡Optimiza tu producción con PivotWare!",
+  "Tiempo Real y Trazabilidad de Desoutter Tools: Reportes instantáneos, trazabilidad avanzada y control de producción. ¡Optimiza tu eficiencia con nuestra plataforma de informes en tiempo real!",
+  "Descubre nuestras soluciones avanzadas para perforación manual y neumática. Perfectas para industrias automotrices e industriales, con sistemas hidráulicos de alta eficiencia.",
+  "Explora nuestras herramientas de roscado y equipos de remachado industrial. Tecnología de fijación de alta velocidad y resistencia para aplicaciones industriales exigentes.",
+  "Potentes herramientas neumáticas para lijado y amolado industrial. Equipos de alta potencia y precisión para la preparación de superficies en la industria.",
+  "Optimiza tu proceso con taladros y roscadoras automáticas obsoletas. Herramientas de perforación de última generación para soluciones precisas y eficientes.",
+  "Descubre nuestra gama de motores de aire industriales para aplicaciones en entornos industriales. Eficiencia y durabilidad en sistemas de propulsión neumática.",
+  "Explora nuestras herramientas diversas, desde trazadores de aire hasta martillos y trituradoras. Soluciones eficientes para una variedad de aplicaciones industriales.",
+  "Optimiza tus estaciones de trabajo con accesorios especializados como brazos de reacción telescópicos, balanceadores y dispensadores automáticos de tornillos. Mejora la eficiencia con nuestras soluciones.",
 ]
-const descriptionPageTools = descriptionsCategories[Number(categoryId)];
+const descriptionPageTools = descriptionsCategories[Number(categoryId)-1];
 // console.log(descriptionPageTools);
 // console.log(categoryId, categoryName);
 const frontmatter = {
   title: "Desoutter Tools México | " + categoryName,
   description: descriptionPageTools,
-  keywords: [
-  "Desoutter Tools México", categoryName, "Herramientas Industriales", "Soluciones de Ensamblaje", "Herramientas Eléctricas", "Innovación Industrial", 
-    "Fabricación de Precisión", "Automatización de Procesos", "Tecnología Industrial", "Eficiencia en Ensamblaje", "Productividad Industrial"
-  ],
+  keywords: ["herramientas de montaje", "herramientas eléctricas", "herramientas neumáticas", "sistemas de montaje", "desatornilladores eléctricos", "soluciones de barrenado", "herramientas de roscado", "motores de aire", "accesorios industriales", "trazabilidad de herramientas",],
   authorName: "Desumex",
   language: "es",
   canonicalUrl: Astro.url.href,
@@ -72,6 +70,7 @@ const subcategories = await getSubcategories(categoryId, categoryName).catch((er
 ---
 <Base frontmatter={frontmatter}>
   <NavigationTools />
+  <DescriptionToolsPage description={descriptionPageTools}/>
     {subcategories !== undefined ? (
       <SubCategoriesList subcategories={subcategories} />
     ):
