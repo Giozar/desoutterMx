@@ -8,7 +8,7 @@ export const prerender = true;
   <figure class="z-0">
     <div class="flex justify-center">
       <picture>
-        <img src={category.image} title={"Silueta de herramienta industrial " + category.name} alt={"Silueta de herramienta industrial para " + category.name} class="w-52 h-52">
+        <img src={category.image} title={"Silueta de herramienta industrial " + category.name} alt={"Silueta de herramienta industrial para " + category.name} loading="lazy" class="w-52 h-52">
       </picture>
     </div>
     <a href=`/herramientas/${category.id}/${category.pathName}` title={category.name}>

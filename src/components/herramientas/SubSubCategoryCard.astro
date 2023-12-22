@@ -7,7 +7,7 @@ const {categoryId, categoryName, subcategoryId, subcategoryName} = Astro.params;
   <figure class="z-0">
     <div class="flex justify-center">
       <picture>
-        <img src={subsubcategory.image} alt={subsubcategory.name} class="w-52 h-52">
+        <img src={subsubcategory.image} alt={subsubcategory.name} loading="lazy" class="w-52 h-52">
       </picture>
     </div>
     <a href=`/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategory.id}/${subsubcategory.pathName}` title={subsubcategory.pathName}>
