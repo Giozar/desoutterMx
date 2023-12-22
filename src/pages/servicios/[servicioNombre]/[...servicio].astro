@@ -11,9 +11,9 @@ const { servicioNombre } = Astro.params;
 const detail = await getEntry("servicio", servicioNombre!);
 
 const frontmatter = {
-  title: detail!.data.title,
+  title: "Desoutter Tools México " + detail!.data.title,
   description: detail!.data.description,
-  keywords: ["Palabra Clave 1", "Palabra Clave 2", "Palabra Clave 3"],
+  keywords: ["Desoutter Tools México", "Servicios Industriales", "Herramientas de Ensamblaje", "Innovación Industrial", "Eficiencia en Fabricación", "Soluciones a Medida"],
   authorName: "Desumex",
   language: "es",
   canonicalUrl: Astro.url.href,
