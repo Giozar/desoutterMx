@@ -22,7 +22,9 @@ const social = await getCollection("social");
                       </div>
 
                       <div class="mr-2">
-                        <a href={method.data.link}>
+                        <a href={method.data.link}
+                          title={method.data.name + " de Desumex"}
+                        >
                           <Icon
                           pack="bi"
                           name={method.data.icon}
@@ -35,6 +37,7 @@ const social = await getCollection("social");
                       <p class="hidden sm:block">
                         <a
                           href={method.data.link}
+                          title={method.data.name + " de Desumex"}
                           class="text-xs text-red-600 hover:text-slate-600 dark:text-red-300 dark:hover:text-white"
                         >
                           {method.data.link}

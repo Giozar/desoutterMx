@@ -1,6 +1,28 @@
 ---
 import { Icon } from 'astro-icon'
 import { LOCATION } from '../../config'
+
+interface Location {
+    sede: string;
+    location: {
+      address: string,
+      col: string,
+      zip: string,
+      state: string,
+      icon: string,
+      link: string,
+    };
+    email: {
+      mail:string,
+      icon:string,
+      link:string,
+    };
+    phone: {
+      number:string,
+      icon:string,
+      link:string,
+    };
+}
 ---
 
 <ol role='list' class='mt-4 py-1 text-sm'>
@@ -16,13 +38,14 @@ import { LOCATION } from '../../config'
           </h2>
         </div>
         <ul>
-          {children.map((child) => {
+          {children.map((child:Location) => {
             return (
               <li class='mb-12 space-y-2 py-1 pl-5 text-gray-500 dark:text-gray-400'>
                 <h3 class='text-base'>{child.sede}</h3>
                 <a
                   href={child.location.link}
                   class='flex hover:text-red-600 dark:hover:text-red-300'
+                  title={"Sede de Desumex: " + child.sede}
                 >
                   <Icon pack='heroicons-outline' name={child.location.icon} class='mr-2 h-6 w-6' />
                   <address>
@@ -36,6 +59,7 @@ import { LOCATION } from '../../config'
                 <a
                   class='flex items-center hover:text-red-600 dark:hover:text-red-300'
                   href={child.email.link}
+                  title={"Dirección de correo " + child.email.mail}
                 >
                   <Icon pack='heroicons-outline' name={child.email.icon} class='mr-2 h-6 w-6' />
                   <span>{child.email.mail}</span>
@@ -44,6 +68,7 @@ import { LOCATION } from '../../config'
                 <a
                   class='flex items-center hover:text-red-600 dark:hover:text-red-300'
                   href={child.phone.link}
+                  title={"Número telefónico " + child.phone.number}
                 >
                   <Icon pack='heroicons-outline' name={child.phone.icon} class='mr-2 h-6 w-6' />
                   {child.phone.number}

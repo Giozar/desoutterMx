@@ -42,7 +42,25 @@ export const SIDEBAR: Sidebar = {
   ]
 }
 
-export type Location = Record<string, { sede: string; location: object, email: object, phone: object }[]>
+export type Location = Record<string, { sede: string; location: {
+  address: string,
+  col: string,
+  zip: string,
+  state: string,
+  icon: string,
+  link: string,
+}, 
+email: {
+  mail:string,
+  icon:string,
+  link:string,
+}, 
+phone: {
+  number:string,
+  icon:string,
+  link:string,
+} 
+}[]>
 
 export const LOCATION: Location = {
   'Nuestras oficinas' : [
