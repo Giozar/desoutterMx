@@ -14,9 +14,9 @@ const errors = {
 }
 
 if (Astro.request.method === 'POST') {
+
   try {
     const data = await Astro.request.formData()
-
     function getData(){
         if (data.has('email_demo')) {
             data.set("subject_demo","Demostración de herramientas");
@@ -26,6 +26,7 @@ if (Astro.request.method === 'POST') {
                 phone_demo : data.get('phone_demo'),
                 name_demo : data.get('name_demo'),
                 company_demo : data.get('company_demo'),
+                reCaptcha_demo: data.get('g-recaptcha-response'),
                 availability : data.get('availability'),
                 issue_demo : data.get('issue_demo'),
                 tool_demo : data.get('tool_demo'),
@@ -37,9 +38,6 @@ if (Astro.request.method === 'POST') {
     
     const dataContact = getData();
 
-    if (typeof dataContact?.name_demo !== 'string' || dataContact?.name_demo.length < 1) {
-      errors.name_demo += 'Ingresa tu nombre completo. '
-    }
     // console.log(dataContact);
 
     fetch(desoutterAPI + '/contacto/cotizar', {
@@ -78,33 +76,33 @@ if (Astro.request.method === 'POST') {
 ---
 <div class="relative bg-white shadow dark:bg-gray-700">
       <div class="px-6 py-6 lg:px-8">
-            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de demostración</h3>
+            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white text-center">Solicitud de demostración</h3>
             <form method="post" id="demo-form">
 
                 <div class="relative z-0 w-full mb-6 group">
-                    <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                    <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
                     <label for="email_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-                    {errors.email_demo && <p class='text-red-500'>{errors.email_demo}</p>}
+                    <p id="error" class="text-red"></p>
                 </div>
 
                 <fieldset class="grid md:grid-cols-2 md:gap-6">
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="text" name="name_demo" id="name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <input type="text" name="name_demo" id="name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
                         <label for="name_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                        {errors.name_demo && <p class='text-red-500'>{errors.name_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                 </fieldset>
 
                 <fieldset class="grid md:grid-cols-2 md:gap-6">
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_demo" id="phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_demo" id="phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" />
                         <label for="phone_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
-                        {errors.phone_demo && <p class='text-red-500'>{errors.phone_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="text" name="company_demo" id="company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <input type="text" name="company_demo" id="company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
                         <label for="company_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                        {errors.company_demo && <p class='text-red-500'>{errors.company_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                 </fieldset>
 
@@ -112,12 +110,12 @@ if (Astro.request.method === 'POST') {
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text" name="issue_demo" id="issue_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer">
                         <label for="issue_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 scale-100 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
-                        {errors.issue_demo && <p class='text-red-500'>{errors.issue_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="text" name="tool_demo" id="tool_demo" placeholder="ej. ELB12-600-P, Pistola, 6151654180" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+                        <input type="text" name="tool_demo" id="tool_demo" placeholder="ej. ELB12-600-P, Pistola, 6151654180" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer">
                         <label for="tool_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Herramienta</label>
-                        {errors.tool_demo && <p class='text-red-500'>{errors.tool_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                 </fieldset>
 
@@ -126,8 +124,8 @@ if (Astro.request.method === 'POST') {
                         <h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Elija la disponibilidad para la demo</h3>
                         <ul class="grid w-full gap-6 md:grid-cols-3">
                             <li>
-                                <input type="radio" id="availability-morning" name="availability" value="availability-morning" class="hidden peer" required>
-                                <label for="availability-morning" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
+                                <input type="radio" id="availability-mañana" name="availability" value="availability-mañana" class="hidden peer">
+                                <label for="availability-mañana" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
                                     <div class="flex justify-center items-center">
                                         <div class="w-full">Mañana</div>
                                         <Icon pack="ph" name="sun" class="h-8 w-8" />
@@ -135,8 +133,8 @@ if (Astro.request.method === 'POST') {
                                 </label>
                             </li>
                             <li>
-                                <input type="radio" id="availability-half-day" name="availability" value="availability-half-day" class="hidden peer">
-                                <label for="availability-half-day" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
+                                <input type="radio" id="availability-medio-dia" name="availability" value="availability-medio-dia" class="hidden peer">
+                                <label for="availability-medio-dia" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
                                     <div class="flex justify-center items-center">
                                         <div class="w-full">Medio día</div>
                                         <Icon pack="wi" name="day-hail" class="h-8 w-8" />
@@ -144,8 +142,8 @@ if (Astro.request.method === 'POST') {
                                 </label>
                             </li>
                             <li>
-                                <input type="radio" id="availability-afternoon" name="availability" value="availability-afternoon" class="hidden peer" required>
-                                <label for="availability-afternoon" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
+                                <input type="radio" id="availability-tarde" name="availability" value="availability-tarde" class="hidden peer">
+                                <label for="availability-tarde" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
                                     <div class="flex justify-center items-center">
                                         <div class="w-full">Tarde</div>
                                         <Icon pack="wi" name="day-haze" class="h-8 w-8" />
@@ -158,21 +156,40 @@ if (Astro.request.method === 'POST') {
                     <div class="relative z-0 w-full mb-6 group">
                         <label for="date_time_demo" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
                         <input type="date" name="date_time_demo" id="date_time_demo" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
-                        {errors.date_time_demo && <p class='text-red-500'>{errors.date_time_demo}</p>}
+                        <p id="error" class="text-red"></p>
                     </div>
                 </fieldset>
 
                 <button type="submit"
                 data-sitekey="6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB"
-                data-callback='onSubmit'
-                data-action='submit'
+                data-callback='onChange'
+                data-action='change'
                 class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
             </form>
         </div>
+        <div id="success-message" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
   </div>
 
   <script>
     function init() {
+
+        const form = document.getElementById("demo-form");
+        const successMessage = document.getElementById('success-message');
+
+        function showSuccessMessage(form:HTMLElement, successMessage:HTMLElement){
+            if(form && successMessage){
+                form?.classList.add('hidden');
+                successMessage?.classList.remove('hidden');
+                setTimeout(() => {
+                    form?.submit();
+                    form?.reset();
+                    form?.classList.remove('hidden');
+                    successMessage?.classList.add('hidden');
+                }, 2000);
+            } else {
+                console.log('elements not found');
+            }
+        }
         
         document.getElementById('phone_demo')?.addEventListener('input', function (e) {
         // Eliminar cualquier caracter que no sea un número
@@ -191,6 +208,8 @@ if (Astro.request.method === 'POST') {
             e.target.value = formattedPhoneNumber;
         });
 
+
+        // Formato y rango de la fecha de demostración
         const $dateTime = document.getElementById('date_time_demo');
         const currentDateTime = new Date();
         currentDateTime.setDate(currentDateTime.getDate() + 1); // Agregamos un día más
@@ -209,11 +228,19 @@ if (Astro.request.method === 'POST') {
              return $dateTime?.value;
         })
 
-        function onSubmit(token) {
-        document.getElementById("demo-form")?.submit();
-      }
+        function onChange(token:string) {
+            if (token) {
+                // console.log("No eres un robot");
+                if (form && successMessage) {
+                    showSuccessMessage(form, successMessage);
+                }
+                else {
+                    console.log("Eres un robot");
+                }
+            }
+        }
 
-      window.onSubmit = onSubmit;
+        window.onChange = onChange;
 
     }
 
