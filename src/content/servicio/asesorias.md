@@ -1,5 +1,5 @@
 ---
-title: 'Asesorias'
+title: 'Asesorías'
 previewDescription: 'Nuestro equipo de expertos en asesorías industriales está a tu disposición para proporcionarte conocimientos estratégicos y soluciones personalizadas que optimizarán tus procesos y aumentarán la eficiencia operativa.'
 description: [
     "En Desoutter México entendemos que cada empresa es única, y nuestras asesorías están diseñadas para adaptarse a tus necesidades específicas.",
