@@ -30,19 +30,19 @@ const errors = {
               </button>
               <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Escribe tu pregunta</h3>
-                    <form method="post">
+                    <form method="post" id="dialog-question-form">
 
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="email" name="email_question" id="email_question" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                             <label for="email_question" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-                            {errors.email_question && <p class='text-red-500'>{errors.email_question}</p>}
+                            <p class="text-red-500 border-t border-red-500 hidden" id="error_email_question"></p>
                         </div>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="name_question" id="name_question" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="name_question" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                                {errors.name_question && <p class='text-red-500'>{errors.name_question}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_name_question"></p>
                             </div>
                         </fieldset>
 
@@ -50,12 +50,12 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_question" id="phone_question" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
                                 <label for="phone_question" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
-                                {errors.phone_question && <p class='text-red-500'>{errors.phone_question}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_phone_question"></p>
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="company_question" id="company_question" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="company_question" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                                {errors.company_question && <p class='text-red-500'>{errors.company_question}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_company_question"></p>
                             </div>
                         </fieldset>
 
@@ -63,13 +63,17 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <textarea name="message_question" id="message_question" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required cols="10" rows="1"></textarea>
                                 <label for="message_question" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Pregunta</label>
-                                {errors.message_question && <p class='text-red-500'>{errors.message_question}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_message_question"></p>
                             </div>
                         </fieldset>
-
-                        <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+                        <button 
+                            type="submit"
+                            class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">
+                            Enviar
+                        </button>
                     </form>
                 </div>
+                <div id="success-message" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
           </div>
       </div>
   </div>

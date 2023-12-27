@@ -36,19 +36,19 @@ const errors = {
               </button>
               <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Solicitud de demostración</h3>
-                    <form method="post">
+                    <form method="post" id="dialog-demo-form">
 
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                             <label for="email_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-                            {errors.email_demo && <p class='text-red-500'>{errors.email_demo}</p>}
+                            <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                         </div>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="name_demo" id="name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="name_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                                {errors.name_demo && <p class='text-red-500'>{errors.name_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                         </fieldset>
 
@@ -56,12 +56,12 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_demo" id="phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
                                 <label for="phone_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
-                                {errors.phone_demo && <p class='text-red-500'>{errors.phone_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="company_demo" id="company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="company_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                                {errors.company_demo && <p class='text-red-500'>{errors.company_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                         </fieldset>
 
@@ -69,12 +69,12 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="issue_demo" id="issue_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer">
                                 <label for="issue_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 scale-100 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
-                                {errors.issue_demo && <p class='text-red-500'>{errors.issue_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="tool_demo" id="tool_demo" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
                                 <label for="tool_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
-                                {errors.tool_demo && <p class='text-red-500'>{errors.tool_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                         </fieldset>
 
@@ -83,7 +83,7 @@ const errors = {
                                 <h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Elija la disponibilidad para la demo</h3>
                                 <ul class="grid w-full gap-6 md:grid-cols-3">
                                     <li>
-                                        <input type="radio" id="availability-morning" name="availability" value="availability-morning" class="hidden peer" required>
+                                        <input type="radio" id="availability-morning" name="availability" value="availability-morning" class="hidden peer" >
                                         <label for="availability-morning" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
                                             <div class="flex justify-center items-center">
                                                 <div class="w-full">Mañana</div>
@@ -101,7 +101,7 @@ const errors = {
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="radio" id="availability-afternoon" name="availability" value="availability-afternoon" class="hidden peer" required>
+                                        <input type="radio" id="availability-afternoon" name="availability" value="availability-afternoon" class="hidden peer" >
                                         <label for="availability-afternoon" class="flex justify-center w-full p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-[#E40520] peer-checked:border-[#E40520] peer-checked:text-[#E40520] hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800">                           
                                             <div class="flex justify-center items-center">
                                                 <div class="w-full">Tarde</div>
@@ -115,13 +115,18 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <label for="date_time_demo" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
                                 <input type="date" name="date_time_demo" id="date_time_demo" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
-                                {errors.date_time_demo && <p class='text-red-500'>{errors.date_time_demo}</p>}
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
                             </div>
                         </fieldset>
-
-                        <button type="submit" class="text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">Enviar</button>
+                        <button 
+                            type="submit"
+                            
+                            class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">
+                            Enviar
+                        </button>
                     </form>
                 </div>
+                <div id="success-message" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
           </div>
       </div>
   </div>
