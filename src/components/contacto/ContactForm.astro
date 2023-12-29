@@ -9,12 +9,15 @@ if (Astro.request.method === 'POST') {
 
     function getData(){
         if( data.has('email')) {
+          data.set("subject","Contacto");
             return{
                 subject: data.get('subject'),
                 email : data.get('email'),
                 phone : data.get('phone'),
                 fullName : data.get('fullName'),
                 company : data.get('company'),
+                reCaptcha: data.get('g-recaptcha-response'),
+                issue : data.get('issue'),
                 message : data.get('message'),
                 informations : data.get('informations'),
                 products : data.get('products'),
@@ -102,9 +105,9 @@ if (Astro.request.method === 'POST') {
 
     <fieldset class="grid md:grid-cols-2 md:gap-6">
       <div class="relative z-0 w-full mb-6 group">
-          <input type="text" name="subject" id="subject" value="Contactar" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
-          <label for="subject" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
-          <p class="text-red-500 border-t border-red-500 hidden" id="error_subject"></p>
+          <input type="text" name="issue" id="issue" value="Contactar" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
+          <label for="issue" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Asunto</label>
+          <p class="text-red-500 border-t border-red-500 hidden" id="error_issue"></p>
       </div>
   </fieldset>
 

@@ -5,7 +5,7 @@ const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj
 const errors = { 
     email_quote: '',
     phone_quote: '',
-    name_quote: '',
+    fullName_quote: '',
     company_quote: '',
     tool_quote: '',
     quantity_quote: '',
@@ -18,13 +18,14 @@ if (Astro.request.method === 'POST') {
 
     function getData(){
         if( data.has('email_quote')) {
-            data.set("subject_quote","Cotización de herramientas");
+            data.set("subject_quote","Cotización de herramientas en contacto");
             return{
                 subject_quote: data.get('subject_quote'),
                 email_quote : data.get('email_quote'),
                 phone_quote : data.get('phone_quote'),
-                name_quote : data.get('name_quote'),
+                fullName_quote : data.get('fullName_quote'),
                 company_quote : data.get('company_quote'),
+                reCaptcha_quote: data.get('g-recaptcha-response'),
                 tool_quote : data.get('tool_quote'),
                 quantity_quote : data.get('quantity_quote'),
                 message_quote : data.get('message_quote')
@@ -95,9 +96,9 @@ if (Astro.request.method === 'POST') {
             </div>
             <fieldset class="grid md:grid-cols-1 md:gap-6">
                 <div class="relative z-0 w-full mb-6 group">
-                    <input type="text" name="name_quote" id="name_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                    <label for="name_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[0.5]">Nombre completo</label>
-                    <p class="text-red-500 border-t border-red-500 hidden" id="error_name_quote"></p>
+                    <input type="text" name="fullName_quote" id="fullName_quote" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                    <label for="fullName_quote" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+                    <p class="text-red-500 border-t border-red-500 hidden" id="error_fullName_quote"></p>
                 </div>
             </fieldset>
 
