@@ -7,7 +7,7 @@ const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj
 
 async function getCategories() {
   try {
-  const response = await fetch(`${desoutterAPI}/herramientas`);
+  const response = await fetch(`${desoutterAPI}${Astro.url.pathname}`);
 
   if (!response.ok) {
     // Si la respuesta no es exitosa, lanzar un error con el status
@@ -20,7 +20,7 @@ async function getCategories() {
   } catch (error) {
     // Manejar cualquier error que ocurra durante la solicitud o al analizar la respuesta JSON
     // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
-    console.error('Error en la solicitud:', (error as Error).message);
+    console.error('Error en la solicitud categorias:', (error as Error).message);
   }
 }
 

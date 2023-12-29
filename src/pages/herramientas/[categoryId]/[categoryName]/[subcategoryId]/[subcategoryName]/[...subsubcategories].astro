@@ -4,7 +4,7 @@ import SubSubCategoriesList from "@components/herramientas/SubSubCategoriesList.
 import NavigationTools from "@components/herramientas/NavigationTools.astro";
 import DescriptionToolsPage from "@components/herramientas/DescriptionToolsPage.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-const {categoryId, categoryName, subcategoryId,subcategoryName} = Astro.params;
+const {categoryId, subcategoryName} = Astro.params;
 
 const descriptionsCategories = [
   "Descubre nuestras herramientas de montaje, ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
@@ -41,12 +41,13 @@ const frontmatter = {
   twitterDescription: descriptionPageTools,
   twitterImage: `https://s3.amazonaws.com/desumex.com.mx/subcategorias/${subcategoryName}.jpg`
 }
-const path = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`;
+
+const path = Astro.url.pathname;
 // Función para realizar la petición fetch por subsubcategoría
-async function getSubsubcategories(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined) {
+async function getSubsubcategories() {
   try {
     const response = 
-    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`);
+    await fetch(`${desoutterAPI}${Astro.url.pathname}`);
     if (!response.ok) {
         // Si la respuesta no es exitosa, lanzar un error con el status
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -54,17 +55,15 @@ async function getSubsubcategories(categoryId:String|undefined, categoryName:Str
     return await response.json();
   } catch (error) {
      // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
-      console.error('Error en la solicitud:', (error as Error).message);
+      console.error('Error en la solicitud subsubcategorias:', (error as Error).message);
   }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto
 
-const data = (subcategoryName !== '[object Object]') ?
-   await getSubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName).catch((error)=>{
-    console.log('No hay subsubcategoria en esta sección');
-    console.error(error);
-   }) : {};
+const data = await getSubsubcategories().catch((error)=>{
+      console.log('No hay subsubcategoria en esta sección');
+      console.error(error); });
 
 
 ---

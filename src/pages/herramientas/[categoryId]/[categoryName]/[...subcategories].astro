@@ -44,25 +44,23 @@ const frontmatter = {
 }
 
 // Función para realizar la petición fetch por subcategoría
-async function getSubcategories(categoryId:String|undefined, categoryName:String|undefined) {
+  async function getSubcategories() {
   try {
-    if(categoryName !== '[object Object]'){
-      const response = await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}`);
-      if (!response.ok) {
-        // Si la respuesta no es exitosa, lanzar un error con el status
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      return await response.json();
+    const response = await fetch(`${desoutterAPI}${Astro.url.pathname}`);
+    if (!response.ok) {
+    // Si la respuesta no es exitosa, lanzar un error con el status
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
+    return await response.json();
+
   } catch (error) {
      // Afirmación de tipo para indicar que 'error' es de tipo 'Error'
-  console.error('Error en la solicitud:', (error as Error).message);
+  console.error('Error en la solicitud subcategorias:', (error as Error).message);
   }
 }
 
 // Realiza la petición fetch y almacena los datos en el objeto organizado
-const subcategories = await getSubcategories(categoryId, categoryName).catch((error)=>{
+const subcategories = await getSubcategories().catch((error)=>{
   console.log('No hay subcategoria en esta sección');
   console.error(error);
 });

@@ -3,13 +3,13 @@ import CTA1 from '@components/CTA1.astro';
 import Product from '@components/herramientas/Product.astro';
 import BaseReCaptchaFacebook from '@layouts/BaseReCaptchaFacebook.astro';
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-const {categoryId, categoryName, subcategoryId, subcategoryName, productId, productName} = Astro.params;
+const {categoryId} = Astro.params;
 
 // Función para realizar la petición fetch por categoría
-async function getProduct(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, productId:String|undefined, productName:String|undefined) {
+async function getProduct() {
   try {
     const response = 
-    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/p/${productId}/${productName}`);
+    await fetch(`${desoutterAPI}${Astro.url.pathname}`);
     if (!response.ok) {
         // Si la respuesta no es exitosa, lanzar un error con el status
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -23,11 +23,10 @@ async function getProduct(categoryId:String|undefined, categoryName:String|undef
 
 // Realiza la petición fetch y almacena los datos en el objeto
 
-const product = (productName !== '[object Object]') ? 
-await getProduct(categoryId, categoryName, subcategoryId, subcategoryName, productId, productName).catch((error)=>{
+const product = await getProduct().catch((error)=>{
     console.log('No hay herramientas en esta sección');
     console.error(error);
-   }) : {};
+   });
 
 
 const descriptionsCategories = [

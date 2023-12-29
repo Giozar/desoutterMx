@@ -4,7 +4,7 @@ import SubSubSubCategoriesList from "@components/herramientas/SubSubSubCategorie
 import NavigationTools from "@components/herramientas/NavigationTools.astro";
 import DescriptionToolsPage from "@components/herramientas/DescriptionToolsPage.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName} = Astro.params;
+const {categoryId, subsubcategoryName} = Astro.params;
 
 const descriptionsCategories = [
   "Descubre nuestras herramientas de montaje, ideales para aplicaciones automotrices, industriales y arquitectónicas. Eficiencia y precisión para desmontaje, fijación y más.",
@@ -42,14 +42,13 @@ const frontmatter = {
   twitterImage: `https://s3.amazonaws.com/desumex.com.mx/subcategorias/${subsubcategoryName}.jpg`
 }
 
-const path = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`;
-
+const path = Astro.url.pathname;
 // Aquí va la petición fetch para recibir data
 // Función para realizar la petición fetch por subsubcategoría
-async function getSubsubsubcategories(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, subsubcategoryId:String|undefined, subsubcategoryName:String|undefined) {
+async function getSubsubsubcategories() {
   try {
     const response = 
-    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}`);
+    await fetch(`${desoutterAPI}${Astro.url.pathname}`);
     if (!response.ok) {
         // Si la respuesta no es exitosa, lanzar un error con el status
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -63,11 +62,10 @@ async function getSubsubsubcategories(categoryId:String|undefined, categoryName:
 
 // Realiza la petición fetch y almacena los datos en el objeto
 
-const data = (subsubcategoryName !== '[object Object]') ? 
-await getSubsubsubcategories(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName).catch((error)=>{
+const data = await getSubsubsubcategories().catch((error)=>{
     console.log('No hay subsubsubcategoria en esta sección');
     console.error(error);
-   })  : {}
+   });
 
 
 ---

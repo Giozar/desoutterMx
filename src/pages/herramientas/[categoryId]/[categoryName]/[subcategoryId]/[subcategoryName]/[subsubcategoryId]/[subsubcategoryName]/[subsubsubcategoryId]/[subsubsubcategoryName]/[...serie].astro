@@ -4,7 +4,7 @@ import SerieList from "@components/herramientas/serieList.astro";
 import NavigationTools from "@components/herramientas/NavigationTools.astro";
 import DescriptionToolsPage from "@components/herramientas/DescriptionToolsPage.astro";
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName} = Astro.params;
+const {categoryId, subsubsubcategoryName} = Astro.params;
 
 
 const descriptionsCategories = [
@@ -43,14 +43,14 @@ const frontmatter = {
   twitterImage: `https://s3.amazonaws.com/desumex.com.mx/subcategorias/${subsubsubcategoryName}.jpg`
 }
 
-const path = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`;
+const path = Astro.url.pathname;
 
 // Aquí va la petición fetch para recibir data
 // Función para realizar la petición fetch por subsubcategoría
-async function getTools(categoryId:String|undefined, categoryName:String|undefined, subcategoryId:String|undefined, subcategoryName:String|undefined, subsubcategoryId:String|undefined, subsubcategoryName:String|undefined, subsubsubcategoryId:String|undefined, subsubsubcategoryName:String|undefined) {
+async function getTools() {
   try {
     const response = 
-    await fetch(`${desoutterAPI}/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}/${subsubcategoryId}/${subsubcategoryName}/${subsubsubcategoryId}/${subsubsubcategoryName}`);
+    await fetch(`${desoutterAPI}${Astro.url.pathname}`);
     if (!response.ok) {
         // Si la respuesta no es exitosa, lanzar un error con el status
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -64,11 +64,10 @@ async function getTools(categoryId:String|undefined, categoryName:String|undefin
 
 // Realiza la petición fetch y almacena los datos en el objeto
 
-const tools = (subsubsubcategoryName !== '[object Object]') ? 
-await getTools(categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName ).catch((error)=>{
+const tools = await getTools().catch((error)=>{
     console.log('No hay series en esta sección');
     console.error(error);
-   })  : {}
+   });
 
 ---
 <Base frontmatter={frontmatter}>
