@@ -11,6 +11,8 @@ const { frontmatter } = Astro.props;
   <head>
     <SEO frontmatter={frontmatter} />
     <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB" async defer></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v18.0" nonce="MV60u2hh"></script>
     <script is:inline>
     const setDarkMode = () => {
       if (
