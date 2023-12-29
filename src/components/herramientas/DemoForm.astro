@@ -2,7 +2,6 @@
 import Icon from "astro-icon";
 const {productModel} = Astro.props;
 
-
 const errors = {
     email_demo: '', 
     phone_demo: '',
@@ -13,7 +12,6 @@ const errors = {
     tool_demo: '',
     date_time_demo: '',
 }
-
 ---
 
 <!-- Modal toggle -->
@@ -41,14 +39,14 @@ const errors = {
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="email" name="email_demo" id="email_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                             <label for="email_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección de correo electrónico</label>
-                            <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                            <p class="text-red-500 border-t border-red-500 hidden" id="error_email_demo"></p>
                         </div>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="name_demo" id="name_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="name_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_name_demo"></p>
                             </div>
                         </fieldset>
 
@@ -56,25 +54,25 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_demo" id="phone_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder="ej. 123 456 7890" required />
                                 <label for="phone_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[0.5] scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-0">Número telefónico</label>
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_phone_demo"></p>
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="company_demo" id="company_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="company_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_company_demo"></p>
                             </div>
                         </fieldset>
 
                         <fieldset class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="issue_demo" id="issue_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer">
-                                <label for="issue_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 scale-100 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <input type="text" name="issue_demo" id="issue_demo" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required>
+                                <label for="issue_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tema</label>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_issue_demo"></p>
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="tool_demo" id="tool_demo" value={productModel} class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" required>
                                 <label for="tool_demo" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Herramienta</label>
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_tool_demo"></p>
                             </div>
                         </fieldset>
 
@@ -115,24 +113,44 @@ const errors = {
                             <div class="relative z-0 w-full mb-6 group">
                                 <label for="date_time_demo" class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Selecciona el día de la demostración</label>
                                 <input type="date" name="date_time_demo" id="date_time_demo" class="dark:bg-gray-800 dark:text-white rounded-sm p-2">
-                                <p class="text-red-500 border-t border-red-500 hidden" id="error__"></p>
+                                <p class="text-red-500 border-t border-red-500 hidden" id="error_date_time_demo"></p>
                             </div>
                         </fieldset>
                         <button 
                             type="submit"
-                            
+                            data-sitekey="6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB"
+                            data-callback='onChangeDemo'
+                            data-action='change'
                             class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">
                             Enviar
                         </button>
                     </form>
                 </div>
-                <div id="success-message" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
+                <div id="success_message_demo" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
           </div>
       </div>
   </div>
   
   <script>
     function init() {
+
+        const successMessageDemo = document.getElementById('success_message_demo');
+
+        function showSuccessMessageDemo(form:HTMLElement, successMessageDemo:HTMLElement){
+            if(form && successMessageDemo){
+                form?.classList.add('hidden');
+                successMessageDemo?.classList.remove('hidden');
+                setTimeout(() => {
+                    form?.submit();
+                    form?.reset();
+                    form?.classList.remove('hidden');
+                    successMessageDemo?.classList.add('hidden');
+                }, 2000);
+            } else {
+                console.log('elements not found');
+            }
+        } 
+
         const btnDemo = document.querySelector('#btn-demo');
         const formDemo = document.querySelector('#form-demo');
         const btnCloseDemo = document.querySelector('#btn-close-demo');
@@ -187,6 +205,51 @@ const errors = {
                 return $dateTime?.value;
             })
         }
+
+        function onChangeDemo(token:string) {
+            // console.log("Demo");
+            if (token) {
+                const formDemo = document.getElementById("dialog-demo-form");
+                // console.log("No eres un robot");
+                try {
+                    if (formDemo && successMessageDemo) {
+                        if(formDemo.checkValidity()){
+                            formDemo.submit();
+                            showSuccessMessageDemo(formDemo, successMessageDemo);
+                        } else {
+                            const formElements = formDemo.elements;
+
+                            Array.from(formElements).forEach(element => {
+                                if (element.checkValidity() === false) {
+                                    const errorMessage = document.getElementById(`error_${element.name}`);
+                                    // if (element.id === "email_service"){
+                                    //     console.log("es correo");
+                                    // }
+                                    if (errorMessage) {
+                                        errorMessage.textContent = 'Falta validar campo';
+                                        errorMessage.classList.replace("hidden", "block");
+
+                                        setTimeout(() => {
+                                            errorMessage.textContent = 'Falta validar campo';
+                                            errorMessage.classList.replace("block", "hidden");
+                                        },4000)
+                                    }
+                                    
+                                }
+                            });
+                        }
+                    } else {
+                        console.log("Ocurrió un error");
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            } else {
+              console.log("Eres un robot");
+            }
+        }
+
+        window.onChangeDemo = onChangeDemo;
 
 
 

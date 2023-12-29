@@ -1,6 +1,7 @@
 ---
 import Icon from "astro-icon";
 const {productModel} = Astro.props;
+
 const errors = { 
     email_quote: '',
     phone_quote: '',
@@ -10,26 +11,16 @@ const errors = {
     quantity_quote: '',
     message_quote: ''
 }
-const {categoryId, categoryName, subcategoryId, subcategoryName, subsubcategoryId, subsubcategoryName, subsubsubcategoryId, subsubsubcategoryName, productId, productName} = Astro.params;
-const baseTools = `/herramientas/${categoryId}/${categoryName}/${subcategoryId}/${subcategoryName}`
-const baseSubsub = `/${subsubcategoryId}/${subsubcategoryName}`
-const baseSubsubsub = `/${subsubsubcategoryId}/${subsubsubcategoryName}`
-const baseProduct = `/p/${productId}/${productName}`
+
 const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
-let urlFinal = baseTools;
-if (subsubcategoryId) {
-    urlFinal = baseTools + baseSubsub + baseProduct;
-} else if (subsubsubcategoryId){
-    urlFinal = baseTools + baseSubsub + baseSubsubsub + baseProduct
-} else {
-    urlFinal += baseProduct; 
-}
 
 if (Astro.request.method === 'POST') {
+
   try {
     const data = await Astro.request.formData()
 
     function getData(){
+
         if( data.has('email_quote')) {
             data.set("subject_quote","Cotización de herramientas");
             return{
@@ -38,6 +29,7 @@ if (Astro.request.method === 'POST') {
                 phone_quote : data.get('phone_quote'),
                 name_quote : data.get('name_quote'),
                 company_quote : data.get('company_quote'),
+                reCaptcha: data.get('g-recaptcha-response'),
                 tool_quote : data.get('tool_quote'),
                 quantity_quote : data.get('quantity_quote'),
                 message_quote : data.get('message_quote')
@@ -52,6 +44,7 @@ if (Astro.request.method === 'POST') {
                 phone_demo : data.get('phone_demo'),
                 name_demo : data.get('name_demo'),
                 company_demo : data.get('company_demo'),
+                reCaptcha : data.get('g-recaptcha-response'),
                 availability : data.get('availability'),
                 issue_demo : data.get('issue_demo'),
                 tool_demo : data.get('tool_demo'),
@@ -67,6 +60,7 @@ if (Astro.request.method === 'POST') {
                 phone_question : data.get('phone_question'),
                 name_question : data.get('name_question'),
                 company_question : data.get('company_question'),
+                reCaptcha: data.get('g-recaptcha-response'),
                 message_question : data.get('message_question')
             }
         }
@@ -75,36 +69,39 @@ if (Astro.request.method === 'POST') {
 
     const dataContact = getData();
 
-    if (typeof dataContact?.name_quote !== 'string' || dataContact?.name_quote.length < 1) {
-      errors.name_quote += 'Ingresa tu nombre completo. '
+    console.log(dataContact);
+
+    if (dataContact) {
+
+        fetch(desoutterAPI + Astro.url.pathname, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataContact),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(responseData => {
+            if (responseData.success) {
+                console.log('Mensaje de éxito:', responseData.message);
+            } else {
+                console.error('Error en la solicitud:', responseData.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error);
+        });
+
+    } else {
+        throw new Error("Error al procesar los datos del formulario herramienta de cotización");
     }
 
-    // console.log(dataContact);
-
-    fetch(desoutterAPI + urlFinal, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dataContact),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(responseData => {
-        if (responseData.success) {
-            console.log('Mensaje de éxito:', responseData.message);
-        } else {
-            console.error('Error en la solicitud:', responseData.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error en la solicitud:', error);
-    });
-
+    
 
   } catch (error) {
     if (error instanceof Error) {
@@ -187,32 +184,31 @@ if (Astro.request.method === 'POST') {
                         <button 
                             type="submit"
                             data-sitekey="6LfiuA8pAAAAAAkXWHT_SsdkFSuFGi3c9qpdvfmB"
-                            data-callback='onChange'
+                            data-callback='onChangeQuote'
                             data-action='change'
                             class="g-recaptcha text-white bg-[#E40520] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-[#E40520] dark:focus:ring-red-800">
                             Enviar
                         </button>
                     </form>
                 </div>
-                <div id="success-message" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
+                <div id="success_message_quote" class="hidden text-green-300 text-center">¡El formulario se envió con éxito!</div>
           </div>
       </div>
   </div>
   
   <script>
      function init() {
-        const form = document.getElementById("dialog-quote-form");
-        const successMessage = document.getElementById('success-message');
+        const successMessageQuote = document.getElementById('success_message_quote');
 
-        function showSuccessMessage(form:HTMLElement, successMessage:HTMLElement){
-            if(form && successMessage){
+        function showSuccessMessageQuote(form:HTMLElement, successMessageQuote:HTMLElement){
+            if(form && successMessageQuote){
                 form?.classList.add('hidden');
-                successMessage?.classList.remove('hidden');
+                successMessageQuote?.classList.remove('hidden');
                 setTimeout(() => {
                     form?.submit();
                     form?.reset();
                     form?.classList.remove('hidden');
-                    successMessage?.classList.add('hidden');
+                    successMessageQuote?.classList.add('hidden');
                 }, 2000);
             } else {
                 console.log('elements not found');
@@ -232,31 +228,39 @@ if (Astro.request.method === 'POST') {
 
 
         document.getElementById('phone_quote')?.addEventListener('input', function (e) {
-        // Eliminar cualquier caracter que no sea un número
-        const phoneNumber = e.target.value.replace(/\D/g, '').slice(0, 10);
+            if(e.target){
+                // Hacer un type assertion para informar a TypeScript sobre el tipo
+                const targetWithvalue = e.target as HTMLInputElement;
 
-        // Aplicar el formato
-        let formattedPhoneNumber = '';
-        for (let i = 0; i < phoneNumber.length; i++) {
-                if (i === 3 || i === 6) {
-                    formattedPhoneNumber += '-';
-                }
-                formattedPhoneNumber += phoneNumber[i];
-            }
+                // Ahora puedes acceder a la propiedad 'value' sin errores
+                const phoneNumber = targetWithvalue.value.replace(/\D/g, '').slice(0, 10);
 
-            // Actualizar el valor del campo de entrada
-            e.target.value = formattedPhoneNumber;
+                // Aplicar el formato
+                let formattedPhoneNumber = '';
+                for (let i = 0; i < phoneNumber.length; i++) {
+                        if (i === 3 || i === 6) {
+                            formattedPhoneNumber += '-';
+                        }
+                        formattedPhoneNumber += phoneNumber[i];
+                    }
+
+                    // Actualizar el valor del campo de entrada
+                    targetWithvalue.value = formattedPhoneNumber;
+                    }
         });
 
-        function onChange(token:string) {
+        function onChangeQuote(token:string) {
             if (token) {
+                // console.log("Cotizar");
+                const formQuote = document.getElementById("dialog-quote-form");
                 // console.log("No eres un robot");
                 try {
-                    if (form && successMessage) {
-                        if(form.checkValidity()){
-                            showSuccessMessage(form, successMessage);
+                    if (formQuote && successMessageQuote) {
+                        if(formQuote.checkValidity()){
+                            formQuote.submit();
+                            showSuccessMessageQuote(formQuote, successMessageQuote);
                         } else {
-                            const formElements = form.elements;
+                            const formElements = formQuote.elements;
 
                             Array.from(formElements).forEach(element => {
                                 if (element.checkValidity() === false) {
@@ -288,7 +292,7 @@ if (Astro.request.method === 'POST') {
             }
         }
 
-        window.onChange = onChange;
+        window.onChangeQuote = onChangeQuote;
 
     }
     window.onload = init;
