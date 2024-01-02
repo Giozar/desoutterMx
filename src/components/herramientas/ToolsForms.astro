@@ -1,0 +1,110 @@
+---
+import DemoForm from "./DemoForm.astro";
+import QuestionForm from "./QuestionForm.astro";
+import QuoteForm from "./QuoteForm.astro";
+
+const {productName} = Astro.props
+
+const desoutterAPI = import.meta.env.PUBLIC_DESOUTTER_API || "https://7yc636gsjj.execute-api.us-east-1.amazonaws.com/prod";
+
+if (Astro.request.method === 'POST') {
+
+  try {
+    const data = await Astro.request.formData()
+
+    function getData(){
+
+        if( data.has('email_quote')) {
+            data.set("subject_quote","Cotización de herramientas");
+            return{
+                subject_quote: data.get('subject_quote'),
+                email_quote : data.get('email_quote'),
+                phone_quote : data.get('phone_quote'),
+                name_quote : data.get('name_quote'),
+                company_quote : data.get('company_quote'),
+                reCaptcha: data.get('g-recaptcha-response'),
+                tool_quote : data.get('tool_quote'),
+                quantity_quote : data.get('quantity_quote'),
+                message_quote : data.get('message_quote')
+            }
+        }
+
+        if (data.has('email_demo')) {
+            data.set("subject_demo","Demostración de herramientas");
+            return {
+                subject_demo: data.get('subject_demo'),
+                email_demo : data.get('email_demo'),
+                phone_demo : data.get('phone_demo'),
+                name_demo : data.get('name_demo'),
+                company_demo : data.get('company_demo'),
+                reCaptcha : data.get('g-recaptcha-response'),
+                availability : data.get('availability'),
+                issue_demo : data.get('issue_demo'),
+                tool_demo : data.get('tool_demo'),
+                date_time_demo : data.get('date_time_demo')
+            }
+        }
+
+        if (data.has('email_question')) {
+            data.set("subject_question","Preguntas generales");
+            return {
+                subject_question: data.get('subject_question'),
+                email_question : data.get('email_question'),
+                phone_question : data.get('phone_question'),
+                name_question : data.get('name_question'),
+                company_question : data.get('company_question'),
+                reCaptcha: data.get('g-recaptcha-response'),
+                message_question : data.get('message_question')
+            }
+        }
+        
+    }
+
+    const dataContact = getData();
+
+    // console.log(dataContact);
+
+    if (dataContact) {
+
+        fetch(desoutterAPI + Astro.url.pathname, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataContact),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(responseData => {
+            if (responseData.success) {
+                console.log('Mensaje de éxito:', responseData.message);
+            } else {
+                console.error('Error en la solicitud:', responseData.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error);
+        });
+
+    } else {
+        throw new Error("Error al procesar los datos del formulario herramienta");
+    }
+
+    
+
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+---              
+                
+                
+<li><QuoteForm productModel={productName} /></li>
+<li><DemoForm productModel={productName} /></li>
+<li><QuestionForm /></li>
